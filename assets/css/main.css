@@ -1308,132 +1308,10 @@ textarea {
   visibility: visible;
 }
 
-/*=========================
-    Pomeroy Compact Hero
-===========================*/
-.hero-breadcrumb-area {
-  position: relative;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding-top: 130px;
-  padding-bottom: 60px;
-  min-height: 480px;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-}
-
-/* Background Ambient Overlay & Glow */
-.hero-breadcrumb-area::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(110deg, rgba(0, 30, 40, 0.45) 0%, rgba(0, 15, 25, 0.25) 100%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Compact Floating Box with Gloss Edge */
-.hero-content-card {
-  background-color: #004958;
-  padding: 28px 30px;
-  border-radius: 8px;
-  max-width: 460px;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle glass accent line */
-}
-
-.hero-content-card .sub-title {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #38b6ff;
-  margin-bottom: 10px;
-}
-
-.hero-content-card .title {
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 1.35;
-  color: #ffffff;
-  margin-bottom: 18px;
-  letter-spacing: -0.01em;
-}
-
-.hero-content-card .hero-btn {
-  display: inline-block;
-  background-color: #ffffff;
-  color: #004859;
-  padding: 9px 20px;
-  font-size: 13px;
-  font-weight: 700;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.hero-content-card .hero-btn:hover {
-  background-color: #004859;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* Tablet Scale */
-@media (max-width: 991.98px) {
-  .hero-breadcrumb-area {
-    padding-top: 110px;
-    padding-bottom: 50px;
-    min-height: 430px;
-  }
-  .hero-content-card {
-    padding: 24px 24px;
-    max-width: 400px;
-  }
-  .hero-content-card .title {
-    font-size: 19px;
-  }
-}
-
-/* Pomeroy Mobile View Match */
-@media (max-width: 767.98px) {
-  .hero-breadcrumb-area {
-    padding-top: 95px;
-    padding-bottom: 18px;
-    min-height: 460px;
-    align-items: flex-end; /* Pins card near bottom of screen */
-  }
-
-  .hero-content-card {
-    padding: 18px 16px;
-    border-radius: 8px;
-    max-width: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  }
-
-  .hero-content-card .sub-title {
-    font-size: 10px;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-
-  .hero-content-card .title {
-    font-size: 16px;
-    line-height: 1.35;
-    margin-bottom: 14px;
-  }
-
-  .hero-content-card .hero-btn {
-    padding: 7px 16px;
-    font-size: 12px;
-  }
-}
-/* .breadcrumb__bg {
+.breadcrumb__bg {
   background-size: cover;
   background-position: center;
-  padding: 230px 0 120px;
+  padding: 150px 0 90px;
   position: relative;
   z-index: 1;
 }
@@ -1547,7 +1425,7 @@ textarea {
 
 .breadcrumb__content .breadcrumb span.breadcrumb-separator {
   color: white;
-} */
+}
 
 /*=============================
     	0. Accordion
