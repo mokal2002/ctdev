@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Web Services | Crescent Technoserve</title>
-    <meta name="description" content="Techzo - IT Solutions & Technology Services Template">
+    <meta name="description"
+        content="Crescent Technoserve provides professional web services including web design, web development, website monitoring, secure hosting, maintenance, and performance optimization.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -21,6 +22,849 @@
     <link rel="stylesheet" href="assets/css/sal.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* ================================
+   In-page navigation
+================================ */
+
+        .mits-nav-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 98;
+
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid var(--tg-color-gray-4);
+
+            transition: top 0.2s ease;
+        }
+
+        .mits-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            min-height: 70px;
+        }
+
+        /* Left */
+        .mits-nav__left {
+            flex-shrink: 0;
+        }
+
+        .mits-nav__label {
+            color: var(--tg-heading-color);
+            font-size: 16px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* Right */
+        .mits-nav__right {
+            margin-left: auto;
+        }
+
+        .mits-nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px 34px;
+
+            margin: 0;
+            padding: 16px 0;
+            list-style: none;
+        }
+
+        .mits-nav__inner a {
+            display: inline-block;
+
+            color: var(--tg-heading-color);
+            font-size: 15px;
+            font-weight: 600;
+
+            text-decoration: none;
+            white-space: nowrap;
+
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+
+            transition: color .2s ease, border-color .2s ease;
+        }
+
+        .mits-nav__inner a:hover,
+        .mits-nav__inner a.is-active {
+            color: var(--tg-theme-primary);
+            border-color: var(--tg-theme-primary);
+        }
+
+        /* Phone */
+        @media (max-width: 767.98px) {
+            .mits-nav-wrapper {
+                display: none !important;
+            }
+        }
+
+
+
+        /* =========================================
+   Managed IT Services - Overview
+   Centered Pomeroy-style layout
+========================================= */
+
+        .mits-overview {
+            padding: 115px 0 105px;
+            background: var(--tg-color-white-default);
+            text-align: center;
+        }
+
+        .mits-overview__content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mits-overview__eyebrow {
+            display: block;
+            margin-bottom: 18px;
+
+            color: var(--tg-theme-primary);
+            font-size: 14px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mits-overview__title {
+            max-width: 820px;
+            margin: 0 auto 30px;
+
+            color: var(--tg-heading-color);
+            font-size: 46px;
+            font-weight: 700;
+            line-height: 1.18;
+        }
+
+        .mits-overview__title::after {
+            content: "";
+            display: block;
+
+            width: 65px;
+            height: 3px;
+
+            margin: 28px auto 30px;
+
+            background: var(--tg-theme-primary);
+        }
+
+        .mits-overview__lead {
+            max-width: 820px;
+            margin: 0 auto 26px;
+
+            color: var(--tg-body-color);
+            font-size: 20px;
+            line-height: 1.75;
+        }
+
+        .mits-overview__text {
+            max-width: 850px;
+            margin: 0 auto;
+
+            color: var(--tg-body-color);
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+
+        /* =========================================
+   Tablet
+========================================= */
+
+        @media (max-width: 991.98px) {
+
+            .mits-overview {
+                padding: 90px 0 85px;
+            }
+
+            .mits-overview__title {
+                font-size: 38px;
+            }
+
+            .mits-overview__lead {
+                font-size: 18px;
+            }
+        }
+
+
+        /* =========================================
+   Mobile
+========================================= */
+
+        @media (max-width: 767.98px) {
+
+            .mits-overview {
+                padding: 70px 0 65px;
+            }
+
+            .mits-overview__content {
+                max-width: 100%;
+            }
+
+            .mits-overview__eyebrow {
+                font-size: 12px;
+                margin-bottom: 14px;
+            }
+
+            .mits-overview__title {
+                font-size: 29px;
+                line-height: 1.25;
+                margin-bottom: 24px;
+            }
+
+            .mits-overview__title::after {
+                width: 50px;
+                height: 2px;
+                margin: 22px auto 24px;
+            }
+
+            .mits-overview__lead {
+                font-size: 17px;
+                line-height: 1.7;
+                margin-bottom: 22px;
+            }
+
+            .mits-overview__text {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+        }
+
+
+
+
+
+
+
+
+
+        /* =========================================
+   Digital Workplace Services (image + text)
+========================================= */
+
+        .dw-section {
+            padding: 100px 0;
+            background: #F2F2F2;
+        }
+
+        .dw-image-wrap {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .dw-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .dw-image-wrap::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(200deg, rgba(255, 145, 0, 0.35) 0%, rgba(255, 145, 0, 0) 22%),
+                linear-gradient(20deg, var(--tg-theme-primary) 0%, rgba(1, 67, 235, 0) 22%);
+            mix-blend-mode: multiply;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .dw-title {
+            font-family: var(--tg-heading-font-family);
+            color: var(--tg-heading-color);
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 1.3;
+            margin-bottom: 22px;
+        }
+
+        .dw-text {
+            font-family: var(--tg-body-font-family);
+            color: var(--tg-body-color);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        .dw-text:last-of-type {
+            margin-bottom: 32px;
+        }
+
+        .dw-outline-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border: 1.5px solid var(--tg-heading-color);
+            border-radius: 4px;
+            color: var(--tg-heading-color);
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .dw-outline-btn:hover,
+        .dw-outline-btn:focus-visible {
+            background: var(--tg-heading-color);
+            color: #fff;
+        }
+
+        @media (max-width: 991px) {
+            .dw-section {
+                padding: 80px 0;
+            }
+
+            .dw-title {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .dw-section {
+                padding: 60px 0;
+            }
+        }
+
+        /* =========================================
+   Areas We Support - Pomeroy Split Tab / Mobile Accordion
+========================================= */
+
+        :root {
+            --pomeroy-active-orange: #ff6200;
+            /* Active accent color matching Pomeroy screenshot */
+        }
+
+        .pomeroy-support-section {
+            padding: 90px 0;
+            background-color: #ffffff;
+            scroll-margin-top: 100px;
+        }
+
+        .pomeroy-support-layout {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        /* Left Sidebar Navigation */
+        .pomeroy-support-sidebar {
+            flex: 0 0 380px;
+            padding-right: 40px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .pomeroy-support-heading {
+            font-family: var(--tg-heading-font-family);
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--tg-heading-color);
+            margin-bottom: 35px;
+        }
+
+        .pomeroy-support-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pomeroy-support-nav li {
+            font-family: var(--tg-heading-font-family);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--tg-heading-color);
+            padding: 10px 0 10px 16px;
+            margin-bottom: 6px;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            transition: all 0.25s ease-in-out;
+            line-height: 1.4;
+        }
+
+        /* Tab Hover & Active Highlight */
+        .pomeroy-support-nav li:hover {
+            color: var(--pomeroy-active-orange);
+            padding-left: 20px;
+        }
+
+        .pomeroy-support-nav li.is-active {
+            color: var(--pomeroy-active-orange);
+            border-left-color: var(--pomeroy-active-orange);
+            font-weight: 800;
+            padding-left: 20px;
+        }
+
+        /* Right Content Area */
+        .pomeroy-support-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .pomeroy-tab-pane {
+            display: none;
+        }
+
+        .pomeroy-tab-pane.is-active {
+            display: block;
+        }
+
+        .pomeroy-content-title {
+            font-family: var(--tg-heading-font-family);
+            color: var(--tg-heading-color);
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .pomeroy-content-desc {
+            font-family: var(--tg-body-font-family);
+            color: var(--tg-body-color);
+            font-size: 18px;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .pomeroy-mobile-trigger {
+            display: none;
+        }
+
+        /* =========================================
+   Mobile View (Accordion + Visible Heading)
+========================================= */
+
+        @media (max-width: 991.98px) {
+            .pomeroy-support-section {
+                padding: 60px 0;
+            }
+
+            .pomeroy-support-layout {
+                display: block;
+            }
+
+            /* Sidebar adjustments for mobile */
+            .pomeroy-support-sidebar {
+                width: 100%;
+                padding-right: 0;
+                border-right: none;
+                margin-bottom: 20px;
+            }
+
+            /* Keep Heading Visible on Mobile */
+            .pomeroy-support-heading {
+                display: block !important;
+                font-size: 20px;
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+                border-bottom: 2px solid var(--tg-heading-color);
+            }
+
+            /* Hide desktop vertical list on mobile */
+            .pomeroy-support-nav {
+                display: none;
+            }
+
+            .pomeroy-tab-pane {
+                display: block;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .pomeroy-tab-pane:first-child {
+                border-top: 1px solid #e2e8f0;
+            }
+
+            /* Mobile Accordion Header Button */
+            .pomeroy-mobile-trigger {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 18px 0;
+                background: none;
+                border: none;
+                text-align: left;
+                font-family: var(--tg-heading-font-family);
+                font-size: 17px;
+                font-weight: 700;
+                color: var(--tg-heading-color);
+                cursor: pointer;
+                transition: color 0.25s ease;
+            }
+
+            .pomeroy-mobile-trigger.is-active {
+                color: var(--pomeroy-active-orange);
+            }
+
+            .pomeroy-mobile-trigger .acc-icon {
+                font-size: 14px;
+                transition: transform 0.3s ease;
+            }
+
+            .pomeroy-mobile-trigger.is-active .acc-icon {
+                transform: rotate(180deg);
+            }
+
+            .pomeroy-tab-body {
+                display: none;
+                padding-bottom: 20px;
+            }
+
+            .pomeroy-tab-pane.is-active .pomeroy-tab-body {
+                display: block;
+            }
+
+            .pomeroy-content-title {
+                display: none;
+                /* Desktop heading hidden in accordion content */
+            }
+
+            .pomeroy-content-desc {
+                font-size: 15px;
+                line-height: 1.65;
+            }
+        }
+
+
+
+
+
+
+        /* =========================================
+   Benefits Section (#benefits)
+   Modern Card Grid Layout with Font Awesome Icons
+========================================= */
+
+        .dw-benefits-section {
+            padding: 100px 0;
+            background-color: #f8fafc;
+            scroll-margin-top: 100px;
+        }
+
+        .dw-benefits-header {
+            margin-bottom: 55px;
+        }
+
+        .dw-benefits-eyebrow {
+            display: inline-block;
+            color: var(--tg-theme-primary);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 12px;
+        }
+
+        .dw-benefits-main-title {
+            font-family: var(--tg-heading-font-family);
+            color: var(--tg-heading-color);
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 18px;
+        }
+
+        .dw-benefits-subtext {
+            font-family: var(--tg-body-font-family);
+            color: var(--tg-body-color);
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* Card Grid Styles */
+        .dw-benefit-card {
+            position: relative;
+            height: 100%;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 36px 30px;
+            transition: all 0.35s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Left Accent Line on Hover */
+        .dw-benefit-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--tg-theme-primary);
+            transition: height 0.35s ease;
+        }
+
+        .dw-benefit-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 16px 32px rgba(0, 73, 88, 0.08);
+            /* Deep teal subtle shadow */
+            border-color: rgba(0, 73, 88, 0.2);
+        }
+
+        .dw-benefit-card:hover::before {
+            height: 100%;
+        }
+
+        /* Icon Box */
+        .dw-benefit-icon-wrap {
+            width: 58px;
+            height: 58px;
+            border-radius: 10px;
+            background: rgba(0, 73, 88, 0.06);
+            /* Subtle deep teal tint */
+            color: #004958;
+            /* Deep Teal accent */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 24px;
+            transition: all 0.35s ease;
+        }
+
+        .dw-benefit-card:hover .dw-benefit-icon-wrap {
+            background: var(--tg-theme-primary);
+            color: #ffffff;
+        }
+
+        /* Card Typography */
+        .dw-benefit-title {
+            font-family: var(--tg-heading-font-family);
+            color: var(--tg-heading-color);
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+
+        .dw-benefit-text {
+            font-family: var(--tg-body-font-family);
+            color: var(--tg-body-color);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Highlights Banner at Bottom */
+        .dw-benefits-stat-bar {
+            margin-top: 50px;
+            padding: 28px 36px;
+            background: #004958;
+            /* Signature Deep Teal */
+            border-radius: 12px;
+            color: #ffffff;
+        }
+
+        .dw-stat-text {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .dw-stat-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: #ffffff;
+            color: #004958;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .dw-stat-btn:hover {
+            background: var(--tg-theme-primary);
+            color: #ffffff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 991.98px) {
+            .dw-benefits-section {
+                padding: 80px 0;
+            }
+
+            .dw-benefits-main-title {
+                font-size: 32px;
+            }
+
+            .dw-stat-text {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .dw-benefits-section {
+                padding: 60px 0;
+            }
+
+            .dw-benefits-main-title {
+                font-size: 26px;
+            }
+
+            .dw-benefit-card {
+                padding: 26px 22px;
+            }
+        }
+
+
+
+
+
+
+
+        /* =========================================
+   Leadership Testimonial Banner
+========================================= */
+
+        .dw-testimonial-banner {
+            position: relative;
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            min-height: 500px;
+            background-color: #04244b;
+            /* Fallback color */
+            overflow: hidden;
+        }
+
+        /* Background Image Layer */
+        .dw-testimonial-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center right;
+            /* Focuses on the right side where the person usually is */
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        /* Gradient Overlay - Dark blue to transparent */
+        .dw-testimonial-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Gradient matching the image: very dark blue on the left fading out to the right */
+            background: linear-gradient(to right, rgba(4, 36, 75, 0.95) 0%, rgba(4, 36, 75, 0.85) 40%, rgba(4, 36, 75, 0.3) 100%);
+            z-index: 0;
+        }
+
+        /* Ensure container content sits above background/overlay */
+        .dw-testimonial-banner .container {
+            z-index: 1;
+        }
+
+        /* Typography & Blockquote Overrides */
+        .dw-testimonial-quote {
+            font-family: var(--tg-heading-font-family);
+            color: #ffffff !important;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0 0 30px 0;
+            padding: 0;
+            border: none;
+            /* Reset standard blockquote borders */
+            background: transparent !important;
+            /* Fixes white/grey background tint */
+            text-shadow: none !important;
+            /* Fixes blurry text-shadow box */
+            box-shadow: none !important;
+            /* Fixes container shadows */
+        }
+
+        .dw-testimonial-author {
+            margin-bottom: 40px;
+        }
+
+        .dw-author-name {
+            font-family: var(--tg-body-font-family);
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0 0 5px 0;
+        }
+
+        .dw-author-title {
+            font-family: var(--tg-body-font-family);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            margin: 0;
+        }
+
+        /* Outline Button */
+        .dw-testimonial-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            font-family: var(--tg-heading-font-family);
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .dw-testimonial-btn:hover {
+            background-color: #ffffff;
+            color: #04244b;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .dw-testimonial-banner {
+                padding: 90px 0;
+                background-position: center;
+            }
+
+            .dw-testimonial-overlay {
+                /* Make overlay darker across the whole image on smaller screens to ensure text readability */
+                background: rgba(4, 36, 75, 0.85);
+            }
+
+            .dw-testimonial-quote {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .dw-testimonial-banner {
+                padding: 70px 0;
+            }
+
+            .dw-testimonial-quote {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -125,6 +969,7 @@
                                         <li class="menu-item-has-children"><a href="services.html">Services</a>
                                             <ul class="sub-menu">
                                                 <li><a href="itconsulting.html">IT Consulting</a></li>
+                                                <!-- <li><a href="managed-it-services.html">Managed IT Services</a></li> -->
                                                 <li><a href="cloudsolution.html">Cloud Solutions</a></li>
                                                 <li><a href="cctv_biomatric.html">CCTV & Biomatric</a></li>
                                                 <li><a href="network_security.html">Network & Security</a></li>
@@ -461,26 +1306,21 @@
 
 
     <!-- main-area -->
-    <main class="main-area fix">
+    <main class="main-area">
 
         <!-- breadcrumb-area -->
-        <section class="breadcrumb__area breadcrumb__bg fix" data-background="assets/img/services/cs/itsolu.png">
+        <section class="breadcrumb__area breadcrumb__bg fix" data-background="assets/img/itc.png">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
-                            <h2 class="title">Web Service</h2>
-                            <!-- <nav class="breadcrumb">
-                                <span property="itemListElement" typeof="ListItem">
-                                    <a href="index.html">Home</a>
-                                </span>
-                                <span class="breadcrumb-separator">/</span>
-                                <span property="itemListElement" typeof="ListItem">
-                                    <a href="services.html">Services</a>
-                                </span>
-                                <span class="breadcrumb-separator">/</span>
-                                <span property="itemListElement" typeof="ListItem">Web Service</span>
-                            </nav> -->
+                            <h2 class="title">Web Services</h2>
+                            <p
+                                style="color:#ffffff; opacity:0.92; max-width:680px; font-size:17px; margin-bottom:32px;">
+                                Professional web design, development, hosting, and management solutions
+                                designed to build and maintain a strong digital presence.
+                            </p>
+                            <a href="#support" class="tg-btn white-btn">Our Web Services</a>
                         </div>
                     </div>
                 </div>
@@ -488,782 +1328,407 @@
         </section>
         <!-- breadcrumb-area-end -->
 
-        <!-- services-details-area -->
-        <section class="services__details-area section-py-120">
+        <div class="mits-nav-wrapper">
+            <nav class="container mits-nav" id="mitsNav" aria-label="Menu">
+                <div class="mits-nav__left">
+                    <span class="mits-nav__label">Web Services</span>
+                </div>
+                <div class="mits-nav__right">
+                    <ul class="mits-nav__inner">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#approach">Web Solutions</a></li>
+                        <li><a href="#support">Our Services</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- overview -->
+        <section id="overview" class="mits-overview" style="scroll-margin-top:130px;">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 order-0 order-lg-2">
-                        <div class="services__details-wrap">
-                            <div class="services__details-thumb">
-                                <img src="assets/img/services/cs/itsoluh.png" alt="img">
-                            </div>
-                            <div class="services__details-content">
-                                <h2 class="title">Web Services That Transform Your Digital Presence
-                                </h2>
-                                <p class="text-bold">At Crescent Technoserve, we design, build, and optimize websites that help businesses grow faster in the digital world. Whether you need a corporate site, e-commerce platform, or custom web application, our expert team delivers modern, secure, and high-performance solutions tailored to your goals.</p>
+                <div class="mits-overview__content">
+                    <span class="mits-overview__eyebrow">Professional Web Services</span>
+                    <h2 class="mits-overview__title">Build, manage, and maintain a stronger digital presence</h2>
+                    <p class="mits-overview__lead">
+                        Create a modern website and keep it secure, reliable, and ready to support your
+                        business with practical web design, hosting, monitoring, and management services.
+                    </p>
+                    <p class="mits-overview__text">
+                        Crescent Technoserve provides web services for businesses that need professional
+                        websites and dependable ongoing management. From responsive web design and development
+                        to secure hosting, website monitoring, maintenance, performance optimization, and
+                        redesign projects, we help keep your digital presence professional and well maintained.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-
-                                <h2 class="title-two mt-4">Professional Web Design Services for Modern & High-Converting Websites</h2>
-                                <p>At Crescent Technoserve, we create visually stunning, mobile-responsive, and SEO-optimized websites that strengthen your brand and deliver a seamless user experience. Our designs are crafted to improve engagement, boost conversions, and help your business grow online.</p>
-
-                                <div class="services__details-inner mb-1">
-                                    <div class="thumb">
-                                        <img src="assets/img/services/cs/cms.png" alt="img">
-                                    </div>
-                                    <div class="services__details-inner-item-wrap mt-4">
-                                        <ul class="choose__list choose__list-three list-wrap">
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                Responsive, mobile-friendly & fast-loading layouts
-                                            </li>
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                Custom UI/UX design tailored to your brand
-                                            </li>
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                SEO-ready structure for higher search rankings
-                                            </li>
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                Clean, modern, and conversion-focused interface
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                                <h2 class="title-two mt-4">24/7 Website Monitoring & Performance Management</h2>
-                                <p>Ensure your website stays online, secure, and performing at its best with our advanced monitoring solutions. Crescent Technoserve continuously checks uptime, speed, and security issues—so you can focus on running your business without interruptions.</p>
-
-                                <div class="services__details-inner mb-1">
-                                    <div class="thumb order-lg-2">
-                                        <img src="assets/img/services/cs/cmse.png" alt="img">
-                                    </div>
-                                    <div class="services__details-inner-item-wrap mt-4">
-                                        <ul class="choose__list choose__list-three list-wrap">
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                Real-time uptime & performance tracking
-                                            </li>
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                Instant alerts for downtime or critical errors
-                                            </li>
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                Security monitoring to prevent threats
-                                            </li>
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                Speed, server health & traffic analytics
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                                <h2 class="title-two mt-4">Reliable & Secure Web Hosting Solutions</h2>
-                                <p>Crescent Technoserve provides fast, secure, and scalable hosting services to keep your website running smoothly. Our hosting solutions deliver strong performance, advanced security, and seamless support for businesses of all sizes.</p>
-
-                                <div class="services__details-inner mb-1">
-                                    <div class="thumb">
-                                        <img src="assets/img/services/cs/bdr.png" alt="img">
-                                    </div>
-                                    <div class="services__details-inner-item-wrap mt-4">
-                                        <ul class="choose__list choose__list-three list-wrap">
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                High-speed SSD hosting with 99.9% uptime
-                                            </li>
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                Secure firewall, SSL, and daily backups
-                                            </li>
-                                            <li>
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                        fill="currentColor" />
-                                                    <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                        stroke-width="2.18182" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                                Scalable plans for small to large websites
-                                            </li>
-                                        </li>
-                                        <li>
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                    fill="currentColor" />
-                                                <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                    stroke-width="2.18182" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                            Expert support for seamless website management
-                                        </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                                
-                                <h2 class="title-two mt-4">Why Businesses Choose Crescent Technoserve</h2>
-                                <p>Experience seamless web performance with high-quality design, real-time monitoring, and ultra-secure hosting. Our solutions ensure faster loading speeds, 99.9% uptime, and continuous protection—helping your business grow without interruptions.</p>
-                                
-                                <div class="services__details-inner">
-                                    <div class="thumb">
-                                        <img src="assets/img/services/cs/ben.png" alt="img">
-                                    </div>
-                                
-                                    <div class="services__details-inner-item-wrap">
-                                
-                                        <div class="services__details-inner-item">
-                                            <div class="icon">
-                                                <i class="fas fa-draw-polygon"></i>
-                                            </div>
-                                            <div class="content">
-                                                <h2 class="title">Modern Web <br> Design</h2>
-                                                <p>Clean, responsive, SEO-optimized website designs that deliver strong engagement and conversions.</p>
-                                            </div>
-                                        </div>
-                                
-                                        <div class="services__details-inner-item">
-                                            <div class="icon">
-                                                <i class="fas fa-shield-alt"></i>
-                                            </div>
-                                            <div class="content">
-                                                <h2 class="title">24/7 Website <br> Monitoring</h2>
-                                                <p>Real-time performance tracking, uptime monitoring, and instant alerts for any issues.</p>
-                                            </div>
-                                        </div>
-                            
-                                
-                                    </div>
-                                </div>
-                                </div>
-                                
-                                <div class="faq__wrap">
-                                    <h2 class="title">Frequently Asked Questions</h2>
-                                    <div class="accordion" id="accordionExample">
-                                
-                                        <!-- FAQ 1 -->
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    What web services does Crescent Technoserve provide?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <p>We offer complete web solutions including professional web design, 24/7 website monitoring, and secure web hosting. Our services ensure your website remains fast, secure, and always available.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <!-- FAQ 2 -->
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                    aria-expanded="false" aria-controls="collapseTwo">
-                                                    How does your website monitoring service work?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <p>Our monitoring system checks your website performance, uptime, speed, and security in real time. If downtime or errors occur, we alert you instantly and begin troubleshooting immediately.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <!-- FAQ 3 -->
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                    aria-expanded="false" aria-controls="collapseThree">
-                                                    What makes your web hosting more secure and reliable?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <p>We use SSD servers, free SSL certificates, firewalls, malware protection, and daily automated backups. Our hosting ensures fast loading speed, 99.9% uptime, and strong security for your website.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <!-- FAQ 4 -->
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                                    aria-expanded="false" aria-controls="collapseFour">
-                                                    Can you redesign my existing website without downtime?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <p>Yes. We rebuild and redesign your website on a staging environment, and once everything is ready, we switch it live instantly—ensuring zero disruption to your visitors.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <!-- FAQ 5 -->
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseFive"
-                                                    aria-expanded="false" aria-controls="collapseFive">
-                                                    Do you provide ongoing support for my website?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <p>Yes, we provide full support including maintenance, security updates, performance optimization, and real-time monitoring to ensure your website stays healthy and efficient.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <!-- FAQ 6 -->
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseSix"
-                                                    aria-expanded="false" aria-controls="collapseSix">
-                                                    How do I get started with Crescent Technoserve?
-                                                </button>
-                                            </h2>
-                                            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <p>Contact us today for a free website analysis. We will evaluate your needs and recommend the best design, hosting, and monitoring solutions tailored to your business.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                    </div>
-                                </div>
-                                
-
-
-                                <!-- <ul class="choose__list choose__list-three list-wrap">
-                                    <li>
-                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                fill="currentColor" />
-                                            <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        We develop strategic IT roadmaps, aligning technology with your core business
-                                        objectives for sustainable growth.g
-                                    </li>
-                                    <li>
-                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                fill="currentColor" />
-                                            <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        Our team assesses your current IT infrastructure to identify key areas for
-                                        performance improvement and cost optimization.
-                                    </li>
-                                    <li>
-                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                fill="currentColor" />
-                                            <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        We provide expert guidance on selecting and implementing the right technology
-                                        solutions to meet your unique business needs.
-                                    </li>
-                                    <li>
-                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                fill="currentColor" />
-                                            <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        By leveraging innovative technology, we streamline and enhance your operational
-                                        processes to boost efficiency and productivity.
-                                    </li>
-                                    <li>
-                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                                fill="currentColor" />
-                                            <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                                stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        We protect your digital assets with robust cybersecurity measures and ensure you
-                                        meet all necessary regulatory compliance standards.
-                                    </li>
-                                </ul> -->
-                                <!-- <h2 class="title-two mt-4">Why Businesses Trust Our Cloud Solutions</h2>
-                                <p>Scale effortlessly with flexible cloud resources that automatically adjust to demand
-                                    without overprovisioning. Ensure business continuity with automated disaster
-                                    recovery, secure backups, and 99.99% uptime guarantee. Reduce IT costs by up to 50%
-                                    with pay-as-you-go pricing and eliminate expensive hardware investments</p>
-                                <div class="services__details-inner">
-                                    <div class="thumb">
-                                        <img src="assets/img/services/cs/ben.png" alt="img">
-                                    </div>
-                                    <div class="services__details-inner-item-wrap">
-                                        <div class="services__details-inner-item">
-                                            <div class="icon">
-                                                <i class="fas fa-headset"></i>
-                                            </div>
-                                            <div class="content">
-                                                <h2 class="title"> Daily Automatic <br> Backup</h2>
-                                                <p>Seamless remote support to keep your business running.</p>
-                                            </div>
-                                        </div>
-                                        <div class="services__details-inner-item">
-                                            <div class="icon">
-                                                <i class="fas fa-lightbulb"></i>
-                                            </div>
-                                            <div class="content">
-                                                <h2 class="title">Strategic <br> IT Solutions</h2>
-                                                <p>Aligning technology with your long-term business goals.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="faq__wrap">
-                                <h2 class="title">Frequently Asked Questions</h2>
-                                <div class="accordion" id="accordionExample">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
-                                                What are cloud solutions and how can they benefit my business?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseOne" class="accordion-collapse collapse show"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Cloud solutions allow your business to store, access, and manage data
-                                                    and applications remotely, enabling flexibility, scalability, and
-                                                    cost efficiency. They improve collaboration, enhance data security,
-                                                    and support business continuity with reliable backups and disaster
-                                                    recovery.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo">
-                                                What types of cloud services do you offer?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTwo" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>We provide comprehensive cloud services including cloud migration,
-                                                    cloud infrastructure management, security and compliance, disaster
-                                                    recovery, and cloud-native application development tailored to your
-                                                    specific business needs.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                aria-expanded="false" aria-controls="collapseThree">
-                                                How do you ensure cloud security and compliance?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseThree" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Security is integral to our cloud solutions. We implement advanced
-                                                    encryption, multi-factor authentication, continuous monitoring, and
-                                                    compliance measures tailored to regulations such as GDPR, HIPAA, and
-                                                    PCI-DSS, ensuring your cloud systems remain secure and compliant.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                                aria-expanded="false" aria-controls="collapseFour">
-                                                Can you help with cloud migration without disrupting my business?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseFour" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Yes, we plan and execute cloud migrations carefully to minimize
-                                                    downtime and prevent data loss. Our proven methodologies allow
-                                                    seamless transitions, keeping your operations running smoothly
-                                                    during the migration process.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseFive"
-                                                aria-expanded="false" aria-controls="collapseFive">
-                                                Do you provide ongoing support and cloud optimization?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseFive" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Absolutely. Our cloud experts continuously monitor and optimize your
-                                                    cloud environment post-migration to improve performance, reduce
-                                                    costs, and adapt to evolving business needs, providing 24/7 support
-                                                    and maintenance.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseSix"
-                                                aria-expanded="false" aria-controls="collapseSix">
-                                                How do I get started with Crescent Technoserve's cloud solutions?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseSix" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p>Simply contact us to schedule a free cloud assessment. We will
-                                                    analyze your current infrastructure, understand your goals, and
-                                                    propose tailored cloud strategies to accelerate your digital
-                                                    transformation.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-
+        <!-- web introduction -->
+        <section id="approach" class="dw-section">
+            <div class="container">
+                <div class="row align-items-center gy-5">
+                    <div class="col-lg-5">
+                        <div class="dw-image-wrap">
+                            <img src="assets/img/services/itc/it_001.png"
+                                alt="Professional web design and web management services">
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <aside class="services__sidebar">
-                            <div class="sidebar__widget">
-                                <h2 class="widget__title">Quick Services</h2>
-                                <div class="sidebar__cat-list">
-                                    <ul class="list-wrap">
-                                        <li>
-                                            <a href="itconsulting.html">IT Consulting
-                                                <span>
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1 13L13 1M13 1H1M13 1V13" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cloudsolution.html">Cloud Solutions
-                                                <span>
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1 13L13 1M13 1H1M13 1V13" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cctv_biomatric.html">CCTV & Biomatric
-                                                <span>
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1 13L13 1M13 1H1M13 1V13" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="network_security.html">Network & Security
-                                                <span>
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1 13L13 1M13 1H1M13 1V13" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="web_services.html">Web Services
-                                                <span>
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1 13L13 1M13 1H1M13 1V13" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="itrental_services.html">IT Rental Services
-                                                <span>
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1 13L13 1M13 1H1M13 1V13" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" />
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sidebar__widget sidebar__widget-bg">
-                                <div class="sidebar__contact">
-                                    <h4 class="title">Reach out to us whenever you need</h4>
-                                    <p>We are committed to excellence at our IT solutions company.</p>
-                                    <div class="cta__contact">
-                                        <div class="icon">
-                                            <svg width="53" height="53" viewBox="0 0 53 53" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M40.1629 32.3041C39.1215 31.2685 37.8655 30.7148 36.5343 30.7148C35.2138 30.7148 33.947 31.2583 32.8627 32.2939L29.4703 35.5239C29.1911 35.3803 28.912 35.247 28.6436 35.1137C28.2572 34.9291 27.8922 34.7548 27.5808 34.5702C24.4031 32.6425 21.5152 30.1303 18.7455 26.8799C17.4035 25.2597 16.5017 23.896 15.8469 22.5117C16.7272 21.7427 17.5431 20.9429 18.3375 20.1738C18.6381 19.8867 18.9387 19.5894 19.2393 19.3023C21.4938 17.149 21.4938 14.3599 19.2393 12.2066L16.3085 9.4073C15.9757 9.08943 15.6322 8.7613 15.3101 8.43318C14.666 7.79744 13.9896 7.14119 13.2918 6.52596C12.2505 5.54159 11.0052 5.01865 9.69542 5.01865C8.38569 5.01865 7.11889 5.54159 6.04534 6.52596C6.0346 6.53622 6.0346 6.53622 6.02387 6.54647L2.37379 10.0635C0.999637 11.376 0.215944 12.9756 0.0441751 14.8316C-0.213478 17.8257 0.709778 20.6148 1.41832 22.4399C3.15748 26.9209 5.75548 31.0737 9.63101 35.5239C14.3332 40.8866 19.9908 45.1215 26.4536 48.1053C28.9228 49.223 32.2186 50.5457 35.9009 50.7713C36.1263 50.7816 36.3625 50.7918 36.5772 50.7918C39.0571 50.7918 41.1398 49.9408 42.7716 48.2489C42.7823 48.2284 42.8038 48.2181 42.8145 48.1976C43.3728 47.5516 44.0169 46.9671 44.6933 46.3417C45.1549 45.9213 45.6273 45.4803 46.0889 45.0189C47.1517 43.9628 47.7099 42.7323 47.7099 41.4711C47.7099 40.1996 47.141 38.9794 46.0567 37.954L40.1629 32.3041ZM44.0062 43.1014C43.9954 43.1117 43.9954 43.1014 44.0062 43.1014C43.5875 43.5321 43.1581 43.9218 42.6964 44.3524C41.9986 44.9882 41.2901 45.6547 40.6245 46.4032C39.5402 47.5106 38.2627 48.0335 36.5879 48.0335C36.4269 48.0335 36.2551 48.0336 36.0941 48.0233C32.9056 47.8285 29.9426 46.639 27.7204 45.6239C21.6441 42.8143 16.3085 38.8256 11.8747 33.7704C8.21392 29.5561 5.76621 25.6596 4.14515 21.4761C3.14674 18.9229 2.78174 16.9336 2.94277 15.0572C3.05012 13.8575 3.53322 12.8628 4.42427 12.0118L8.08509 8.51521C8.61113 8.04353 9.16938 7.78719 9.71689 7.78719C10.3932 7.78719 10.9407 8.17683 11.2843 8.50496C11.295 8.51521 11.3057 8.52546 11.3165 8.53572C11.9714 9.12019 12.594 9.72516 13.2489 10.3712C13.5817 10.6993 13.9252 11.0274 14.2688 11.3658L17.1996 14.1651C18.3375 15.252 18.3375 16.2569 17.1996 17.3438C16.8882 17.6411 16.5876 17.9385 16.2763 18.2256C15.3745 19.1074 14.5157 19.9277 13.5817 20.7275C13.5602 20.7481 13.5387 20.7583 13.528 20.7788C12.6047 21.6606 12.7765 22.522 12.9698 23.1064C12.9805 23.1372 12.9912 23.168 13.002 23.1987C13.7642 24.9624 14.8377 26.6235 16.4695 28.6025L16.4803 28.6128C19.4433 32.0991 22.5673 34.8163 26.0134 36.8979C26.4536 37.1645 26.9045 37.3798 27.3339 37.5849C27.7204 37.7694 28.0854 37.9438 28.3967 38.1283C28.4397 38.1488 28.4826 38.1796 28.5255 38.2001C28.8906 38.3744 29.2341 38.4565 29.5884 38.4565C30.4794 38.4565 31.0377 37.9233 31.2202 37.7489L34.8917 34.2421C35.2567 33.8935 35.8364 33.4731 36.5128 33.4731C37.1784 33.4731 37.7259 33.873 38.0587 34.2216C38.0694 34.2319 38.0694 34.2319 38.0802 34.2421L43.9955 39.892C45.1012 40.9379 45.1012 42.0145 44.0062 43.1014Z"
-                                                    fill="#004958" />
-                                                <path
-                                                    d="M27.452 13.7652C30.2647 14.2164 32.8198 15.4878 34.8595 17.4361C36.8993 19.3843 38.2197 21.8247 38.7028 24.5112C38.8209 25.188 39.4328 25.6596 40.1307 25.6596C40.2165 25.6596 40.2917 25.6494 40.3776 25.6391C41.172 25.5161 41.698 24.7983 41.5692 24.0395C40.9895 20.7891 39.3792 17.8257 36.9207 15.4776C34.4623 13.1294 31.3597 11.5914 27.9566 11.0377C27.1621 10.9146 26.4214 11.4171 26.2818 12.1656C26.1423 12.9141 26.6576 13.6421 27.452 13.7652Z"
-                                                    fill="#004958" />
-                                                <path
-                                                    d="M50.7696 23.6396C49.8141 18.2871 47.1732 13.4166 43.1151 9.5406C39.0571 5.66464 33.9577 3.14219 28.3538 2.2296C27.5701 2.0963 26.8293 2.60899 26.6898 3.35752C26.5609 4.11631 27.087 4.82382 27.8814 4.95712C32.8842 5.76718 37.4468 8.03328 41.0754 11.4888C44.704 14.9546 47.0658 19.3125 47.9139 24.0908C48.032 24.7676 48.6439 25.2392 49.3417 25.2392C49.4276 25.2392 49.5028 25.229 49.5887 25.2187C50.3724 25.1059 50.9091 24.3882 50.7696 23.6396Z"
-                                                    fill="#004958" />
-                                            </svg>
-                                        </div>
-                                        <div class="content">
-                                            <span style="color: #004958;">Call For More Info</span>
-                                            <a style="color: #004958;" href="tel:0123456789">+91 7738262069</a>
-                                        </div>
-                                    </div>
-                                    <a href="contact.html" class="tg-btn">Contact With Us
-                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="sidebar__widget">
-                                <h2 class="widget__title">Download</h2>
-                                <div class="sidebar__brochure">
-                                    <a href="assets/img/project/project_img10.jpg" target="_blank" download>
-                                        <span class="icon">
-                                            <svg width="18" height="24" viewBox="0 0 18 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M18 21V6.75L11.25 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.31607 1.44129 0 2.20435 0 3V21C0 21.7957 0.31607 22.5587 0.87868 23.1213C1.44129 23.6839 2.20435 24 3 24H15C15.7957 24 16.5587 23.6839 17.1213 23.1213C17.6839 22.5587 18 21.7957 18 21ZM11.25 4.5C11.25 5.09674 11.4871 5.66903 11.909 6.09099C12.331 6.51295 12.9033 6.75 13.5 6.75H16.5V21C16.5 21.3978 16.342 21.7794 16.0607 22.0607C15.7794 22.342 15.3978 22.5 15 22.5H3C2.60218 22.5 2.22064 22.342 1.93934 22.0607C1.65804 21.7794 1.5 21.3978 1.5 21V3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H11.25V4.5Z"
-                                                    fill="currentColor" />
-                                                <path
-                                                    d="M3.9045 21.1305C3.61214 21.0136 3.37659 20.7877 3.2475 20.5005C2.955 19.9185 3.0525 19.3365 3.3675 18.8475C3.6645 18.387 4.1565 17.9955 4.713 17.667C5.41791 17.2672 6.16303 16.9429 6.936 16.6995C7.53629 15.6204 8.06833 14.5047 8.529 13.359C8.25357 12.7332 8.03762 12.0828 7.884 11.4165C7.755 10.8165 7.7055 10.2225 7.815 9.7125C7.9275 9.1815 8.226 8.7045 8.79 8.478C9.078 8.3625 9.39 8.298 9.693 8.3625C9.84542 8.39495 9.9887 8.46091 10.1125 8.55561C10.2362 8.65031 10.3373 8.77137 10.4085 8.91C10.5405 9.156 10.5885 9.444 10.599 9.717C10.6095 9.999 10.581 10.311 10.5285 10.638C10.4025 11.403 10.1235 12.339 9.7485 13.329C10.1623 14.214 10.6543 15.0604 11.2185 15.858C11.8862 15.8053 12.5577 15.8304 13.2195 15.933C13.7655 16.032 14.3205 16.2255 14.6595 16.6305C14.8395 16.8465 14.949 17.1105 14.9595 17.4075C14.97 17.6955 14.889 17.9805 14.7525 18.252C14.6343 18.5036 14.4509 18.719 14.2215 18.876C13.9947 19.0239 13.7269 19.0964 13.4565 19.083C12.96 19.062 12.4755 18.789 12.057 18.4575C11.5481 18.0367 11.0896 17.5586 10.6905 17.0325C9.67613 17.1476 8.6738 17.3514 7.695 17.6415C7.24677 18.4364 6.73511 19.1939 6.165 19.9065C5.727 20.4315 5.2515 20.8905 4.7745 21.087C4.50043 21.211 4.18957 21.2265 3.9045 21.1305ZM5.973 18.279C5.724 18.393 5.493 18.513 5.2845 18.636C4.7925 18.927 4.473 19.2105 4.314 19.4565C4.173 19.674 4.17 19.8315 4.254 19.998C4.269 20.031 4.284 20.052 4.293 20.064C4.3109 20.0592 4.32844 20.0532 4.3455 20.046C4.551 19.962 4.878 19.6935 5.298 19.188C5.53687 18.8955 5.76211 18.5922 5.973 18.279ZM8.433 16.284C8.93389 16.1671 9.4393 16.0705 9.948 15.9945C9.67488 15.5765 9.41965 15.1471 9.183 14.7075C8.94773 15.2394 8.69763 15.7646 8.433 16.2825V16.284ZM12.102 16.959C12.327 17.2035 12.546 17.409 12.7545 17.574C13.1145 17.859 13.365 17.9535 13.5015 17.958C13.538 17.9628 13.5751 17.9548 13.6065 17.9355C13.6689 17.8862 13.7175 17.8216 13.7475 17.748C13.8008 17.6566 13.8312 17.5537 13.836 17.448C13.8351 17.4128 13.8212 17.3791 13.797 17.3535C13.719 17.2605 13.497 17.1255 13.02 17.04C12.7166 16.9893 12.4096 16.9627 12.102 16.9605V16.959ZM9.117 11.7C9.24324 11.2928 9.34344 10.8779 9.417 10.458C9.4635 10.176 9.4815 9.9435 9.474 9.7605C9.47441 9.65954 9.4582 9.55919 9.426 9.4635C9.35096 9.47279 9.27769 9.493 9.2085 9.5235C9.078 9.576 8.9715 9.6825 8.9145 9.948C8.8545 10.236 8.8695 10.6515 8.9835 11.181C9.0195 11.3475 9.0645 11.5215 9.1185 11.7H9.117Z"
-                                                    fill="currentColor" />
-                                            </svg>
-                                        </span>
-                                        <span class="content">
-                                            <strong>PDF. Download</strong>
-                                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M8.50018 15.0117L12.5002 19.0117M12.5002 19.0117L16.5002 15.0117M12.5002 19.0117V10.0117M21.3802 16.1017C22.2496 15.4903 22.9015 14.6178 23.2415 13.6108C23.5814 12.6038 23.5916 11.5147 23.2706 10.5015C22.9496 9.48828 22.314 8.60374 21.4562 7.97621C20.5985 7.34868 19.563 7.01082 18.5002 7.01165H17.2402C16.9394 5.83952 16.3767 4.7509 15.5943 3.82773C14.8119 2.90456 13.8303 2.17091 12.7234 1.68201C11.6164 1.1931 10.413 0.961679 9.2037 1.00517C7.99439 1.04866 6.81069 1.36592 5.74173 1.93308C4.67277 2.50023 3.7464 3.3025 3.03236 4.27948C2.31833 5.25646 1.83523 6.3827 1.61944 7.5734C1.40365 8.7641 1.46079 9.98825 1.78656 11.1537C2.11233 12.3191 2.69824 13.3954 3.50018 14.3017"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <a href="assets/img/project/project_img10.jpg" target="_blank" download>
-                                        <span class="icon">
-                                            <svg width="18" height="24" viewBox="0 0 18 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M18 21V6.75L11.25 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.31607 1.44129 0 2.20435 0 3V21C0 21.7957 0.31607 22.5587 0.87868 23.1213C1.44129 23.6839 2.20435 24 3 24H15C15.7957 24 16.5587 23.6839 17.1213 23.1213C17.6839 22.5587 18 21.7957 18 21ZM11.25 4.5C11.25 5.09674 11.4871 5.66903 11.909 6.09099C12.331 6.51295 12.9033 6.75 13.5 6.75H16.5V21C16.5 21.3978 16.342 21.7794 16.0607 22.0607C15.7794 22.342 15.3978 22.5 15 22.5H3C2.60218 22.5 2.22064 22.342 1.93934 22.0607C1.65804 21.7794 1.5 21.3978 1.5 21V3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H11.25V4.5Z"
-                                                    fill="currentColor" />
-                                                <path
-                                                    d="M3.9045 21.1305C3.61214 21.0136 3.37659 20.7877 3.2475 20.5005C2.955 19.9185 3.0525 19.3365 3.3675 18.8475C3.6645 18.387 4.1565 17.9955 4.713 17.667C5.41791 17.2672 6.16303 16.9429 6.936 16.6995C7.53629 15.6204 8.06833 14.5047 8.529 13.359C8.25357 12.7332 8.03762 12.0828 7.884 11.4165C7.755 10.8165 7.7055 10.2225 7.815 9.7125C7.9275 9.1815 8.226 8.7045 8.79 8.478C9.078 8.3625 9.39 8.298 9.693 8.3625C9.84542 8.39495 9.9887 8.46091 10.1125 8.55561C10.2362 8.65031 10.3373 8.77137 10.4085 8.91C10.5405 9.156 10.5885 9.444 10.599 9.717C10.6095 9.999 10.581 10.311 10.5285 10.638C10.4025 11.403 10.1235 12.339 9.7485 13.329C10.1623 14.214 10.6543 15.0604 11.2185 15.858C11.8862 15.8053 12.5577 15.8304 13.2195 15.933C13.7655 16.032 14.3205 16.2255 14.6595 16.6305C14.8395 16.8465 14.949 17.1105 14.9595 17.4075C14.97 17.6955 14.889 17.9805 14.7525 18.252C14.6343 18.5036 14.4509 18.719 14.2215 18.876C13.9947 19.0239 13.7269 19.0964 13.4565 19.083C12.96 19.062 12.4755 18.789 12.057 18.4575C11.5481 18.0367 11.0896 17.5586 10.6905 17.0325C9.67613 17.1476 8.6738 17.3514 7.695 17.6415C7.24677 18.4364 6.73511 19.1939 6.165 19.9065C5.727 20.4315 5.2515 20.8905 4.7745 21.087C4.50043 21.211 4.18957 21.2265 3.9045 21.1305ZM5.973 18.279C5.724 18.393 5.493 18.513 5.2845 18.636C4.7925 18.927 4.473 19.2105 4.314 19.4565C4.173 19.674 4.17 19.8315 4.254 19.998C4.269 20.031 4.284 20.052 4.293 20.064C4.3109 20.0592 4.32844 20.0532 4.3455 20.046C4.551 19.962 4.878 19.6935 5.298 19.188C5.53687 18.8955 5.76211 18.5922 5.973 18.279ZM8.433 16.284C8.93389 16.1671 9.4393 16.0705 9.948 15.9945C9.67488 15.5765 9.41965 15.1471 9.183 14.7075C8.94773 15.2394 8.69763 15.7646 8.433 16.2825V16.284ZM12.102 16.959C12.327 17.2035 12.546 17.409 12.7545 17.574C13.1145 17.859 13.365 17.9535 13.5015 17.958C13.538 17.9628 13.5751 17.9548 13.6065 17.9355C13.6689 17.8862 13.7175 17.8216 13.7475 17.748C13.8008 17.6566 13.8312 17.5537 13.836 17.448C13.8351 17.4128 13.8212 17.3791 13.797 17.3535C13.719 17.2605 13.497 17.1255 13.02 17.04C12.7166 16.9893 12.4096 16.9627 12.102 16.9605V16.959ZM9.117 11.7C9.24324 11.2928 9.34344 10.8779 9.417 10.458C9.4635 10.176 9.4815 9.9435 9.474 9.7605C9.47441 9.65954 9.4582 9.55919 9.426 9.4635C9.35096 9.47279 9.27769 9.493 9.2085 9.5235C9.078 9.576 8.9715 9.6825 8.9145 9.948C8.8545 10.236 8.8695 10.6515 8.9835 11.181C9.0195 11.3475 9.0645 11.5215 9.1185 11.7H9.117Z"
-                                                    fill="currentColor" />
-                                            </svg>
-                                        </span>
-                                        <span class="content">
-                                            <strong>Company Details</strong>
-                                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M8.50018 15.0117L12.5002 19.0117M12.5002 19.0117L16.5002 15.0117M12.5002 19.0117V10.0117M21.3802 16.1017C22.2496 15.4903 22.9015 14.6178 23.2415 13.6108C23.5814 12.6038 23.5916 11.5147 23.2706 10.5015C22.9496 9.48828 22.314 8.60374 21.4562 7.97621C20.5985 7.34868 19.563 7.01082 18.5002 7.01165H17.2402C16.9394 5.83952 16.3767 4.7509 15.5943 3.82773C14.8119 2.90456 13.8303 2.17091 12.7234 1.68201C11.6164 1.1931 10.413 0.961679 9.2037 1.00517C7.99439 1.04866 6.81069 1.36592 5.74173 1.93308C4.67277 2.50023 3.7464 3.3025 3.03236 4.27948C2.31833 5.25646 1.83523 6.3827 1.61944 7.5734C1.40365 8.7641 1.46079 9.98825 1.78656 11.1537C2.11233 12.3191 2.69824 13.3954 3.50018 14.3017"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round" />
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </aside>
+                    <div class="col-lg-7">
+                        <h2 class="dw-title">Professional web solutions designed around your business</h2>
+                        <p class="dw-text">
+                            Your website is an important part of how customers discover, evaluate, and connect
+                            with your business. We help create modern, responsive, and professional web
+                            experiences that support your brand and business goals.
+                        </p>
+                        <p class="dw-text">
+                            Beyond website creation, we can help with hosting, monitoring, maintenance, security
+                            updates, performance improvements, and ongoing web management. Our goal is to give
+                            you a practical web solution and the support needed to keep it running smoothly.
+                        </p>
+                        <a href="contact.html#ct" class="dw-outline-btn">Speak with a Web Expert</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- services-details-area-end -->
-
-        <!-- cta-area -->
-        <section class="cta__area-two">
-            <div class="cta__bg" data-background="assets/img/services/servicel-1.png"></div>
+        <!-- Web Services -->
+        <section id="support" class="pomeroy-support-section">
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="cta__content-four">
-                            <div class="section__title white-title mb-10">
-                                <h2 class="title">Empowering IT Businesses One Step at a Time</h2>
+                <div class="pomeroy-support-layout">
+                    <div class="pomeroy-support-sidebar">
+                        <h2 class="pomeroy-support-heading">WEB SERVICES WE SUPPORT</h2>
+                        <ul class="pomeroy-support-nav" id="pomeroySupportNav">
+                            <li class="is-active" data-target="item-1">Web Design</li>
+                            <li data-target="item-2">Web Development</li>
+                            <li data-target="item-3">Website Redesign</li>
+                            <li data-target="item-4">Website Monitoring</li>
+                            <li data-target="item-5">Web Hosting</li>
+                            <li data-target="item-6">Website Maintenance</li>
+                            <li data-target="item-7">Performance Optimization</li>
+                            <li data-target="item-8">SEO-Ready Websites</li>
+                        </ul>
+                    </div>
+
+                    <div class="pomeroy-support-content" id="pomeroySupportContent">
+                        <div class="pomeroy-tab-pane is-active" id="item-1">
+                            <button class="pomeroy-mobile-trigger is-active" type="button">
+                                <span>Web Design</span><span class="acc-icon">&#9660;</span>
+                            </button>
+                            <div class="pomeroy-tab-body">
+                                <h2 class="pomeroy-content-title">Professional Web Design</h2>
+                                <p class="pomeroy-content-desc">
+                                    Create modern, visually appealing, and mobile-responsive website designs
+                                    tailored to your brand. We focus on clear layouts, practical user experience,
+                                    fast-loading pages, and designs that support your business objectives.
+                                </p>
                             </div>
-                            <p>At Crescent Technoserve, our support team is dedicated to empowering your business. We
-                                provide the strategic guidance and technology solutions you need to visualize and
-                                achieve your goals.</p>
-                            <div class="cta__content-bottom">
-                                <a href="contact.html#ct" class="tg-btn white-btn">Make An Appointment
-                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                                <div class="cta__contact">
-                                    <div class="icon">
-                                        <svg width="53" height="53" viewBox="0 0 53 53" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M40.1629 32.3041C39.1215 31.2685 37.8655 30.7148 36.5343 30.7148C35.2138 30.7148 33.947 31.2583 32.8627 32.2939L29.4703 35.5239C29.1911 35.3803 28.912 35.247 28.6436 35.1137C28.2572 34.9291 27.8922 34.7548 27.5808 34.5702C24.4031 32.6425 21.5152 30.1303 18.7455 26.8799C17.4035 25.2597 16.5017 23.896 15.8469 22.5117C16.7272 21.7427 17.5431 20.9429 18.3375 20.1738C18.6381 19.8867 18.9387 19.5894 19.2393 19.3023C21.4938 17.149 21.4938 14.3599 19.2393 12.2066L16.3085 9.4073C15.9757 9.08943 15.6322 8.7613 15.3101 8.43318C14.666 7.79744 13.9896 7.14119 13.2918 6.52596C12.2505 5.54159 11.0052 5.01865 9.69542 5.01865C8.38569 5.01865 7.11889 5.54159 6.04534 6.52596C6.0346 6.53622 6.0346 6.53622 6.02387 6.54647L2.37379 10.0635C0.999637 11.376 0.215944 12.9756 0.0441751 14.8316C-0.213478 17.8257 0.709778 20.6148 1.41832 22.4399C3.15748 26.9209 5.75548 31.0737 9.63101 35.5239C14.3332 40.8866 19.9908 45.1215 26.4536 48.1053C28.9228 49.223 32.2186 50.5457 35.9009 50.7713C36.1263 50.7816 36.3625 50.7918 36.5772 50.7918C39.0571 50.7918 41.1398 49.9408 42.7716 48.2489C42.7823 48.2284 42.8038 48.2181 42.8145 48.1976C43.3728 47.5516 44.0169 46.9671 44.6933 46.3417C45.1549 45.9213 45.6273 45.4803 46.0889 45.0189C47.1517 43.9628 47.7099 42.7323 47.7099 41.4711C47.7099 40.1996 47.141 38.9794 46.0567 37.954L40.1629 32.3041ZM44.0062 43.1014C43.9954 43.1117 43.9954 43.1014 44.0062 43.1014C43.5875 43.5321 43.1581 43.9218 42.6964 44.3524C41.9986 44.9882 41.2901 45.6547 40.6245 46.4032C39.5402 47.5106 38.2627 48.0335 36.5879 48.0335C36.4269 48.0335 36.2551 48.0336 36.0941 48.0233C32.9056 47.8285 29.9426 46.639 27.7204 45.6239C21.6441 42.8143 16.3085 38.8256 11.8747 33.7704C8.21392 29.5561 5.76621 25.6596 4.14515 21.4761C3.14674 18.9229 2.78174 16.9336 2.94277 15.0572C3.05012 13.8575 3.53322 12.8628 4.42427 12.0118L8.08509 8.51521C8.61113 8.04353 9.16938 7.78719 9.71689 7.78719C10.3932 7.78719 10.9407 8.17683 11.2843 8.50496C11.295 8.51521 11.3057 8.52546 11.3165 8.53572C11.9714 9.12019 12.594 9.72516 13.2489 10.3712C13.5817 10.6993 13.9252 11.0274 14.2688 11.3658L17.1996 14.1651C18.3375 15.252 18.3375 16.2569 17.1996 17.3438C16.8882 17.6411 16.5876 17.9385 16.2763 18.2256C15.3745 19.1074 14.5157 19.9277 13.5817 20.7275C13.5602 20.7481 13.5387 20.7583 13.528 20.7788C12.6047 21.6606 12.7765 22.522 12.9698 23.1064C12.9805 23.1372 12.9912 23.168 13.002 23.1987C13.7642 24.9624 14.8377 26.6235 16.4695 28.6025L16.4803 28.6128C19.4433 32.0991 22.5673 34.8163 26.0134 36.8979C26.4536 37.1645 26.9045 37.3798 27.3339 37.5849C27.7204 37.7694 28.0854 37.9438 28.3967 38.1283C28.4397 38.1488 28.4826 38.1796 28.5255 38.2001C28.8906 38.3744 29.2341 38.4565 29.5884 38.4565C30.4794 38.4565 31.0377 37.9233 31.2202 37.7489L34.8917 34.2421C35.2567 33.8935 35.8364 33.4731 36.5128 33.4731C37.1784 33.4731 37.7259 33.873 38.0587 34.2216C38.0694 34.2319 38.0694 34.2319 38.0802 34.2421L43.9955 39.892C45.1012 40.9379 45.1012 42.0145 44.0062 43.1014Z"
-                                                fill="currentColor" />
-                                            <path
-                                                d="M27.452 13.7652C30.2647 14.2164 32.8198 15.4878 34.8595 17.4361C36.8993 19.3843 38.2197 21.8247 38.7028 24.5112C38.8209 25.188 39.4328 25.6596 40.1307 25.6596C40.2165 25.6596 40.2917 25.6494 40.3776 25.6391C41.172 25.5161 41.698 24.7983 41.5692 24.0395C40.9895 20.7891 39.3792 17.8257 36.9207 15.4776C34.4623 13.1294 31.3597 11.5914 27.9566 11.0377C27.1621 10.9146 26.4214 11.4171 26.2818 12.1656C26.1423 12.9141 26.6576 13.6421 27.452 13.7652Z"
-                                                fill="currentColor" />
-                                            <path
-                                                d="M50.7696 23.6396C49.8141 18.2871 47.1732 13.4166 43.1151 9.5406C39.0571 5.66464 33.9577 3.14219 28.3538 2.2296C27.5701 2.0963 26.8293 2.60899 26.6898 3.35752C26.5609 4.11631 27.087 4.82382 27.8814 4.95712C32.8842 5.76718 37.4468 8.03328 41.0754 11.4888C44.704 14.9546 47.0658 19.3125 47.9139 24.0908C48.032 24.7676 48.6439 25.2392 49.3417 25.2392C49.4276 25.2392 49.5028 25.229 49.5887 25.2187C50.3724 25.1059 50.9091 24.3882 50.7696 23.6396Z"
-                                                fill="currentColor" />
-                                        </svg>
-                                    </div>
-                                    <div class="content">
-                                        <span>Call For More Info</span>
-                                        <a href="tel:917738262069">+91 7738262069</a>
-                                    </div>
+                        </div>
+
+                        <div class="pomeroy-tab-pane" id="item-2">
+                            <button class="pomeroy-mobile-trigger" type="button">
+                                <span>Web Development</span><span class="acc-icon">&#9660;</span>
+                            </button>
+                            <div class="pomeroy-tab-body">
+                                <h2 class="pomeroy-content-title">Website Development</h2>
+                                <p class="pomeroy-content-desc">
+                                    Build professional websites for corporate businesses, portfolios, service
+                                    providers, and other digital requirements. We develop practical web solutions
+                                    with responsive layouts and features appropriate for your business.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pomeroy-tab-pane" id="item-3">
+                            <button class="pomeroy-mobile-trigger" type="button">
+                                <span>Website Redesign</span><span class="acc-icon">&#9660;</span>
+                            </button>
+                            <div class="pomeroy-tab-body">
+                                <h2 class="pomeroy-content-title">Website Redesign &amp; Modernization</h2>
+                                <p class="pomeroy-content-desc">
+                                    Refresh an outdated website with a modern design, improved responsiveness,
+                                    better usability, and updated content. Where appropriate, redesign work can be
+                                    completed before the new version replaces the existing live website.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pomeroy-tab-pane" id="item-4">
+                            <button class="pomeroy-mobile-trigger" type="button">
+                                <span>Website Monitoring</span><span class="acc-icon">&#9660;</span>
+                            </button>
+                            <div class="pomeroy-tab-body">
+                                <h2 class="pomeroy-content-title">Website Monitoring &amp; Issue Management</h2>
+                                <p class="pomeroy-content-desc">
+                                    Monitor key website health indicators such as availability and performance,
+                                    helping identify downtime or important issues. We can assist with
+                                    troubleshooting and corrective action for supported websites and hosting
+                                    environments.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pomeroy-tab-pane" id="item-5">
+                            <button class="pomeroy-mobile-trigger" type="button">
+                                <span>Web Hosting</span><span class="acc-icon">&#9660;</span>
+                            </button>
+                            <div class="pomeroy-tab-body">
+                                <h2 class="pomeroy-content-title">Reliable Web Hosting</h2>
+                                <p class="pomeroy-content-desc">
+                                    Set up and manage hosting solutions for business websites with practical
+                                    performance, security, SSL, backup, and support requirements. We help keep
+                                    the hosting environment properly configured and maintained.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pomeroy-tab-pane" id="item-6">
+                            <button class="pomeroy-mobile-trigger" type="button">
+                                <span>Website Maintenance</span><span class="acc-icon">&#9660;</span>
+                            </button>
+                            <div class="pomeroy-tab-body">
+                                <h2 class="pomeroy-content-title">Ongoing Website Maintenance</h2>
+                                <p class="pomeroy-content-desc">
+                                    Keep your website updated with ongoing content changes, technical maintenance,
+                                    software and security updates, troubleshooting, and support to help maintain
+                                    a healthy and reliable web presence.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pomeroy-tab-pane" id="item-7">
+                            <button class="pomeroy-mobile-trigger" type="button">
+                                <span>Performance Optimization</span><span class="acc-icon">&#9660;</span>
+                            </button>
+                            <div class="pomeroy-tab-body">
+                                <h2 class="pomeroy-content-title">Website Performance Optimization</h2>
+                                <p class="pomeroy-content-desc">
+                                    Review and improve areas that affect website performance, including page
+                                    loading, images, caching, code, and hosting configuration, to help provide
+                                    visitors with a faster and smoother experience.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pomeroy-tab-pane" id="item-8">
+                            <button class="pomeroy-mobile-trigger" type="button">
+                                <span>SEO-Ready Websites</span><span class="acc-icon">&#9660;</span>
+                            </button>
+                            <div class="pomeroy-tab-body">
+                                <h2 class="pomeroy-content-title">SEO-Ready Website Structure</h2>
+                                <p class="pomeroy-content-desc">
+                                    Build websites with a clean, search-engine-friendly structure, responsive
+                                    design, and appropriate page organization to provide a strong technical
+                                    foundation for your future digital marketing and SEO activities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- assessment -->
+        <section class="dw-section">
+            <div class="container">
+                <div class="row align-items-center flex-lg-row-reverse gy-5">
+                    <div class="col-lg-5">
+                        <div class="dw-image-wrap">
+                            <img src="assets/img/services/itc/IT_002.png"
+                                alt="Website assessment and web strategy recommendations">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <h2 class="dw-title">From website assessment to practical next steps</h2>
+                        <p class="dw-text">
+                            We start by understanding your business, current website, digital goals, and the
+                            challenges affecting your online presence. This helps us focus on the areas that
+                            matter most for your website and web infrastructure.
+                        </p>
+                        <p class="dw-text">
+                            We then assess the available options and recommend practical next steps covering
+                            design, development, hosting, performance, maintenance, and ongoing management.
+                            When you are ready to move forward, Crescent Technoserve can support implementation
+                            and continued website maintenance.
+                        </p>
+                        <a href="contact.html#ct" class="dw-outline-btn">Start a Conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- benefits -->
+        <section id="benefits" class="dw-benefits-section">
+            <div class="container">
+                <div class="dw-benefits-header text-center">
+                    <span class="dw-benefits-eyebrow">WHY PROFESSIONAL WEB SERVICES</span>
+                    <h2 class="dw-benefits-main-title">Build a stronger and more reliable digital presence</h2>
+                    <p class="dw-benefits-subtext">
+                        Professional design and ongoing web management help keep your website modern,
+                        accessible, secure, and ready to support your business goals.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="dw-benefit-card">
+                            <div class="dw-benefit-icon-wrap"><i class="fas fa-laptop-code"></i></div>
+                            <h3 class="dw-benefit-title">Modern Web Design</h3>
+                            <p class="dw-benefit-text">Create responsive, professional websites that present your brand
+                                clearly across desktop and mobile devices.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="dw-benefit-card">
+                            <div class="dw-benefit-icon-wrap"><i class="fas fa-tachometer-alt"></i></div>
+                            <h3 class="dw-benefit-title">Better Performance</h3>
+                            <p class="dw-benefit-text">Improve loading and user experience through practical website and
+                                hosting optimization.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="dw-benefit-card">
+                            <div class="dw-benefit-icon-wrap"><i class="fas fa-mobile-alt"></i></div>
+                            <h3 class="dw-benefit-title">Mobile Ready</h3>
+                            <p class="dw-benefit-text">Deliver a consistent experience with responsive layouts that
+                                adapt to different screen sizes.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="dw-benefit-card">
+                            <div class="dw-benefit-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+                            <h3 class="dw-benefit-title">Reliable Maintenance</h3>
+                            <p class="dw-benefit-text">Keep websites maintained with technical updates, troubleshooting,
+                                and ongoing support.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="dw-benefit-card">
+                            <div class="dw-benefit-icon-wrap"><i class="fas fa-search"></i></div>
+                            <h3 class="dw-benefit-title">SEO-Ready Structure</h3>
+                            <p class="dw-benefit-text">Start with a clean and well-organized technical foundation for
+                                future search visibility efforts.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="dw-benefit-card">
+                            <div class="dw-benefit-icon-wrap"><i class="fas fa-chart-line"></i></div>
+                            <h3 class="dw-benefit-title">Ready to Grow</h3>
+                            <p class="dw-benefit-text">Use a flexible web foundation that can evolve with your business,
+                                services, and digital needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dw-benefits-stat-bar">
+                    <p class="dw-stat-text">
+                        Build a professional web presence and keep it running smoothly with the right technology
+                        support.
+                        <a href="contact.html#ct" class="dw-stat-btn">Talk to a Web Expert</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq__area section-py pt-4 pb-4">
+            <div class="container">
+                <div class="faq__wrap">
+                    <h2 class="title">Frequently Asked Questions</h2>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What web services does Crescent Technoserve provide?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>We provide web design, website development, redesign, website monitoring, web
+                                        hosting, maintenance, performance optimization, and SEO-ready website structure.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Can you redesign our existing website?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Yes. We can redesign and modernize an existing website with improved
+                                        responsiveness, usability, content, and technical structure. Where appropriate,
+                                        work can be completed before the new version replaces the live site.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Do you provide website monitoring?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>We can monitor supported websites for important availability and performance
+                                        issues and assist with troubleshooting when problems are identified.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Can you provide web hosting?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Yes. We can provide and manage appropriate hosting solutions with the required
+                                        performance, security, SSL, backup, and support configuration for your website.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Do you provide ongoing website maintenance?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Yes. Ongoing support can include content updates, technical maintenance,
+                                        troubleshooting, security updates, performance improvements, and website
+                                        management.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    How can we get started?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Contact our team to discuss your website, digital goals, current challenges, and
+                                        the type of web support you need. We can then recommend practical next steps for
+                                        your business.</p>
                                 </div>
                             </div>
                         </div>
@@ -1271,10 +1736,30 @@
                 </div>
             </div>
         </section>
-        <!-- cta-area-end -->
 
-
+        <!-- CTA -->
+        <section class="dw-testimonial-banner">
+            <div class="dw-testimonial-bg" style="background-image: url('assets/img/testimonial/leadership-bg.jpg');">
+            </div>
+            <div class="dw-testimonial-overlay"></div>
+            <div class="container position-relative z-1">
+                <div class="row">
+                    <div class="col-lg-7 col-md-9">
+                        <blockquote class="dw-testimonial-quote">
+                            “Your website should do more than look professional—it should provide a reliable
+                            digital foundation that supports your business as it grows.”
+                        </blockquote>
+                        <div class="dw-testimonial-author">
+                            <h4 class="dw-author-name">Crescent Technoserve</h4>
+                            <p class="dw-author-title">Your Web Technology Partner</p>
+                        </div>
+                        <a href="contact.html#ct" class="dw-testimonial-btn">Start a Conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- main-area-end -->
     <!-- main-area-end -->
 
     <!-- footer-area -->
@@ -1291,7 +1776,7 @@
                         </svg>
                     </a> With Us
                 </h2>
-                <a href="contact.html" class="tg-btn">Contact With Us
+                <a href="contact.html#ct" class="tg-btn">Contact With Us
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1305,8 +1790,7 @@
                     <div class="col-lg-4 col-md-5 col-sm-6">
                         <div class="footer__widget">
                             <div class="footer__logo">
-                                <a href="index.html"><img src="assets/img/logo/creswhitelogo.svg" alt="logo"
-                                        ></a>
+                                <a href="index.html"><img src="assets/img/logo/creswhitelogo.svg" alt="logo"></a>
                             </div>
                             <div class="footer__content">
                                 <p>Empowering businesses with smart IT solutions, innovation, and trusted support.</p>
@@ -1318,6 +1802,7 @@
                             <h4 class="footer__widget-title">Our Services</h4>
                             <ul class="list-wrap footer__link">
                                 <li><a href="itconsulting.html">IT Consulting</a></li>
+                                <!-- <li><a href="managed-it-services.html">Managed IT Services</a></li> -->
                                 <li><a href="cloudsolution.html">Cloud Solutions</a></li>
                                 <li><a href="cctv_biomatric.html">CCTV & Biomatric</a></li>
                                 <li><a href="network_security.html">Network & Security</a></li>
@@ -1433,6 +1918,119 @@
     <script src="assets/js/ajax-form.js"></script>
     <script src="assets/js/sal.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- mits-nav sticky sync (page-specific, no conflicts with main.js) -->
+    <script>
+        (function () {
+            'use strict';
+
+            var header = document.getElementById('sticky-header');
+            var nav = document.getElementById('mitsNav');
+            var navWrapper = document.querySelector('.mits-nav-wrapper');
+
+            if (!header || !nav || !navWrapper) return;
+
+            function syncNavOffset() {
+                var headerIsFixed = header.classList.contains('sticky-menu');
+
+                var offset = headerIsFixed
+                    ? header.getBoundingClientRect().height
+                    : 0;
+
+                navWrapper.style.top = offset + 'px';
+            }
+
+            var navLinks = nav.querySelectorAll('a[href^="#"]');
+
+            var sectionIds = Array.prototype.map.call(navLinks, function (a) {
+                return a.getAttribute('href').slice(1);
+            });
+
+            function syncActiveLink() {
+                var navHeight = navWrapper.getBoundingClientRect().height || 70;
+                var fromTop = window.scrollY + navHeight + 40;
+
+                var currentId = sectionIds[0];
+
+                for (var i = 0; i < sectionIds.length; i++) {
+                    var el = document.getElementById(sectionIds[i]);
+
+                    if (el && el.offsetTop <= fromTop) {
+                        currentId = sectionIds[i];
+                    }
+                }
+
+                navLinks.forEach(function (a) {
+                    a.classList.toggle(
+                        'is-active',
+                        a.getAttribute('href') === '#' + currentId
+                    );
+                });
+            }
+
+            function onScrollOrResize() {
+                syncNavOffset();
+                syncActiveLink();
+            }
+
+            window.addEventListener('scroll', onScrollOrResize, {
+                passive: true
+            });
+
+            window.addEventListener('resize', onScrollOrResize);
+            window.addEventListener('load', onScrollOrResize);
+
+            document.addEventListener(
+                'DOMContentLoaded',
+                onScrollOrResize
+            );
+
+            onScrollOrResize();
+
+        })();
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navItems = document.querySelectorAll("#pomeroySupportNav li");
+            const tabPanes = document.querySelectorAll(".pomeroy-tab-pane");
+            const mobileTriggers = document.querySelectorAll(".pomeroy-mobile-trigger");
+
+            // Desktop Tab Switching
+            navItems.forEach(item => {
+                item.addEventListener("click", function () {
+                    const targetId = this.getAttribute("data-target");
+
+                    navItems.forEach(nav => nav.classList.remove("is-active"));
+                    tabPanes.forEach(pane => pane.classList.remove("is-active"));
+
+                    this.classList.add("is-active");
+                    const activePane = document.getElementById(targetId);
+                    if (activePane) {
+                        activePane.classList.add("is-active");
+                    }
+                });
+            });
+
+            // Mobile Accordion Toggle
+            mobileTriggers.forEach(trigger => {
+                trigger.addEventListener("click", function () {
+                    const parentPane = this.closest(".pomeroy-tab-pane");
+                    const isOpen = parentPane.classList.contains("is-active");
+
+                    tabPanes.forEach(pane => {
+                        pane.classList.remove("is-active");
+                        const btn = pane.querySelector(".pomeroy-mobile-trigger");
+                        if (btn) btn.classList.remove("is-active");
+                    });
+
+                    if (!isOpen) {
+                        parentPane.classList.add("is-active");
+                        this.classList.add("is-active");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
