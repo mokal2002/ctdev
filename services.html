@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Techzo - IT Solutions & Technology Services Template</title>
-    <meta name="description" content="Techzo - IT Solutions & Technology Services Template">
+    <title>Managed ITServices | Crescent Technoserve</title>
+    <meta name="description"
+        content="Crescent Technoserve provides strategic IT consulting to help businesses plan, optimize, secure, and scale their technology infrastructure.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -20,6 +21,275 @@
     <link rel="stylesheet" href="assets/css/sal.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* =========================================
+   Managed IT Services - Overview
+   Centered Pomeroy-style layout
+========================================= */
+
+        .mits-overview {
+            padding: 115px 0 105px;
+            background: var(--tg-color-white-default);
+            text-align: center;
+        }
+
+        .mits-overview__content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mits-overview__eyebrow {
+            display: block;
+            margin-bottom: 18px;
+
+            color: var(--tg-theme-primary);
+            font-size: 14px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mits-overview__title {
+            max-width: 820px;
+            margin: 0 auto 30px;
+
+            color: var(--tg-heading-color);
+            font-size: 46px;
+            font-weight: 700;
+            line-height: 1.18;
+        }
+
+        .mits-overview__title::after {
+            content: "";
+            display: block;
+
+            width: 65px;
+            height: 3px;
+
+            margin: 28px auto 30px;
+
+            background: var(--tg-theme-primary);
+        }
+
+        .mits-overview__lead {
+            max-width: 820px;
+            margin: 0 auto 26px;
+
+            color: var(--tg-body-color);
+            font-size: 20px;
+            line-height: 1.75;
+        }
+
+        .mits-overview__text {
+            max-width: 850px;
+            margin: 0 auto;
+
+            color: var(--tg-body-color);
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+
+        /* =========================================
+   Tablet
+========================================= */
+
+        @media (max-width: 991.98px) {
+
+            .mits-overview {
+                padding: 90px 0 85px;
+            }
+
+            .mits-overview__title {
+                font-size: 38px;
+            }
+
+            .mits-overview__lead {
+                font-size: 18px;
+            }
+        }
+
+
+        /* =========================================
+   Mobile
+========================================= */
+
+        @media (max-width: 767.98px) {
+
+            .mits-overview {
+                padding: 70px 0 65px;
+            }
+
+            .mits-overview__content {
+                max-width: 100%;
+            }
+
+            .mits-overview__eyebrow {
+                font-size: 12px;
+                margin-bottom: 14px;
+            }
+
+            .mits-overview__title {
+                font-size: 29px;
+                line-height: 1.25;
+                margin-bottom: 24px;
+            }
+
+            .mits-overview__title::after {
+                width: 50px;
+                height: 2px;
+                margin: 22px auto 24px;
+            }
+
+            .mits-overview__lead {
+                font-size: 17px;
+                line-height: 1.7;
+                margin-bottom: 22px;
+            }
+
+            .mits-overview__text {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+        }
+
+
+
+        .mits-strategic {
+            position: relative;
+            padding: 90px 0;
+            min-height: 460px;
+            display: flex;
+            align-items: center;
+            background-color: #04244b;
+            overflow: hidden;
+        }
+
+        .mits-strategic__bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .mits-strategic__overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(4, 36, 75, 0.75);
+            z-index: 0;
+        }
+
+        .mits-strategic .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mits-strategic__title {
+            color: #ffffff;
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1.25;
+            max-width: 720px;
+            margin-bottom: 26px;
+        }
+
+        .mits-strategic__text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 680px;
+            margin-bottom: 18px;
+        }
+
+        .mits-strategic__text strong {
+            color: #ffffff;
+        }
+
+        .mits-strategic__links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .mits-strategic__links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #6fd7d1;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .mits-strategic__links a:hover {
+            color: #ffffff;
+        }
+
+        .mits-strategic__links .q-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1.5px solid currentColor;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 767.98px) {
+            .mits-strategic {
+                padding: 60px 0;
+            }
+
+            .mits-strategic__title {
+                font-size: 26px;
+            }
+        }
+
+        .mits-offcanvas {
+            background: var(--tg-color-white-default);
+            height: 100%;
+            padding: 90px 50px;
+            position: fixed;
+            right: 0;
+            top: 0;
+            transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            width: 425px;
+            max-width: 90vw;
+            z-index: 999;
+            overflow-y: scroll;
+            transform: translateX(100%);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mits-offcanvas.active {
+            transform: translateX(0);
+        }
+
+        .mits-offcanvas-overly {
+            position: fixed;
+            background: #000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-out 0s;
+        }
+
+        .mits-offcanvas-overly.active {
+            opacity: 0.7;
+            visibility: visible;
+        }
+    </style>
 </head>
 
 <body>
@@ -470,26 +740,107 @@
     <!-- main-area -->
     <main class="main-area fix">
 
-        <!-- breadcrumb-area -->
-        <section class="breadcrumb__area breadcrumb__bg fix" data-background="assets/img/bg/breadcrumb_bg.jpg">
+        <!-- breadcrumb-area-end -->
+        <section class="breadcrumb__area breadcrumb__bg fix" data-background="assets/img/bg/bg_bread.png">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
-                            <h2 class="title">Our Services</h2>
-                            <!-- <nav class="breadcrumb">
-                                <span property="itemListElement" typeof="ListItem">
-                                    <a href="index.html">Home</a>
-                                </span>
-                                <span class="breadcrumb-separator">/</span>
-                                <span property="itemListElement" typeof="ListItem">Services</span>
-                            </nav> -->
+                            <h2 class="title">Managed IT Services for the Distributed Enterprise</h2>
+                            <p
+                                style="color:#ffffff; opacity:0.92; max-width:680px; font-size:17px; margin-bottom:32px;">
+                                Give your team the muscle to move faster with managed IT services that handle the heavy
+                                lifting, strengthen security, and keep distributed environments running without
+                                interruption.
+                            </p>
+                            <a href="contact.html" class="tg-btn white-btn m-2">Get in touch
+
+
+                            </a>
+                            <a href="#support" class="tg-btn white-btn">Our Solutions
+
+
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- breadcrumb-area-end -->
+
+        <!-- intro -->
+        <section id="overview" class="mits-overview" style="scroll-margin-top:130px;">
+            <div class="container">
+                <div class="mits-overview__content">
+                    <span class="mits-overview__eyebrow">Managed IT Services</span>
+                    <h2 class="mits-overview__title">Shift from fixing problems to preventing them</h2>
+                    <p class="mits-overview__lead">Crescent Technoserve replaces reactive support with proactive
+                        delivery—monitoring your environment, catching issues early, and resolving them before they slow
+                        your team down. Lower costs. Fewer disruptions. More productive teams..</p>
+                    <p class="mits-overview__text">Crescent Technoserve helps businesses shift from reactive support
+                        to proactive delivery. From 24/7 monitoring and help desk support to network management,
+                        cybersecurity, and cloud administration, we take on the day-to-day IT workload so your team
+                        can stay focused on what actually moves the business forward.</p>
+                </div>
+                <a href="#services" class="tg-btn mt-4">Explore Our Services</a>
+
+            </div>
+        </section>
+        <!-- intro-end -->
+
+
+        <!-- strategic-advantage -->
+        <section class="mits-strategic">
+            <div class="mits-strategic__bg" style="background-image:url('assets/img/testimonial/leadership-bg.jpg');">
+            </div>
+            <div class="mits-strategic__overlay"></div>
+            <div class="container">
+                <h2 class="mits-strategic__title">Transform IT Into a Strategic Advantage</h2>
+                <p class="mits-strategic__text">IT teams are under more pressure than ever. Threat surfaces keep
+                    growing,
+                    costs are climbing, and leadership expects consistent performance across every system, endpoint, and
+                    location.</p>
+                <p class="mits-strategic__text">Our managed IT services are built on years of experience helping
+                    businesses
+                    reduce complexity, manage risk, and give IT the foundation it needs to become a
+                    <strong>strategic driver of business performance</strong>.
+                </p>
+                <div class="mits-strategic__links">
+                    <a href="#" id="whatIsManagedITBtn"><span class="q-icon">?</span> What Are Managed IT Services?</a>
+                    <a href="#faq"><span class="q-icon">?</span> Managed IT FAQs</a>
+                </div>
+            </div>
+        </section>
+        <!-- strategic-advantage-end -->
+
+        <!-- off-canvas: What is Managed IT -->
+        <div class="mits-offcanvas" id="whatIsManagedITPanel">
+            <div class="offCanvas__close-icon menu-close" id="whatIsManagedITClose">
+                <button>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <h2 class="offCanvas__title">What are Managed IT Services?</h2>
+            <div class="offCanvas__content">
+                <p>Managed IT services mean handing off the day-to-day management of your IT infrastructure, systems,
+                    and
+                    support to a trusted partner. This typically includes:</p>
+            </div>
+            <div class="offCanvas__info-wrap mb-30">
+                <ul style="padding-left:18px; color:#565656; line-height:1.9;">
+                    <li>24/7 monitoring and support</li>
+                    <li>Network and infrastructure management</li>
+                    <li>End-user help desk services</li>
+                    <li>Cybersecurity protection and response</li>
+                    <li>Cloud and service management</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mits-offcanvas-overly" id="whatIsManagedITOverlay"></div>
+
 
         <!-- services-area -->
         <section class="services__area section-bg section-py-140">
@@ -679,8 +1030,7 @@
                     <div class="col-lg-4 col-md-5 col-sm-6">
                         <div class="footer__widget">
                             <div class="footer__logo">
-                                <a href="index.html"><img src="assets/img/logo/creswhitelogo.svg" alt="logo"
-                                        ></a>
+                                <a href="index.html"><img src="assets/img/logo/creswhitelogo.svg" alt="logo"></a>
                             </div>
                             <div class="footer__content">
                                 <p>Empowering businesses with smart IT solutions, innovation, and trusted support.</p>
@@ -792,6 +1142,30 @@
     <!-- footer-area-end -->
 
 
+
+    <script>
+        (function () {
+            var openBtn = document.getElementById('whatIsManagedITBtn');
+            var closeBtn = document.getElementById('whatIsManagedITClose');
+            var panel = document.getElementById('whatIsManagedITPanel');
+            var overlay = document.getElementById('whatIsManagedITOverlay');
+            if (!openBtn || !panel || !overlay) return;
+
+            function open(e) {
+                if (e) e.preventDefault();
+                panel.classList.add('active');
+                overlay.classList.add('active');
+            }
+            function close() {
+                panel.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+
+            openBtn.addEventListener('click', open);
+            closeBtn.addEventListener('click', close);
+            overlay.addEventListener('click', close);
+        })();
+    </script>
 
 
 
