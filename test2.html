@@ -23,21 +23,14 @@
 
     <style>
         /* Safety: nothing in the new sections should force horizontal scroll */
-        .hww-intro,
-        .model-tabs,
-        .fit-cards,
-        .trust-strip,
-        .final-cta {
+        .hww-intro, .model-tabs, .fit-cards, .trust-strip, .final-cta {
             max-width: 100vw;
             overflow-x: hidden;
         }
-
         .model-panel__tags span,
         .model-panel__benefit-item,
         .model-panel__step,
-        .model-panel__grid4 .block {
-            word-break: break-word;
-        }
+        .model-panel__grid4 .block { word-break: break-word; }
 
         /* =========================================
    Services page — How We Work With You
@@ -82,17 +75,9 @@
         }
 
         @media (max-width: 767.98px) {
-            .hww-intro {
-                padding: 70px 0 40px;
-            }
-
-            .hww-intro__title {
-                font-size: 28px;
-            }
-
-            .hww-intro__text {
-                font-size: 15px;
-            }
+            .hww-intro { padding: 70px 0 40px; }
+            .hww-intro__title { font-size: 28px; }
+            .hww-intro__text { font-size: 15px; }
         }
 
         /* =========================================
@@ -131,7 +116,7 @@
         .model-tabs__btn.active {
             background: #ffffff;
             border-color: var(--tg-theme-primary);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, .06);
+            box-shadow: 0 12px 30px rgba(0,0,0,.06);
         }
 
         .model-tabs__btn .icon {
@@ -142,14 +127,11 @@
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            background: rgba(var(--tg-theme-primary-rgb, 22, 66, 138), .08);
+            background: rgba(var(--tg-theme-primary-rgb, 22,66,138),.08);
             color: var(--tg-theme-primary);
         }
 
-        .model-tabs__btn .icon svg {
-            width: 22px;
-            height: 22px;
-        }
+        .model-tabs__btn .icon svg { width: 22px; height: 22px; }
 
         .model-tabs__btn h3 {
             font-size: 17px;
@@ -165,14 +147,8 @@
             line-height: 1.5;
         }
 
-        .model-panel {
-            display: none;
-            width: 100%;
-        }
-
-        .model-panel.active {
-            display: block;
-        }
+        .model-panel { display: none; width: 100%; }
+        .model-panel.active { display: block; }
 
         .model-panel__identity {
             display: inline-block;
@@ -272,9 +248,7 @@
             margin-top: 2px;
         }
 
-        .model-panel__extra {
-            margin-bottom: 50px;
-        }
+        .model-panel__extra { margin-bottom: 50px; }
 
         .model-panel__tags {
             display: flex;
@@ -325,13 +299,8 @@
         }
 
         @media (max-width: 767.98px) {
-            .model-panel__title {
-                font-size: 24px;
-            }
-
-            .model-tabs {
-                padding: 20px 0 60px;
-            }
+            .model-panel__title { font-size: 24px; }
+            .model-tabs { padding: 20px 0 60px; }
 
             /* square icon-only tab boxes, 3 per row */
             .model-tabs__btn {
@@ -343,23 +312,19 @@
                 padding: 14px 8px;
                 aspect-ratio: 1 / 1;
             }
-
             .model-tabs__btn .icon {
                 width: 34px;
                 height: 34px;
             }
-
             .model-tabs__btn .icon svg {
                 width: 18px;
                 height: 18px;
             }
-
             .model-tabs__btn h3 {
                 font-size: 12px;
                 line-height: 1.3;
                 margin: 0;
             }
-
             .model-tabs__btn p {
                 display: none;
             }
@@ -368,30 +333,24 @@
             .model-panel__step {
                 padding: 14px 14px;
             }
-
             .model-panel__step h4 {
                 font-size: 14px;
             }
-
             .model-panel__step p {
                 font-size: 12.5px;
             }
-
-            .model-panel__steps .row.gutter-y-20>[class*="col-"] {
+            .model-panel__steps .row.gutter-y-20 > [class*="col-"] {
                 margin-bottom: 12px;
                 padding-left: 6px;
                 padding-right: 6px;
             }
-
             .model-panel__steps .row {
                 margin-left: -6px;
                 margin-right: -6px;
             }
-
             .model-panel__steps {
                 margin-bottom: 8px;
             }
-
             .model-panel__section-title {
                 margin-bottom: 14px;
             }
@@ -467,13 +426,8 @@
         }
 
         @media (max-width: 767.98px) {
-            .fit-cards {
-                padding: 60px 0;
-            }
-
-            .fit-cards__title {
-                font-size: 24px;
-            }
+            .fit-cards { padding: 60px 0; }
+            .fit-cards__title { font-size: 24px; }
         }
 
         /* =========================================
@@ -487,7 +441,7 @@
 
         .trust-strip__head {
             text-align: center;
-            color: rgba(255, 255, 255, .6);
+            color: rgba(255,255,255,.6);
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
@@ -508,13 +462,11 @@
 
         .trust-strip__label {
             font-size: 14px;
-            color: rgba(255, 255, 255, .75);
+            color: rgba(255,255,255,.75);
         }
 
         @media (max-width: 767.98px) {
-            .trust-strip__num {
-                font-size: 32px;
-            }
+            .trust-strip__num { font-size: 32px; }
         }
 
         /* =========================================
@@ -557,14 +509,6 @@
             margin-top: 18px;
             font-size: 13px;
             color: var(--tg-body-color);
-        }
-
-
-        .hero-btn-group {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
         }
     </style>
 </head>
@@ -831,15 +775,8 @@
                                 Every business has different IT needs — whether it's a specific project, ongoing IT
                                 management, or a dedicated professional on-site, we provide the right level of support.
                             </p>
-                            <div class="hero-btn-group">
-                                <a href="#service-models" class="tg-btn white-btn">
-                                    Explore Our Service Models
-                                </a>
-
-                                <a href="contact.html" class="tg-btn white-btn">
-                                    Talk to Us
-                                </a>
-                            </div>
+                            <a href="#service-models" class="tg-btn white-btn m-2">Explore Our Service Models</a>
+                            <a href="contact.html" class="tg-btn white-btn">Talk to Us</a>
                         </div>
                     </div>
                 </div>
@@ -865,7 +802,6 @@
         <!-- 03 — service model tabs -->
         <section class="model-tabs">
             <div class="container">
-                    <span class="hww-intro__eyebrow">How We Work With You</span>
 
                 <div class="model-tabs__nav">
                     <div class="row gutter-y-20">
@@ -874,9 +810,8 @@
                                 <span class="icon">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
-                                            stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
-                                        <path d="M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" />
+                                            stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                        <path d="M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
                                     </svg>
                                 </span>
                                 <span>
@@ -890,9 +825,9 @@
                                 <span class="icon">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"
-                                            stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                                            stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
                                         <path d="M9 12.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
+                                            stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
                                 <span>
@@ -905,9 +840,9 @@
                             <button type="button" class="model-tabs__btn" data-tab="staffing">
                                 <span class="icon">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6" />
+                                        <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/>
                                         <path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" />
+                                            stroke-linecap="round"/>
                                     </svg>
                                 </span>
                                 <span>
@@ -970,20 +905,16 @@
                     <h4 class="model-panel__section-title mt-4">Why choose this model</h4>
                     <div class="model-panel__benefits">
                         <div class="row">
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>End-to-end
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>End-to-end
                                         project delivery</strong>One team manages the project from initial planning
                                     to final implementation.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Experienced
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Experienced
                                         IT expertise</strong>Access the technical knowledge required for specialised
                                     IT projects.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Clear
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Clear
                                         project coordination</strong>Avoid the complexity of managing multiple
                                     technical vendors.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Focused on
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Focused on
                                         your requirement</strong>The engagement is designed around your specific
                                     project scope and objectives.</span></div>
                         </div>
@@ -1095,24 +1026,19 @@
                     <h4 class="model-panel__section-title mt-4">Why choose this model</h4>
                     <div class="model-panel__benefits">
                         <div class="row">
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Focus
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Focus
                                         on your business</strong>Spend less time managing IT issues and more time on
                                     your business.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>A
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>A
                                         complete IT support team</strong>Access broader IT expertise instead of
                                     relying on a single resource.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Ongoing
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Ongoing
                                         support</strong>Get continuous support for your changing technology
                                     requirements.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>One
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>One
                                         IT partner</strong>Simplify IT management by working with one team across
                                     multiple requirements.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Flexible
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Flexible
                                         as you grow</strong>Your IT support can adapt as your business, team, and
                                     technology requirements change.</span></div>
                         </div>
@@ -1174,24 +1100,19 @@
                     <h4 class="model-panel__section-title mt-4">Why choose this model</h4>
                     <div class="model-panel__benefits">
                         <div class="row">
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>The
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>The
                                         right skills for your requirement</strong>Get an IT professional based on the
                                     technical needs of your business.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Reduced
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Reduced
                                         recruitment effort</strong>Save time and effort involved in finding and
                                     onboarding technical resources.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Simplified
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Simplified
                                         administration</strong>Reduce the burden of payroll and related
                                     administrative responsibilities.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Dedicated
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Dedicated
                                         on-site support</strong>Have an IT professional available to support your
                                     workplace and team.</span></div>
-                            <div class="col-md-6 col-12 model-panel__benefit-item"><span
-                                    class="check">&#10003;</span><span><strong>Flexible
+                            <div class="col-md-6 col-12 model-panel__benefit-item"><span class="check">&#10003;</span><span><strong>Flexible
                                         resourcing</strong>Scale your IT resource requirements based on changing
                                     business needs.</span></div>
                         </div>
