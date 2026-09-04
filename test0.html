@@ -96,7 +96,7 @@
         }
 
         /* =========================================
-   Service model tabs
+   Service model accordion
 ========================================= */
 
         .model-tabs {
@@ -104,77 +104,166 @@
             background: #F0F2F5;
         }
 
-        .model-tabs__nav {
-            margin-bottom: 45px;
+        .model-tabs__section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
         }
 
-        .model-tabs__btn {
+        .model-tabs__section-title .sub-title {
+            display: block;
+            margin-bottom: 16px;
+            color: var(--tg-theme-primary);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .model-tabs__section-title h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--tg-heading-color);
+            margin-bottom: 14px;
+        }
+
+        .model-tabs__section-title p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--tg-body-color);
+            margin: 0;
+        }
+
+        .accordion-list {
             width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            text-align: left;
-            padding: 22px 20px;
-            background: #F7F8FA;
-            border: 2px solid transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all .25s ease;
         }
 
-        .model-tabs__btn:hover {
-            border-color: #dbe1ea;
-        }
-
-        .model-tabs__btn.active {
+        .accordion-item {
             background: #ffffff;
+            border: 1px solid #E7E9EE;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: border-color .25s ease, box-shadow .25s ease;
+        }
+
+        .accordion-item.is-open {
             border-color: var(--tg-theme-primary);
             box-shadow: 0 12px 30px rgba(0, 0, 0, .06);
         }
 
-        .model-tabs__btn .icon {
+        .accordion-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 22px 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .accordion-header__icon {
             flex-shrink: 0;
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
             background: rgba(var(--tg-theme-primary-rgb, 22, 66, 138), .08);
             color: var(--tg-theme-primary);
         }
 
-        .model-tabs__btn .icon svg {
+        .accordion-header__icon svg {
             width: 22px;
             height: 22px;
         }
 
-        .model-tabs__btn h3 {
-            font-size: 17px;
+        .accordion-header__text {
+            flex: 1 1 auto;
+        }
+
+        .accordion-header__text h3 {
+            font-size: 18px;
             font-weight: 700;
             margin: 0 0 4px;
             color: var(--tg-heading-color);
         }
 
-        .model-tabs__btn p {
+        .accordion-header__text p {
             font-size: 13px;
-            color: var(--tg-body-color);
             margin: 0;
-            line-height: 1.5;
+            font-weight: 600;
+            color: var(--tg-theme-primary);
         }
 
-        .model-panel {
-            display: none;
-            width: 100%;
+        .accordion-header__arrow {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #F0F2F5;
+            color: var(--tg-heading-color);
+            transition: transform .3s ease, background .3s ease, color .3s ease;
         }
 
-        .model-panel.active {
-            display: block;
+        .accordion-header[aria-expanded="true"] .accordion-header__arrow {
+            transform: rotate(180deg);
+            background: var(--tg-theme-primary);
+            color: #ffffff;
         }
 
-        .model-panel__identity {
+        .accordion-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease;
+        }
+
+        .accordion-panel__inner {
+            padding: 4px 24px 30px;
+        }
+
+        @media (max-width: 767.98px) {
+            .model-tabs {
+                padding: 20px 0 60px;
+            }
+
+            .model-tabs__section-title h2 {
+                font-size: 24px;
+            }
+
+            .accordion-header {
+                padding: 16px 16px;
+                gap: 12px;
+            }
+
+            .accordion-header__icon {
+                width: 36px;
+                height: 36px;
+            }
+
+            .accordion-header__icon svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .accordion-header__text h3 {
+                font-size: 15px;
+            }
+
+            .accordion-header__text p {
+                font-size: 11.5px;
+            }
+
+            .accordion-panel__inner {
+                padding: 0 16px 24px;
+            }
+        }
             display: inline-block;
             font-size: 14px;
             font-weight: 700;
@@ -329,41 +418,6 @@
                 font-size: 24px;
             }
 
-            .model-tabs {
-                padding: 20px 0 60px;
-            }
-
-            /* square icon-only tab boxes, 3 per row */
-            .model-tabs__btn {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                justify-content: center;
-                gap: 8px;
-                padding: 14px 8px;
-                aspect-ratio: 1 / 1;
-            }
-
-            .model-tabs__btn .icon {
-                width: 34px;
-                height: 34px;
-            }
-
-            .model-tabs__btn .icon svg {
-                width: 18px;
-                height: 18px;
-            }
-
-            .model-tabs__btn h3 {
-                font-size: 12px;
-                line-height: 1.3;
-                margin: 0;
-            }
-
-            .model-tabs__btn p {
-                display: none;
-            }
-
             /* 2-per-row step boxes stay legible at half width */
             .model-panel__step {
                 padding: 14px 14px;
@@ -403,7 +457,7 @@
 
         .fit-cards {
             padding: 90px 0;
-            background: #F7F8FA;
+            background: #ffffff;
             text-align: center;
         }
 
@@ -443,6 +497,7 @@
             border-radius: 10px;
             padding: 28px 24px;
             border: 1px solid #E7E9EE;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .04);
         }
 
         .fit-cards__item h3 {
@@ -492,6 +547,14 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+
+        .trust-strip__title {
+            text-align: center;
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
             margin-bottom: 40px;
         }
 
@@ -862,66 +925,44 @@
         </section>
         <!-- how-we-work-end -->
 
-        <!-- 03 — service model tabs -->
+        <!-- 03 — service model accordion -->
         <section class="model-tabs">
             <div class="container">
-                    <span class="hww-intro__eyebrow">MODELS details</span>
 
-                <div class="model-tabs__nav">
-                    <div class="row gutter-y-20">
-                        <div class="col-lg-4 col-md-4 col-4">
-                            <button type="button" class="model-tabs__btn active" data-tab="project">
-                                <span class="icon">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
-                                            stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
-                                        <path d="M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </span>
-                                <span>
-                                    <h3>Project-Based</h3>
-                                    <p>For a specific IT requirement or project.</p>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-4">
-                            <button type="button" class="model-tabs__btn" data-tab="managed">
-                                <span class="icon">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"
-                                            stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
-                                        <path d="M9 12.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span>
-                                    <h3>Managed IT</h3>
-                                    <p>For ongoing IT management and support.</p>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-4">
-                            <button type="button" class="model-tabs__btn" data-tab="staffing">
-                                <span class="icon">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6" />
-                                        <path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </span>
-                                <span>
-                                    <h3>IT Staffing</h3>
-                                    <p>For dedicated IT professionals at your workplace.</p>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
+                <div class="model-tabs__section-title">
+                    <span class="sub-title">Choose Your Model</span>
+                    <h2>How Would You Like to Work With Us?</h2>
+                    <p>Click a model below to see how it works, why businesses choose it, and how to get started.</p>
                 </div>
 
-                <!-- PANEL: Project-Based -->
-                <div class="model-panel active" id="panel-project">
-                    <span class="model-panel__identity">You have a requirement. We deliver the solution.</span>
+                <div class="accordion-list">
+
+                    <!-- ACCORDION ITEM: Project-Based -->
+                    <div class="accordion-item is-open" data-model="project">
+                        <button type="button" class="accordion-header" aria-expanded="true">
+                            <span class="accordion-header__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                                        stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                                    <path d="M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            <span class="accordion-header__text">
+                                <h3>Project-Based IT Services</h3>
+                                <p>You have a requirement. We deliver the solution.</p>
+                            </span>
+                            <span class="accordion-header__arrow">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="accordion-panel__inner">
+
                     <h3 class="model-panel__title">Have a Specific IT Project? We'll Help You Take It From Plan to
                         Completion.</h3>
                     <p class="model-panel__desc">Whether you're setting up a new office, upgrading your IT
@@ -1007,11 +1048,38 @@
                         <a href="contact.html#ct" class="tg-btn">Discuss Your Project</a>
                         <small>Tell us what you're planning, and let's discuss the right approach.</small>
                     </div>
-                </div>
 
-                <!-- PANEL: Managed IT -->
-                <div class="model-panel" id="panel-managed">
-                    <span class="model-panel__identity">You focus on your business. We take care of your IT.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END ACCORDION ITEM: Project-Based -->
+
+                    <!-- ACCORDION ITEM: Managed IT -->
+                    <div class="accordion-item" data-model="managed">
+                        <button type="button" class="accordion-header" aria-expanded="false">
+                            <span class="accordion-header__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"
+                                        stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                                    <path d="M9 12.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                            <span class="accordion-header__text">
+                                <h3>Managed IT Services</h3>
+                                <p>You focus on your business. We take care of your IT.</p>
+                            </span>
+                            <span class="accordion-header__arrow">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="accordion-panel__inner">
+
                     <h3 class="model-panel__title">Focus on Your Business. Leave the Day-to-Day IT to Us.</h3>
                     <p class="model-panel__desc">Managing IT can involve multiple systems, vendors, technical issues,
                         maintenance requirements, and ongoing support. With Managed IT Services, Crescent Technoserve
@@ -1122,11 +1190,37 @@
                         <a href="contact.html#ct" class="tg-btn">Partner With Our IT Team</a>
                         <small>Let's discuss how we can support and manage your IT operations.</small>
                     </div>
-                </div>
 
-                <!-- PANEL: IT Staffing -->
-                <div class="model-panel" id="panel-staffing">
-                    <span class="model-panel__identity">You need the right person. We manage the rest.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END ACCORDION ITEM: Managed IT -->
+
+                    <!-- ACCORDION ITEM: IT Staffing -->
+                    <div class="accordion-item" data-model="staffing">
+                        <button type="button" class="accordion-header" aria-expanded="false">
+                            <span class="accordion-header__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6" />
+                                    <path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            <span class="accordion-header__text">
+                                <h3>IT Staffing & Payroll Services</h3>
+                                <p>You need the right person. We manage the rest.</p>
+                            </span>
+                            <span class="accordion-header__arrow">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-panel">
+                            <div class="accordion-panel__inner">
+
                     <h3 class="model-panel__title">Get the Right IT Professional, Without the Management Burden.</h3>
                     <p class="model-panel__desc">When your business needs dedicated IT support at your workplace, we
                         help provide the right technical resource based on your requirements. The IT professional
@@ -1214,6 +1308,12 @@
                         <a href="contact.html#ct" class="tg-btn">Request an IT Resource</a>
                         <small>Tell us the skills and support you need, and we'll help find the right resource.</small>
                     </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END ACCORDION ITEM: IT Staffing -->
+
                 </div>
 
             </div>
@@ -1407,6 +1507,7 @@
         <section class="trust-strip">
             <div class="container">
                 <div class="trust-strip__head">Why Businesses Work With Us</div>
+                <h2 class="trust-strip__title">Real Numbers Behind Our Partnerships</h2>
                 <div class="trust-strip__grid">
                     <div class="row gutter-y-30">
                         <div class="col-md-4 col-6">
@@ -1576,31 +1677,72 @@
 
     <script>
         (function () {
-            var tabButtons = document.querySelectorAll('.model-tabs__btn');
-            var panels = {
-                project: document.getElementById('panel-project'),
-                managed: document.getElementById('panel-managed'),
-                staffing: document.getElementById('panel-staffing')
-            };
+            var headers = document.querySelectorAll('.accordion-header');
 
-            function activate(key) {
-                tabButtons.forEach(function (btn) {
-                    btn.classList.toggle('active', btn.getAttribute('data-tab') === key);
-                });
-                Object.keys(panels).forEach(function (k) {
-                    panels[k].classList.toggle('active', k === key);
+            function closeAll() {
+                headers.forEach(function (h) {
+                    h.setAttribute('aria-expanded', 'false');
+                    var item = h.closest('.accordion-item');
+                    item.classList.remove('is-open');
+                    var panel = item.querySelector('.accordion-panel');
+                    panel.style.maxHeight = null;
                 });
             }
 
-            tabButtons.forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    activate(btn.getAttribute('data-tab'));
+            function openItem(item) {
+                var header = item.querySelector('.accordion-header');
+                var panel = item.querySelector('.accordion-panel');
+                header.setAttribute('aria-expanded', 'true');
+                item.classList.add('is-open');
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
+
+            headers.forEach(function (header) {
+                header.addEventListener('click', function () {
+                    var item = header.closest('.accordion-item');
+                    var isOpen = header.getAttribute('aria-expanded') === 'true';
+                    closeAll();
+                    if (!isOpen) {
+                        openItem(item);
+                    }
                 });
             });
 
+            // open the default (first) item immediately, and again after full load
+            // (in case fonts/images shift its height)
+            var initialHeader = document.querySelector('.accordion-header[aria-expanded="true"]');
+            if (initialHeader) {
+                var initialPanel = initialHeader.closest('.accordion-item').querySelector('.accordion-panel');
+                initialPanel.style.maxHeight = initialPanel.scrollHeight + 'px';
+            }
+            window.addEventListener('load', function () {
+                var openHeader = document.querySelector('.accordion-header[aria-expanded="true"]');
+                if (openHeader) {
+                    var panel = openHeader.closest('.accordion-item').querySelector('.accordion-panel');
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                }
+            });
+
+            // recalc height of the open panel on resize (text reflow changes content height)
+            window.addEventListener('resize', function () {
+                var openHeader = document.querySelector('.accordion-header[aria-expanded="true"]');
+                if (openHeader) {
+                    var panel = openHeader.closest('.accordion-item').querySelector('.accordion-panel');
+                    panel.style.maxHeight = 'none';
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                }
+            });
+
+            // "Which model fits you" jump-cards open the matching accordion item and scroll to it
             document.querySelectorAll('.jump-tab').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    activate(link.getAttribute('data-tab'));
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var key = link.getAttribute('data-tab');
+                    var item = document.querySelector('.accordion-item[data-model="' + key + '"]');
+                    if (!item) return;
+                    closeAll();
+                    openItem(item);
+                    item.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
         })();
