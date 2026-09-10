@@ -1231,7 +1231,7 @@ textarea {
 }
 
 .offCanvas__logo img {
-  max-height: 60px;
+  max-height: 80px;
 }
 
 .offCanvas__content {
@@ -1353,6 +1353,7 @@ textarea {
 }
 
 .breadcrumb__content .title {
+  margin-top: 20px;
   margin-bottom: 30px;
   font-size: 50px;
   color: var(--tg-color-white-default);
@@ -1813,7 +1814,7 @@ textarea {
 }
 
 .tgmobile__menu .nav-logo img {
-  width: 50px;
+  width: 80px;
 }
 
 .tgmobile__menu .navigation {
@@ -2825,7 +2826,8 @@ textarea {
 }
 
 .tgmenu__nav .logo img {
-  max-height: 55px;
+  margin: 11px;
+  max-height: 80px;
 }
 
 .tgmenu__navbar-wrap {
@@ -3281,6 +3283,7 @@ textarea {
 .tgmenu__action>ul li.offCanvas-menu a {
   width: 54px;
   height: 54px;
+  margin: 11px;
   flex: 0 0 auto;
   display: -webkit-box;
   display: -moz-box;
@@ -4151,7 +4154,7 @@ textarea {
     	04. Brand
 ===============================*/
 .brand__area {
-  padding: 50px 50px;
+  padding: 20px 20px;
   background: var(--tg-color-gray-3);
 }
 
@@ -13772,7 +13775,7 @@ blockquote cite {
   background: #014858;
   background-position: center;
   padding: 195px 0 0;
-  margin-top: -110px;
+  margin-top: -180px;
 }
 
 @media (max-width: 767.98px) {
@@ -13784,6 +13787,7 @@ blockquote cite {
 .footer__bg-two {
   margin-top: 0;
   padding: 120px 0 0;
+
 }
 
 .footer__cta-wrap {
@@ -14066,17 +14070,19 @@ blockquote cite {
 }
 
 .footer__logo {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .footer__logo img {
-  height: 90px;
-  width: 90px;
+  height: 80px;
+  width: 80px;
 }
 
 @media (max-width: 991.98px) {
   .footer__logo img {
-    width: 50px;
+    width: 80px;
+    height: 80px;
+
   }
 }
 
