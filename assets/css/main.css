@@ -1545,7 +1545,7 @@ textarea {
   justify-content: center;
   line-height: 0;
   position: fixed;
-  bottom: -10%;
+  bottom: -50%;
   right: 50px;
   font-size: 16px;
   border-radius: 0;
@@ -1590,12 +1590,12 @@ textarea {
 }
 
 .scroll__top.open {
-  bottom: 30px;
+  bottom: 75px;
 }
 
 @media (max-width: 1199.98px) {
   .scroll__top.open {
-    bottom: 25px;
+    bottom: 60px;
   }
 }
 
@@ -14423,8 +14423,8 @@ blockquote cite {
 
 .whatsapp-float {
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   bottom: 25px;
   left: 25px;
   background-color: #25d366;
