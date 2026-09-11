@@ -1312,6 +1312,7 @@ textarea {
   background-size: cover;
   background-position: center;
   padding: 150px 0 90px;
+  min-height: 500px;
   position: relative;
   z-index: 1;
 }

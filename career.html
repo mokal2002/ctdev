@@ -22,6 +22,181 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/style.css">
+    <style>
+        .job-apply-submit {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            /* keeps the strip contained inside the button's rounded corners */
+        }
+
+        /* the thin progress strip */
+        .job-apply-submit .progress-strip {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 0%;
+            background: rgba(255, 255, 255, 0.9);
+            transition: width 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .job-apply-submit.is-loading .progress-strip {
+            width: 92%;
+            /* stalls near-complete until the real response arrives */
+        }
+
+        .job-apply-submit.is-done .progress-strip {
+            width: 100%;
+            transition: width 0.2s ease;
+        }
+
+        /* button text fades while loading/done, checkmark takes over */
+        .job-apply-submit .btn-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .job-apply-submit.is-loading .btn-text,
+        .job-apply-submit.is-done .btn-text {
+            opacity: 0;
+            transform: translateY(4px);
+        }
+
+        /* checkmark, hidden until success */
+        .job-apply-submit .check-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        .job-apply-submit.is-done .check-icon {
+            opacity: 1;
+        }
+
+        .job-apply-submit .check-icon path {
+            stroke-dasharray: 24;
+            stroke-dashoffset: 24;
+        }
+
+        .job-apply-submit.is-done .check-icon path {
+            animation: draw-check 0.4s ease forwards 0.15s;
+        }
+
+        @keyframes draw-check {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+    <style>
+        .breadcrumb__hiring-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .breadcrumb__hiring-badge .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #4ADE80;
+            box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+            animation: hiring-pulse 1.8s infinite;
+        }
+
+        @keyframes hiring-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55);
+            }
+
+            70% {
+                box-shadow: 0 0 0 8px rgba(74, 222, 128, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .breadcrumb__hiring-badge .dot {
+                animation: none;
+            }
+        }
+
+        /* Divider between the collapsed card and the expanded details */
+        .job__details-inner {
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            margin-top: 26px;
+            padding-top: 30px;
+        }
+
+        /* Smooth arrow rotation on expand/collapse */
+        .job__toggle-trigger .toggle-arrow {
+            transition: transform 0.25s ease;
+        }
+
+        .job__details-panel {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+        }
+
+        .job__details-panel.is-open {
+            opacity: 1;
+        }
+
+        .job__details-inner {
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            margin-top: 26px;
+            padding-top: 30px;
+        }
+
+        .job__toggle-trigger .toggle-arrow {
+            transition: transform 0.25s ease;
+        }
+
+        input[type="tel"] {
+            /* margin-top: 10px;
+            margin-bottom: 10px; */
+            border: 1px solid var(--tg-border-4);
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--tg-heading-color);
+            background: var(--tg-color-gray-2);
+            width: 100%;
+            padding: 10px 16px;
+            height: 45px;
+            display: block;
+        }
+
+        input[type="tel"]::placeholder {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        #apply-form .form-grp {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -186,7 +361,7 @@
                                                 </svg>
                                             </a>
                                         </li> -->
-                                        
+
                                         <li class="offCanvas-menu">
                                             <a href="#!" class="menu-tigger">
                                                 <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
@@ -477,258 +652,57 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb__content">
-                            <h2 class="title">Crescent Technoserve Careers</h2>
+
+                            <span class="breadcrumb__hiring-badge">
+                                <span class="dot"></span> We're hiring
+                            </span>
+
+                            <h2 class="title">Join our team</h2>
+
+                            <p
+                                style="color:#ffffff; opacity:0.92; max-width:620px; font-size:17px; margin-bottom:30px;">
+                                Crescent Technoserve is built on curiosity and craft. Here, every voice counts, every
+                                challenge is a chance to grow, and every person has the room to go further than they
+                                thought possible.
+                            </p>
+
+                            <a href="#job-circular" class="tg-btn white-btn">
+                                View Open Positions
+                            </a>
+
                             <!-- <nav class="breadcrumb">
-                                <span property="itemListElement" typeof="ListItem">
-                                    <a href="index.html">Home</a>
-                                </span>
-                                <span class="breadcrumb-separator">/</span>
-                                <span property="itemListElement" typeof="ListItem">Career</span>
-                            </nav> -->
+                        <span property="itemListElement" typeof="ListItem">
+                            <a href="index.html">Home</a>
+                        </span>
+                        <span class="breadcrumb-separator">/</span>
+                        <span property="itemListElement" typeof="ListItem">Career</span>
+                    </nav> -->
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- breadcrumb-area-end -->
-
-        <!-- career-area -->
-        <!-- <section class="career__area section-py-120">
-            <div class="container">
-                <div class="career__slider-wrap">
-                    <div class="swiper-container career__active" id="careerSlider" data-swiper-options='{
-                        "loop": true,
-                        "effect": "fade",
-                        "autoplay": { "delay": 8000 },
-                        "breakpoints": {
-                            "0": { "spaceBetween": 0, "slidesPerView": 1 },
-                            "375": { "spaceBetween": 0, "slidesPerView": 1 },
-                            "575": { "spaceBetween": 0, "slidesPerView": 1 },
-                            "768": { "spaceBetween": 0, "slidesPerView": 1 },
-                            "992": { "spaceBetween": 0, "slidesPerView": 1 },
-                            "1400": { "spaceBetween": 0, "slidesPerView": 1 }
-                        },
-                        "navigation": {
-                            "nextEl": ".career-button-next",
-                            "prevEl": ".career-button-prev"
-                        }}'>
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="career__img">
-                                    <img src="assets/img/slider/h2_slider_bg01.jpg" alt="img">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="career__img">
-                                    <img src="assets/img/slider/h2_slider_bg02.jpg" alt="img">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="career__img">
-                                    <img src="assets/img/slider/h2_slider_bg03.jpg" alt="img">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="career__img">
-                                    <img src="assets/img/project/project_details.jpg" alt="img">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="career__nav-wrap">
-                        <button class="career-button-prev">
-                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M17.9997 7.99998H1.33301M1.33301 7.99998L7.99967 14.6666M1.33301 7.99998L7.99967 1.33331"
-                                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <button class="career-button-next">
-                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M2.00033 7.99998H18.667M18.667 7.99998L12.0003 14.6666M18.667 7.99998L12.0003 1.33331"
-                                    stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="career__content">
-                            <div class="section__title section__title-two mb-25">
-                                <span class="sub-title">Crescent Technoserve Careers</span>
-                                <h2 class="title">Crescent Technoserve is an IT company that helps businesses grow <br>
-                                    with smart technology.</h2>
-                            </div>
-                            <p>Each demo built with Teba will look different. You can customize almost anything offer
-                                your website with onl fewlicks Each demo built with Teba will xceptional opportu nities
-                                with interdependent users.Each demo built with eba will look different. You can
-                                customize almost anything in the appearance offer your website with on few clicks Each
-                                demo built with Teba will look differentUniquely.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- career-area-end -->
-
-        <!-- company-benefit-area -->
-        <!-- <section class="company__benefit-area section-pb-140">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 order-0 order-lg-2">
-                        <div class="company__benefit-img">
-                            <img src="assets/img/images/company.jpg" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="company__benefit-content">
-                            <div class="section__title section__title-two mb-25">
-                                <span class="sub-title">Company Benefits</span>
-                                <h2 class="title">We Provide Awesome Benefits For Employees</h2>
-                            </div>
-                            <p>Each demo built with Teba will look different. You can customalmost anything in the ap
-                                pearance of your website witnly a few clicks ach demo built different.Each demo built
-                                with Teba will look different.</p>
-                            <ul class="choose__list choose__list-three choose__list-four choose__list-five list-wrap">
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Excellent Culture & Environment
-                                </li>
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Gym Facilities
-                                </li>
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Relax & Sports zone
-                                </li>
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Free Shuttle Service
-                                </li>
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Dual Festival Bonuses
-                                </li>
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Loyalty Bonus
-                                </li>
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Annual Pleasure Tour
-                                </li>
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Excellent Culture & Environment
-                                </li>
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Meals, Coffee & Snacks
-                                </li>
-                                <li>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
-                                            fill="currentColor" />
-                                        <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636" stroke="white"
-                                            stroke-width="2.18182" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Leave Encashment
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- company-benefit-area-end -->
 
         <!-- job-area -->
-        <section class="job__area section-bg section-py-140">
+        <section class="job__area section-bg section-py-140" id="job-circular">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="section__title section__title-two text-center mb-50">
                             <span class="sub-title">Job Circular</span>
                             <h2 class="title">Ready to Join Our Team</h2>
-                            <p>Each demo built with Teba will look different. You can customalmost anything appearance
-                                of your website witonly a few click</p>
+                            <p>Explore our current openings and find where you fit best.</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="row gutter-y-30">
+
+                    <!-- ============ JOB CARD TEMPLATE — duplicate this whole .col-lg-12 block per job ============ -->
                     <div class="col-lg-12 col-md-6">
                         <div class="job__item">
+
                             <ul class="list-wrap job__meta">
                                 <li><span>Full time</span></li>
                                 <li>
@@ -746,25 +720,133 @@
                                     Mumbai, India
                                 </li>
                             </ul>
-                            <h2 class="title"><a href="career-details.html">Digital Marketing Excutive</a></h2>
-                            <p>when an unknown printer took a galley type and scramble dmake a type specimen book. It
-                                has survived not only five but also the leap centuries,</p>
+
+                            <h2 class="title">Job Title Here</h2>
+                            <p>Short one-line summary of the role goes here.</p>
+
                             <div class="job__bottom">
-                                <span class="salary">₹10,000 - ₹ 12,000 / Month</span>
-                                <a href="career-details.html" class="tg-btn">Apply Now
-                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                <span class="salary">₹0,000 - ₹0,000 / Month</span>
+                                <a href="javascript:void(0);" class="tg-btn job__toggle-trigger">
+                                    <span class="btn-label">View Details</span>
+                                    <svg class="toggle-arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
                                         <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </a>
                             </div>
+
+                            <!-- Expandable details panel -->
+                            <div class="job__details-panel">
+                                <div class="job__details-inner">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="career__details-content">
+                                                <h2 class="title">Job Overview:</h2>
+                                                <p>Add job overview here.</p>
+
+                                                <div class="career__details-content-inner">
+                                                    <h3 class="title-two">Job Responsibilities</h3>
+                                                    <ul
+                                                        class="choose__list choose__list-three choose__list-four list-wrap">
+                                                        <li>
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
+                                                                    fill="currentColor" />
+                                                                <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636"
+                                                                    stroke="white" stroke-width="2.18182"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                            Add responsibility here
+                                                        </li>
+                                                        <li>
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
+                                                                    fill="currentColor" />
+                                                                <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636"
+                                                                    stroke="white" stroke-width="2.18182"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                            Add responsibility here
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="career__details-content-inner">
+                                                    <h3 class="title-two">Qualifications</h3>
+                                                    <ul class="choose__list choose__list-three list-wrap">
+                                                        <li>
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
+                                                                    fill="currentColor" />
+                                                                <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636"
+                                                                    stroke="white" stroke-width="2.18182"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                            Add qualification here
+                                                        </li>
+                                                        <li>
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
+                                                                    fill="currentColor" />
+                                                                <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636"
+                                                                    stroke="white" stroke-width="2.18182"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                            Add qualification here
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <aside class="services__sidebar">
+                                                <div class="sidebar__widget">
+                                                    <h2 class="widget__title">Job Information</h2>
+                                                    <div class="job__info-wrap">
+                                                        <ul class="list-wrap">
+                                                            <li><span>Position:</span> Job Title Here</li>
+                                                            <li><span>Job Type:</span> Full Time</li>
+                                                            <li><span>Job Duration:</span> 09:00 am - 06:00 pm</li>
+                                                            <li><span>Location:</span> Mumbai, India</li>
+                                                        </ul>
+                                                        <a href="#apply-form" class="tg-btn">Apply Now
+                                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor"
+                                                                    stroke-width="1.6" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor"
+                                                                    stroke-width="1.6" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                            </aside>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /details panel -->
+
                         </div>
                     </div>
+                    <!-- ============ END TEMPLATE — duplicate above block, change content, repeat per job ============ -->
+                    <!-- ============ JOB CARD TEMPLATE — duplicate this whole .col-lg-12 block per job ============ -->
                     <div class="col-lg-12 col-md-6">
                         <div class="job__item">
+
                             <ul class="list-wrap job__meta">
                                 <li><span>Full time</span></li>
                                 <li>
@@ -782,198 +864,200 @@
                                     Mumbai, India
                                 </li>
                             </ul>
-                            <h2 class="title"><a href="career-details.html">Sr.WordPress Developer</a></h2>
-                            <p>when an unknown printer took a galley type and scramble dmake a type specimen book. It
-                                has survived not only five but also the leap centuries,</p>
+
+                            <h2 class="title">Job Title Here</h2>
+                            <p>Short one-line summary of the role goes here.</p>
+
                             <div class="job__bottom">
-                                <span class="salary">₹10,000 - ₹ 12,000 / Month</span>
-                                <a href="career-details.html" class="tg-btn">Apply Now
-                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                <span class="salary">₹0,000 - ₹0,000 / Month</span>
+                                <a href="javascript:void(0);" class="tg-btn job__toggle-trigger">
+                                    <span class="btn-label">View Details</span>
+                                    <svg class="toggle-arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
                                         <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-6">
-                        <div class="job__item">
-                            <ul class="list-wrap job__meta">
-                                <li><span>Full time</span></li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M16.6671 8.38381C16.6671 14.0404 9.44488 18.8889 9.44488 18.8889C9.44488 18.8889 2.22266 14.0404 2.22266 8.38381C2.22266 6.45496 2.98357 4.60512 4.338 3.24122C5.69243 1.87732 7.52943 1.11108 9.44488 1.11108C11.3603 1.11108 13.1973 1.87732 14.5518 3.24122C15.9062 4.60512 16.6671 6.45496 16.6671 8.38381Z"
-                                            stroke="currentColor" stroke-width="1.44444" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M9.44488 10.8081C10.7745 10.8081 11.8523 9.72268 11.8523 8.38381C11.8523 7.04494 10.7745 5.95957 9.44488 5.95957C8.1153 5.95957 7.03747 7.04494 7.03747 8.38381C7.03747 9.72268 8.1153 10.8081 9.44488 10.8081Z"
-                                            stroke="currentColor" stroke-width="1.44444" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                    Mumbai, India
-                                </li>
-                            </ul>
-                            <h2 class="title"><a href="career-details.html">Product Designer</a></h2>
-                            <p>when an unknown printer took a galley type and scramble dmake a type specimen book. It
-                                has survived not only five but also the leap centuries,</p>
-                            <div class="job__bottom">
-                                <span class="salary">₹10,000 - ₹ 12,000 / Month</span>
-                                <a href="career-details.html" class="tg-btn">Apply Now
-                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </a>
+
+                            <!-- Expandable details panel -->
+                            <div class="job__details-panel">
+                                <div class="job__details-inner">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="career__details-content">
+                                                <h2 class="title">Job Overview:</h2>
+                                                <p>Add job overview here.</p>
+
+                                                <div class="career__details-content-inner">
+                                                    <h3 class="title-two">Job Responsibilities</h3>
+                                                    <ul
+                                                        class="choose__list choose__list-three choose__list-four list-wrap">
+                                                        <li>
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
+                                                                    fill="currentColor" />
+                                                                <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636"
+                                                                    stroke="white" stroke-width="2.18182"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                            Add responsibility here
+                                                        </li>
+                                                        <li>
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
+                                                                    fill="currentColor" />
+                                                                <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636"
+                                                                    stroke="white" stroke-width="2.18182"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                            Add responsibility here
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="career__details-content-inner">
+                                                    <h3 class="title-two">Qualifications</h3>
+                                                    <ul class="choose__list choose__list-three list-wrap">
+                                                        <li>
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
+                                                                    fill="currentColor" />
+                                                                <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636"
+                                                                    stroke="white" stroke-width="2.18182"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                            Add qualification here
+                                                        </li>
+                                                        <li>
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M29.9142 11.0033C30.4204 12.8928 28.5305 14.9239 28.2895 16.7482C28.0392 18.6401 29.31 21.0892 28.372 22.7197C27.434 24.35 24.6725 24.4711 23.1593 25.6339C21.7009 26.7586 20.8849 29.4083 18.9964 29.9144C17.108 30.4204 15.0765 28.5295 13.251 28.2886C11.3592 28.0384 8.91003 29.3092 7.27958 28.3713C5.64914 27.4332 5.52798 24.6719 4.36627 23.1584C3.24138 21.7001 0.592009 20.885 0.0857368 18.9957C-0.420555 17.1063 1.47056 15.0757 1.71164 13.2514C1.96094 11.3598 0.690114 8.91071 1.62814 7.2803C2.56617 5.6499 5.32758 5.52875 6.84086 4.3661C8.30021 3.24097 9.1152 0.591668 11.0037 0.0856724C12.8922 -0.420342 14.9247 1.47019 16.7491 1.71127C18.641 1.96154 21.0903 0.69075 22.7206 1.62875C24.3511 2.56676 24.4722 5.3281 25.6349 6.84134C26.7545 8.29583 29.4068 9.11001 29.9142 11.0033Z"
+                                                                    fill="currentColor" />
+                                                                <path d="M20.8182 10.5L12.8182 18.5L9.18182 14.8636"
+                                                                    stroke="white" stroke-width="2.18182"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                            Add qualification here
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4">
+                                            <aside class="services__sidebar">
+                                                <div class="sidebar__widget">
+                                                    <h2 class="widget__title">Job Information</h2>
+                                                    <div class="job__info-wrap">
+                                                        <ul class="list-wrap">
+                                                            <li><span>Position:</span> Job Title Here</li>
+                                                            <li><span>Job Type:</span> Full Time</li>
+                                                            <li><span>Job Duration:</span> 09:00 am - 06:00 pm</li>
+                                                            <li><span>Location:</span> Mumbai, India</li>
+                                                        </ul>
+                                                        <a href="#apply-form" class="tg-btn">Apply Now
+                                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor"
+                                                                    stroke-width="1.6" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor"
+                                                                    stroke-width="1.6" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </aside>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- /details panel -->
+
                         </div>
                     </div>
-                    <div class="col-lg-12 col-md-6">
-                        <div class="job__item">
-                            <ul class="list-wrap job__meta">
-                                <li><span>Full time</span></li>
-                                <li>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M16.6671 8.38381C16.6671 14.0404 9.44488 18.8889 9.44488 18.8889C9.44488 18.8889 2.22266 14.0404 2.22266 8.38381C2.22266 6.45496 2.98357 4.60512 4.338 3.24122C5.69243 1.87732 7.52943 1.11108 9.44488 1.11108C11.3603 1.11108 13.1973 1.87732 14.5518 3.24122C15.9062 4.60512 16.6671 6.45496 16.6671 8.38381Z"
-                                            stroke="currentColor" stroke-width="1.44444" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M9.44488 10.8081C10.7745 10.8081 11.8523 9.72268 11.8523 8.38381C11.8523 7.04494 10.7745 5.95957 9.44488 5.95957C8.1153 5.95957 7.03747 7.04494 7.03747 8.38381C7.03747 9.72268 8.1153 10.8081 9.44488 10.8081Z"
-                                            stroke="currentColor" stroke-width="1.44444" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                    Mumbai, India
-                                </li>
-                            </ul>
-                            <h2 class="title"><a href="career-details.html">Jr.Content Writer</a></h2>
-                            <p>when an unknown printer took a galley type and scramble dmake a type specimen book. It
-                                has survived not only five but also the leap centuries,</p>
-                            <div class="job__bottom">
-                                <span class="salary">₹10,000 - ₹ 12,000 / Month</span>
-                                <a href="career-details.html" class="tg-btn">Apply Now
-                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- ============ END TEMPLATE — duplicate above block, change content, repeat per job ============ -->
                 </div>
             </div>
         </section>
-        <!-- job-area-end -->
 
-        <!-- contact-area -->
-        <!-- <section class="contact__area-three fix section-py-140">
+        <!-- job-form-area -->
+        <section id="apply-form" class="job__form-area section-bg section-py-140">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="contact__content-two">
-                            <div class="section__title section__title-two mb-25">
-                                <span class="sub-title">Our security Contact us</span>
-                                <h2 class="title">Let’s build an awesome project together</h2>
+                <div class="contact__form-wrap contact__form-wrap-four">
+                    <h3 class="title">Apply Form</h3>
+                    <p>Digital Marketing Executive</p>
+                    <form id="contact-form" class="contact-form" action="scripts/apply.php" method="POST"
+                        enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-grp">
+                                    <input type="text" name="name" placeholder="Your Name*" required>
+                                </div>
                             </div>
-                            <p>Each demo built with Teba will look different. You can customize almost anything in the
-                                appearance of your website with only Each demo built with Teba will look different.</p>
-                            <div class="contact__info-list contact__info-list-two">
-                                <div class="contact__info-item contact__info-item-two">
-                                    <div class="icon">
-                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M25 12.5761C25 21.0609 14.1667 28.3337 14.1667 28.3337C14.1667 28.3337 3.33334 21.0609 3.33334 12.5761C3.33334 9.68281 4.47471 6.90804 6.50635 4.86219C8.538 2.81634 11.2935 1.66699 14.1667 1.66699C17.0399 1.66699 19.7954 2.81634 21.827 4.86219C23.8586 6.90804 25 9.68281 25 12.5761Z"
-                                                stroke="currentColor" stroke-width="2.16667" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M14.1667 16.2124C16.161 16.2124 17.7778 14.5844 17.7778 12.5761C17.7778 10.5678 16.161 8.93972 14.1667 8.93972C12.1723 8.93972 10.5556 10.5678 10.5556 12.5761C10.5556 14.5844 12.1723 16.2124 14.1667 16.2124Z"
-                                                stroke="currentColor" stroke-width="2.16667" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <div class="content">
-                                        <h4 class="title">HD-314, WeWork Spectrum Tower, 4th Floor, Mindspace Chincholi
-                                            Bunder Road, <br> Off Link Road,
-                                            Malad (West), Mumbai, MH 400064</h4>
-                                    </div>
+                            <div class="col-md-6">
+                                <div class="form-grp">
+                                    <input type="email" name="email" placeholder="Email*" required>
                                 </div>
-                                <div class="contact__info-item contact__info-item-two">
-                                    <div class="icon">
-                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M28.3333 7.5C28.3333 6.125 27.1333 5 25.6667 5H4.33332C2.86666 5 1.66666 6.125 1.66666 7.5M28.3333 7.5V22.5C28.3333 23.875 27.1333 25 25.6667 25H4.33332C2.86666 25 1.66666 23.875 1.66666 22.5V7.5M28.3333 7.5L15 16.2501L1.66666 7.5"
-                                                stroke="currentColor" stroke-width="1.83333" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <div class="content">
-                                        <h4 class="title"><a
-                                                href="mailto:info@gmail.com">info@crescenttechnoserve,com</a></h4>
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-grp select-grp">
+                                    <select name="orderby" class="orderby">
+                                        <option value="Default sorting">Select Job Role *</option>
+                                        <option value="Desktop Engg">Desktop Engg</option>
+                                        <option value="Network Engg">Network Engg</option>
+                                    </select>
                                 </div>
-                                <div class="contact__info-item contact__info-item-two">
-                                    <div class="icon">
-                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M26.6197 20.8025V24.3151C26.6211 24.6412 26.5543 24.964 26.4236 25.2627C26.293 25.5615 26.1014 25.8297 25.8611 26.0502C25.6208 26.2706 25.3371 26.4384 25.0282 26.5429C24.7193 26.6474 24.392 26.6862 24.0672 26.6568C20.4643 26.2653 17.0034 25.0342 13.9626 23.0623C11.1336 21.2646 8.73509 18.8661 6.93742 16.0371C4.95862 12.9825 3.72718 9.50477 3.34285 5.88562C3.31359 5.56183 3.35207 5.2355 3.45584 4.92741C3.55961 4.61931 3.72639 4.33619 3.94557 4.09608C4.16475 3.85598 4.43153 3.66414 4.72891 3.53278C5.0263 3.40142 5.34777 3.33343 5.67288 3.33312H9.18548C9.75372 3.32753 10.3046 3.52875 10.7354 3.89927C11.1663 4.2698 11.4477 4.78435 11.5272 5.34702C11.6755 6.47113 11.9504 7.57486 12.3468 8.63716C12.5044 9.05624 12.5385 9.5117 12.4451 9.94956C12.3517 10.3874 12.1347 10.7893 11.8199 11.1077L10.3329 12.5947C11.9997 15.526 14.4268 17.9531 17.3582 19.6199L18.8452 18.1329C19.1635 17.8181 19.5654 17.6012 20.0033 17.5078C20.4411 17.4144 20.8966 17.4485 21.3157 17.606C22.378 18.0024 23.4817 18.2774 24.6058 18.4256C25.1746 18.5059 25.694 18.7923 26.0654 19.2306C26.4367 19.6688 26.634 20.2283 26.6197 20.8025Z"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <div class="content">
-                                        <h4 class="title"><a href="tel:0123456789">+91 77382 62069</a></h4>
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-grp">
+                                    <input type="tel" name="phone" placeholder="Phone Number">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6" data-sal="slide-left" data-sal-duration="700" data-sal-delay="300">
-                        <div class="contact__form-wrap-two contact__form-wrap-three">
-                            <h4 class="title">Fill The Contact Form</h4>
-                            <p>We’d love to hear from you, and we promise no spam</p>
-                            <form id="contact-form" action="assets/mail.php" class="contact__form-two" method="POST">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-grp">
-                                            <input type="text" name="name" placeholder="Your Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-grp">
-                                            <input type="number" name="number" placeholder="Phone Number">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-grp">
-                                    <input type="email" name="email" placeholder="E-mail Address">
-                                </div>
-                                <div class="form-grp">
-                                    <textarea name="message" placeholder="Write your message"></textarea>
-                                </div>
-                                <button type="submit" class="tg-btn">Send Message</button>
-                            </form>
-                            <p class="ajax-response mb-0"></p>
+                        <div class="form-grp">
+                            <textarea name="message" placeholder="Write your message" required></textarea>
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Upload Your CV</label>
+                            <input class="form-control" name="cv" type="file" id="formFile" accept=".pdf,.doc,.docx"
+                                required>
+                        </div>
+                        <!-- replace your submit button markup with this -->
+                        <button type="submit" class="tg-btn job-apply-submit">
+                            <span class="btn-text">
+                                Submit Application
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+
+                            <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 10L8 14L16 6" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+
+                            <span class="progress-strip"></span>
+                        </button>
+                    </form>
+
+                    <p class="ajax-response mb-0"></p>
                 </div>
             </div>
-        </section> -->
-        <!-- contact-area-end -->
-
+        </section>
+        <!-- job-form-area-end -->
     </main>
     <!-- main-area-end -->
 
@@ -1005,8 +1089,7 @@
                     <div class="col-lg-4 col-md-5 col-sm-6">
                         <div class="footer__widget">
                             <div class="footer__logo">
-                                <a href="index.html"><img src="assets/img/logo/creswhitelogo.svg" alt="logo"
-                                        ></a>
+                                <a href="index.html"><img src="assets/img/logo/creswhitelogo.svg" alt="logo"></a>
                             </div>
                             <div class="footer__content">
                                 <p>Empowering businesses with smart IT solutions, innovation, and trusted support.</p>
@@ -1133,6 +1216,119 @@
     <script src="assets/js/ajax-form.js"></script>
     <script src="assets/js/sal.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function closeCard(card) {
+                var panel = card.querySelector('.job__details-panel');
+                var btn = card.querySelector('.job__toggle-trigger');
+                var label = btn.querySelector('.btn-label');
+                var arrow = btn.querySelector('.toggle-arrow');
+
+                panel.style.maxHeight = panel.scrollHeight + 'px'; // lock current height first
+                requestAnimationFrame(function () {
+                    panel.style.maxHeight = '0px';
+                });
+                panel.classList.remove('is-open');
+                if (label) label.textContent = 'View Details';
+                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            }
+
+            function openCard(card) {
+                var panel = card.querySelector('.job__details-panel');
+                var btn = card.querySelector('.job__toggle-trigger');
+                var label = btn.querySelector('.btn-label');
+                var arrow = btn.querySelector('.toggle-arrow');
+
+                panel.classList.add('is-open');
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                if (label) label.textContent = 'Hide Details';
+                if (arrow) arrow.style.transform = 'rotate(45deg)';
+
+                // once open, release the fixed height so content (e.g. window resize) isn't clipped later
+                panel.addEventListener('transitionend', function handler() {
+                    if (panel.classList.contains('is-open')) {
+                        panel.style.maxHeight = 'none';
+                    }
+                    panel.removeEventListener('transitionend', handler);
+                });
+            }
+
+            document.querySelectorAll('.job__toggle-trigger').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var card = btn.closest('.job__item');
+                    var panel = card.querySelector('.job__details-panel');
+                    var isOpen = panel.classList.contains('is-open');
+
+                    // close any other open card first
+                    document.querySelectorAll('.job__item').forEach(function (otherCard) {
+                        if (otherCard !== card) closeCard(otherCard);
+                    });
+
+                    if (isOpen) {
+                        closeCard(card);
+                    } else {
+                        openCard(card);
+                        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('contact-form');
+            if (!form) return;
+
+            var submitBtn = form.querySelector('.job-apply-submit') || form.querySelector('button[type="submit"]');
+            var responseEl = document.querySelector('.ajax-response');
+
+            // wrap existing button text so we can fade it during loading
+            if (submitBtn && !submitBtn.querySelector('.btn-text')) {
+                submitBtn.innerHTML = '<span class="btn-text">' + submitBtn.innerHTML + '</span><span class="spinner"></span>';
+            }
+
+            // updated submit handler — swap in for the fetch section from before
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                submitBtn.classList.remove('is-done');
+                submitBtn.classList.add('is-loading');
+                submitBtn.disabled = true;
+                responseEl.classList.remove('show', 'success', 'error');
+
+                var formData = new FormData(form);
+
+                fetch(form.action, { method: 'POST', body: formData })
+                    .then(function (res) { return res.json(); })
+                    .then(function (data) {
+                        submitBtn.classList.remove('is-loading');
+
+                        if (data.status === 'success') {
+                            submitBtn.classList.add('is-done');
+                            setTimeout(function () {
+                                submitBtn.classList.remove('is-done');
+                                submitBtn.disabled = false;
+                                form.reset();
+                            }, 1400); // hold the checkmark a beat before resetting the button
+                        } else {
+                            submitBtn.disabled = false;
+                        }
+
+                        responseEl.textContent = data.message;
+                        responseEl.classList.add('show', data.status === 'success' ? 'success' : 'error');
+                    })
+                    .catch(function () {
+                        submitBtn.classList.remove('is-loading');
+                        submitBtn.disabled = false;
+                        responseEl.textContent = 'Network error — please check your connection and try again.';
+                        responseEl.classList.add('show', 'error');
+                    });
+            });
+        });
+    </script>
 </body>
 
 </html>

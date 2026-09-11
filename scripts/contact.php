@@ -2,96 +2,95 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../PHPMailer/src/Exception.php';
-require '../PHPMailer/src/PHPMailer.php';
-require '../PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    exit("Invalid request");
+    http_response_code(405);
+    echo json_encode(["status" => "error", "message" => "Invalid request"]);
+    exit;
 }
 
-// -------- VERIFY RECAPTCHA --------
-$secretKey = "6Ld_SWssAAAAAHIzCfOpE8S3cmJ7-hGkM4YlzG4q";
-$recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+// -------- FORM DATA (sanitized) --------
+$name    = trim(htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8'));
+$email   = trim(filter_var($_POST['email'] ?? '', FILTER_SANITIZE_EMAIL));
+$jobRole = trim(htmlspecialchars($_POST['orderby'] ?? '', ENT_QUOTES, 'UTF-8'));
+$phone   = trim(htmlspecialchars($_POST['phone'] ?? '', ENT_QUOTES, 'UTF-8'));
+$message = trim(htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8'));
 
-if (!$recaptchaResponse) {
-    exit("Please complete reCAPTCHA");
+if (!$name || !$email || !$message || !$jobRole) {
+    http_response_code(400);
+    echo json_encode(["status" => "error", "message" => "Please fill in all required fields."]);
+    exit;
 }
 
-$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaResponse");
-$responseData = json_decode($verify);
-
-if (!$responseData->success) {
-    exit("reCAPTCHA verification failed");
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo json_encode(["status" => "error", "message" => "Please enter a valid email address."]);
+    exit;
 }
 
-// -------- SANITIZE --------
-$fname   = htmlspecialchars($_POST['fname'] ?? '');
-$lname   = htmlspecialchars($_POST['lname'] ?? '');
-$email   = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
-$number  = htmlspecialchars($_POST['number'] ?? '');
-$message = htmlspecialchars($_POST['messages'] ?? '');
-
-if (!$fname || !$email || !$number) {
-    exit("Required fields missing");
+// -------- FILE (validated) --------
+if (!isset($_FILES['cv']) || $_FILES['cv']['error'] !== 0) {
+    http_response_code(400);
+    echo json_encode(["status" => "error", "message" => "CV upload failed or missing."]);
+    exit;
 }
 
-// -------- ADMIN MAIL --------
+$fileTmp  = $_FILES['cv']['tmp_name'];
+$fileName = $_FILES['cv']['name'];
+$fileSize = $_FILES['cv']['size'];
+$allowedExt = ['pdf', 'doc', 'docx'];
+$ext = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+if (!in_array($ext, $allowedExt)) {
+    http_response_code(400);
+    echo json_encode(["status" => "error", "message" => "Only PDF, DOC, or DOCX files are allowed."]);
+    exit;
+}
+
+if ($fileSize > 5 * 1024 * 1024) { // 5MB limit
+    http_response_code(400);
+    echo json_encode(["status" => "error", "message" => "File is too large — max 5MB."]);
+    exit;
+}
+
+// -------- MAIL --------
 $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'contact.crescenttechno@gmail.com';
-    $mail->Password   = 'vtdotbcohduazfpw';
+    $mail->Username   = getenv('contact.crescenttechno@gmail.com');   // moved out of source
+    $mail->Password   = getenv('vtdotbcohduazfpw'); // moved out of source
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
-    $mail->setFrom('contact.crescenttechno@gmail.com', 'Website Contact');
-    $mail->addReplyTo($email, $fname);
+    $mail->setFrom($mail->Username, 'Career Applications'); // use YOUR address as From
+    $mail->addReplyTo($email, $name); // so replying goes to the applicant
     $mail->addAddress('support@crescenttechnoserve.com');
 
+    $mail->addAttachment($fileTmp, $fileName);
+
     $mail->isHTML(true);
-    $mail->Subject = "New Contact Message from $fname";
+    $mail->Subject = "Job Application - $jobRole - $name";
     $mail->Body    = "
-        <h3>New Contact Message</h3>
-        <p><strong>Name:</strong> $fname $lname</p>
+        <h3>New Job Application</h3>
+        <p><strong>Position:</strong> $jobRole</p>
+        <p><strong>Name:</strong> $name</p>
         <p><strong>Email:</strong> $email</p>
-        <p><strong>Phone:</strong> $number</p>
-        <p><strong>Message:</strong><br>$message</p>
+        <p><strong>Phone:</strong> $phone</p>
+        <p><strong>Message:</strong><br>" . nl2br($message) . "</p>
     ";
 
     $mail->send();
-
-    // -------- AUTO REPLY --------
-    $autoReply = new PHPMailer(true);
-
-    $autoReply->isSMTP();
-    $autoReply->Host       = 'smtp.gmail.com';
-    $autoReply->SMTPAuth   = true;
-    $autoReply->Username   = 'contact.crescenttechno@gmail.com';
-    $autoReply->Password   = 'vtdotbcohduazfpw';
-    $autoReply->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $autoReply->Port       = 587;
-
-    $autoReply->setFrom('contact.crescenttechno@gmail.com', 'Crescent Technoserve');
-    $autoReply->addAddress($email, $fname);
-
-    $autoReply->isHTML(true);
-    $autoReply->Subject = "Thank You for Contacting Us";
-    $autoReply->Body    = "
-        <h3>Hello $fname 👋</h3>
-        <p>Thank you for contacting us.</p>
-        <p>We have received your message and will respond shortly.</p>
-        <br>
-        <p><strong>Best Regards</strong><br>Crescent Technoserve</p>
-    ";
-
-    $autoReply->send();
-
-    echo "success";
+    echo json_encode(["status" => "success", "message" => "Application submitted successfully!"]);
 
 } catch (Exception $e) {
-    echo "Mailer Error: {$mail->ErrorInfo}";
+    http_response_code(500);
+    echo json_encode(["status" => "error", "message" => "Something went wrong sending your application. Please try again."]);
 }
