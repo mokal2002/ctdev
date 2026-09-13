@@ -3540,7 +3540,7 @@ textarea {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(90deg, #045b6d91 25.96%, rgba(3, 104, 151, 0.233) 100%);
+  background: linear-gradient(90deg, #045b6d98 25.96%, rgba(3, 104, 151, 0.233) 100%);
 }
 @media (max-width: 991.98px) {
   .slider__bg-img {
