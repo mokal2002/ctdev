@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Development/test files — not meant to be indexed
+Disallow: /test.html
+Disallow: /test0.html
+Disallow: /test2.html
+Disallow: /test3.html
+Disallow: /testpage.html
+Disallow: /manage_service.html
+Disallow: /itconsultant-pomeroy.html
+Disallow: /cloudsolution-updated.html
+Disallow: /networkandsecurity.html
+Disallow: /index%20copy.html
+
+Sitemap: https://www.crescenttechnoserve.com/sitemap.xml
