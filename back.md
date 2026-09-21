@@ -1824,3 +1824,57 @@ try {
 </body>
 
 </html>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const form = document.getElementById("contactFormHome");
+            const responseBox = document.querySelector(".ajax-response");
+
+            if (!form) {
+                console.log("Form not found");
+                return;
+            }
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault(); // STOP normal submission
+
+                const button = form.querySelector("button[type='submit']");
+                const originalText = button.innerHTML;
+
+                // Disable button
+                button.disabled = true;
+                button.innerHTML = "Sending...";
+
+                const formData = new FormData(form);
+
+                fetch("scripts/contact.php", {
+                    method: "POST",
+                    body: formData
+                })
+                    .then(res => res.text())
+                    .then(data => {
+                        if (data.trim() === "success") {
+                            responseBox.innerHTML = "✅ Message sent successfully!";
+                            responseBox.style.color = "green";
+                            form.reset();
+                            if (typeof grecaptcha !== "undefined") {
+                                grecaptcha.reset();
+                            }
+                        } else {
+                            responseBox.innerHTML = "❌ " + data;
+                            responseBox.style.color = "red";
+                        }
+                    })
+                    .catch(error => {
+                        responseBox.innerHTML = "❌ Error sending message.";
+                        responseBox.style.color = "red";
+                        console.error(error);
+                    })
+                    .finally(() => {
+                        button.disabled = false;
+                        button.innerHTML = originalText;
+                    });
+            });
+
+        });
+    </script>

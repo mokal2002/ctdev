@@ -5546,6 +5546,8 @@ textarea {
   font-size: 2rem;
 }
 
+.counter__area-two h2 { color: white; font-size: 2rem; }
+
 @media (max-width: 767.98px) {
   .counter__area-two {
     padding: 60px 0 60px;
