@@ -144,16 +144,15 @@
         .partner-grid {
             width: min(1180px, calc(100% - 40px));
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(5, minmax(120px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
-            justify-items: center;
-            column-gap: 48px;
-            row-gap: 42px;
+            gap: 42px 48px;
         }
 
         .partner-card {
-            width: 100%;
+            width: 180px;
             min-height: 92px;
             display: flex;
             align-items: center;
@@ -217,8 +216,7 @@
 
         @media (max-width: 1199px) {
             .partner-grid {
-                grid-template-columns: repeat(4, minmax(120px, 1fr));
-                column-gap: 35px;
+                gap: 42px 35px;
             }
         }
 
@@ -228,9 +226,11 @@
             }
 
             .partner-grid {
-                grid-template-columns: repeat(3, minmax(110px, 1fr));
-                column-gap: 25px;
-                row-gap: 34px;
+                gap: 34px 25px;
+            }
+
+            .partner-card {
+                width: 160px;
             }
 
             .partner-card img {
@@ -268,12 +268,11 @@
 
             .partner-grid {
                 width: calc(100% - 30px);
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                column-gap: 15px;
-                row-gap: 28px;
+                gap: 28px 15px;
             }
 
             .partner-card {
+                width: 140px;
                 min-height: 70px;
                 padding: 8px;
             }
@@ -286,7 +285,11 @@
 
         @media (max-width: 400px) {
             .partner-grid {
-                column-gap: 8px;
+                gap: 24px 8px;
+            }
+
+            .partner-card {
+                width: 125px;
             }
 
             .partner-card img {
@@ -686,7 +689,7 @@
     <main class="main-area">
 
         <!-- breadcrumb-area -->
-        <section class="breadcrumb__area breadcrumb__bg fix" data-background="assets/img/bg/bg_bread.png">
+        <section class="breadcrumb__area breadcrumb__bg fix" data-background="assets/images/partners/bread_bg.png">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -740,15 +743,15 @@
                 </div>
 
                 <div class="partner-grid">
-                    <div class="partner-card" title="Dell"><img src="https://logo.clearbit.com/dell.com?size=160" alt="Dell logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Dell</span></div>
-                    <div class="partner-card" title="HP"><img src="https://logo.clearbit.com/hp.com?size=160" alt="HP logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">HP</span></div>
-                    <div class="partner-card" title="Lenovo"><img src="https://logo.clearbit.com/lenovo.com?size=160" alt="Lenovo logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Lenovo</span></div>
-                    <div class="partner-card" title="Acer"><img src="https://logo.clearbit.com/acer.com?size=160" alt="Acer logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Acer</span></div>
-                    <div class="partner-card" title="ASUS"><img src="https://logo.clearbit.com/asus.com?size=160" alt="ASUS logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">ASUS</span></div>
-                    <div class="partner-card" title="Samsung"><img src="https://logo.clearbit.com/samsung.com?size=160" alt="Samsung logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Samsung</span></div>
-                    <div class="partner-card" title="Epson"><img src="https://logo.clearbit.com/epson.com?size=160" alt="Epson logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Epson</span></div>
-                    <div class="partner-card" title="Canon"><img src="https://logo.clearbit.com/canon.co.in?size=160" alt="Canon logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Canon</span></div>
-                    <div class="partner-card" title="Logitech"><img src="https://logo.clearbit.com/logitech.com?size=160" alt="Logitech logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Logitech</span></div>
+                    <div class="partner-card" title="Dell"><img src="assets/images/partners/logos/dell.svg" alt="Dell logo" loading="lazy"><span class="partner-card__fallback">Dell</span></div>
+                    <div class="partner-card" title="HP"><img src="assets/images/partners/logos/hp.svg" alt="HP logo" loading="lazy"><span class="partner-card__fallback">HP</span></div>
+                    <div class="partner-card" title="Lenovo"><img src="assets/images/partners/logos/lenovo.svg" alt="Lenovo logo" loading="lazy"><span class="partner-card__fallback">Lenovo</span></div>
+                    <div class="partner-card" title="Acer"><img src="assets/images/partners/logos/acer.svg" alt="Acer logo" loading="lazy"><span class="partner-card__fallback">Acer</span></div>
+                    <div class="partner-card" title="ASUS"><img src="assets/images/partners/logos/asus.svg" alt="ASUS logo" loading="lazy"><span class="partner-card__fallback">ASUS</span></div>
+                    <div class="partner-card" title="Samsung"><img src="assets/images/partners/logos/samsung.svg" alt="Samsung logo" loading="lazy"><span class="partner-card__fallback">Samsung</span></div>
+                    <div class="partner-card" title="Epson"><img src="assets/images/partners/logos/epson.svg" alt="Epson logo" loading="lazy"><span class="partner-card__fallback">Epson</span></div>
+                    <div class="partner-card" title="Canon"><img src="assets/images/partners/logos/canon.svg" alt="Canon logo" loading="lazy"><span class="partner-card__fallback">Canon</span></div>
+                    <div class="partner-card" title="Logitech"><img src="assets/images/partners/logos/logitech.svg" alt="Logitech logo" loading="lazy"><span class="partner-card__fallback">Logitech</span></div>
                 </div>
             </div>
 
@@ -761,12 +764,12 @@
                 </div>
 
                 <div class="partner-grid">
-                    <div class="partner-card" title="Microsoft"><img src="https://logo.clearbit.com/microsoft.com?size=160" alt="Microsoft logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Microsoft</span></div>
-                    <div class="partner-card" title="Google"><img src="https://logo.clearbit.com/google.com?size=160" alt="Google logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Google</span></div>
-                    <div class="partner-card" title="Google Workspace"><img src="https://logo.clearbit.com/workspace.google.com?size=160" alt="Google Workspace logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Google Workspace</span></div>
-                    <div class="partner-card" title="Amazon Web Services"><img src="https://logo.clearbit.com/aws.amazon.com?size=160" alt="AWS logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">AWS</span></div>
-                    <div class="partner-card" title="Adobe"><img src="https://logo.clearbit.com/adobe.com?size=160" alt="Adobe logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Adobe</span></div>
-                    <div class="partner-card" title="Microsoft 365"><img src="https://logo.clearbit.com/microsoft.com?size=160" alt="Microsoft 365 logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Microsoft 365</span></div>
+                    <div class="partner-card" title="Microsoft"><img src="assets/images/partners/logos/micrsoft.svg" alt="Microsoft logo" loading="lazy"><span class="partner-card__fallback">Microsoft</span></div>
+                    <div class="partner-card" title="Google"><img src="assets/images/partners/logos/google.svg" alt="Google logo" loading="lazy"><span class="partner-card__fallback">Google</span></div>
+                    <div class="partner-card" title="Google Workspace"><img src="assets/images/partners/logos/google-workspace.svg" alt="Google Workspace logo" loading="lazy"><span class="partner-card__fallback">Google Workspace</span></div>
+                    <div class="partner-card" title="Amazon Web Services"><img src="assets/images/partners/logos/aws.svg" alt="AWS logo" loading="lazy"><span class="partner-card__fallback">AWS</span></div>
+                    <div class="partner-card" title="Adobe"><img src="assets/images/partners/logos/adobe.svg" alt="Adobe logo" loading="lazy"><span class="partner-card__fallback">Adobe</span></div>
+                    <div class="partner-card" title="Microsoft 365"><img src="assets/images/partners/logos/microsoft365.svg" alt="Microsoft 365 logo" loading="lazy"><span class="partner-card__fallback">Microsoft 365</span></div>
                 </div>
             </div>
 
@@ -779,13 +782,13 @@
                 </div>
 
                 <div class="partner-grid">
-                    <div class="partner-card" title="Cisco"><img src="https://logo.clearbit.com/cisco.com?size=160" alt="Cisco logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Cisco</span></div>
-                    <div class="partner-card" title="Aruba"><img src="https://logo.clearbit.com/arubanetworks.com?size=160" alt="Aruba logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Aruba</span></div>
-                    <div class="partner-card" title="TP-Link"><img src="https://logo.clearbit.com/tp-link.com?size=160" alt="TP-Link logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">TP-Link</span></div>
-                    <div class="partner-card" title="D-Link"><img src="https://logo.clearbit.com/dlink.com?size=160" alt="D-Link logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">D-Link</span></div>
-                    <div class="partner-card" title="Ubiquiti"><img src="https://logo.clearbit.com/ui.com?size=160" alt="Ubiquiti logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Ubiquiti</span></div>
-                    <div class="partner-card" title="Sophos"><img src="https://logo.clearbit.com/sophos.com?size=160" alt="Sophos logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Sophos</span></div>
-                    <div class="partner-card" title="SonicWall"><img src="https://logo.clearbit.com/sonicwall.com?size=160" alt="SonicWall logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">SonicWall</span></div>
+                    <div class="partner-card" title="Cisco"><img src="assets/images/partners/logos/cisco.svg" alt="Cisco logo" loading="lazy"><span class="partner-card__fallback">Cisco</span></div>
+                    <div class="partner-card" title="Aruba"><img src="assets/images/partners/logos/aruba.svg" alt="Aruba logo" loading="lazy"><span class="partner-card__fallback">Aruba</span></div>
+                    <div class="partner-card" title="TP-Link"><img src="assets/images/partners/logos/tp-link.svg" alt="TP-Link logo" loading="lazy"><span class="partner-card__fallback">TP-Link</span></div>
+                    <div class="partner-card" title="D-Link"><img src="assets/images/partners/logos/d-link.svg" alt="D-Link logo" loading="lazy"><span class="partner-card__fallback">D-Link</span></div>
+                    <div class="partner-card" title="Ubiquiti"><img src="assets/images/partners/logos/ubiquiti.svg" alt="Ubiquiti logo" loading="lazy"><span class="partner-card__fallback">Ubiquiti</span></div>
+                    <div class="partner-card" title="Sophos"><img src="assets/images/partners/logos/sophas.svg" alt="Sophos logo" loading="lazy"><span class="partner-card__fallback">Sophos</span></div>
+                    <div class="partner-card" title="SonicWall"><img src="https://cdn.simpleicons.org/sonicwall?viewbox=auto" alt="SonicWall logo" loading="lazy"><span class="partner-card__fallback">SonicWall</span></div>
                 </div>
             </div>
 
@@ -798,13 +801,12 @@
                 </div>
 
                 <div class="partner-grid">
-                    <div class="partner-card" title="Hikvision"><img src="https://logo.clearbit.com/hikvision.com?size=160" alt="Hikvision logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Hikvision</span></div>
-                    <div class="partner-card" title="Dahua"><img src="https://logo.clearbit.com/dahuasecurity.com?size=160" alt="Dahua logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Dahua</span></div>
-                    <div class="partner-card" title="CP Plus"><img src="https://logo.clearbit.com/cpplusworld.com?size=160" alt="CP Plus logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">CP Plus</span></div>
-                    <div class="partner-card" title="Axis Communications"><img src="https://logo.clearbit.com/axis.com?size=160" alt="Axis Communications logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Axis</span></div>
-                    <div class="partner-card" title="Uniview"><img src="https://logo.clearbit.com/uniview.com?size=160" alt="Uniview logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">Uniview</span></div>
-                    <div class="partner-card" title="ZKTeco"><img src="https://logo.clearbit.com/zkteco.com?size=160" alt="ZKTeco logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">ZKTeco</span></div>
-                    <div class="partner-card" title="eSSL"><img src="https://logo.clearbit.com/esslsecurity.com?size=160" alt="eSSL logo" loading="lazy" onerror="this.closest('.partner-card').classList.add('is-fallback');"><span class="partner-card__fallback">eSSL</span></div>
+                    <div class="partner-card" title="Hikvision"><img src="assets/images/partners/logos/hikvision.svg" alt="Hikvision logo" loading="lazy"><span class="partner-card__fallback">Hikvision</span></div>
+                    <div class="partner-card" title="Dahua"><img src="assets/images/partners/logos/dahanu.svg" alt="Dahua logo" loading="lazy"><span class="partner-card__fallback">Dahua</span></div>
+                    <div class="partner-card" title="CP Plus"><img src="assets/images/partners/logos/cpplus.png" alt="CP Plus logo" loading="lazy"><span class="partner-card__fallback">CP Plus</span></div>
+                    <!-- <div class="partner-card" title="Uniview"><img src="https://cdn.simpleicons.org/uniview?viewbox=auto" alt="Uniview logo" loading="lazy"><span class="partner-card__fallback">Uniview</span></div> -->
+                    <!-- <div class="partner-card" title="ZKTeco"><img src="https://cdn.simpleicons.org/zkteco?viewbox=auto" alt="ZKTeco logo" loading="lazy"><span class="partner-card__fallback">ZKTeco</span></div> -->
+                    <div class="partner-card" title="eSSL"><img src="assets/images/partners/logos/esslogo.png" alt="eSSL logo" loading="lazy"><span class="partner-card__fallback">eSSL</span></div>
                 </div>
             </div>
 
