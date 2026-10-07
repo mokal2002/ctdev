@@ -5,42 +5,44 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Careers | IT Jobs in Mumbai | Crescent Technoserve</title>
-<meta name="description"
-    content="Join Crescent Technoserve in Mumbai. View open positions and apply online to work with our IT services and onsite engineering team.">
+    <meta name="description"
+        content="Join Crescent Technoserve in Mumbai. View open positions and apply online to work with our IT services and onsite engineering team.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4169WX6HEV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4169WX6HEV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-4169WX6HEV');
-</script>
-<link rel="canonical" href="https://www.crescenttechnoserve.com/career.html">
-<!-- TESTING COPY ONLY: delete the next line when the site moves to crescenttechnoserve.com -->
-<meta name="robots" content="noindex, nofollow">
+        gtag('config', 'G-4169WX6HEV');
+    </script>
+    <link rel="canonical" href="https://www.crescenttechnoserve.com/career.html">
+    <!-- TESTING COPY ONLY: delete the next line when the site moves to crescenttechnoserve.com -->
+    <meta name="robots" content="noindex, nofollow">
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Crescent Technoserve">
-<meta property="og:locale" content="en_IN">
-<meta property="og:title" content="Careers | IT Jobs in Mumbai | Crescent Technoserve">
-<meta property="og:description" content="Join Crescent Technoserve in Mumbai. View open positions and apply online to work with our IT services and onsite engineering team.">
-<meta property="og:url" content="https://www.crescenttechnoserve.com/career.html">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Careers | IT Jobs in Mumbai | Crescent Technoserve">
-<meta name="twitter:description" content="Join Crescent Technoserve in Mumbai. View open positions and apply online to work with our IT services and onsite engineering team.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Crescent Technoserve">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:title" content="Careers | IT Jobs in Mumbai | Crescent Technoserve">
+    <meta property="og:description"
+        content="Join Crescent Technoserve in Mumbai. View open positions and apply online to work with our IT services and onsite engineering team.">
+    <meta property="og:url" content="https://www.crescenttechnoserve.com/career.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Careers | IT Jobs in Mumbai | Crescent Technoserve">
+    <meta name="twitter:description"
+        content="Join Crescent Technoserve in Mumbai. View open positions and apply online to work with our IT services and onsite engineering team.">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.crescenttechnoserve.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Career", "item": "https://www.crescenttechnoserve.com/career.html" }
-  ]
-}
-</script>
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.crescenttechnoserve.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Career", "item": "https://www.crescenttechnoserve.com/career.html" }
+        ]
+        }
+        </script>
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
 
 
@@ -55,73 +57,142 @@
     <link rel="stylesheet" href="assets/css/main.css">
 
     <style>
-        .job-apply-submit {
+        /* ===== Apply form + full-block success overlay ===== */
+        .apply-form-wrap {
             position: relative;
             overflow: hidden;
-            isolation: isolate;
-            /* keeps the strip contained inside the button's rounded corners */
         }
 
-        /* the thin progress strip */
-        .job-apply-submit .progress-strip {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 3px;
-            width: 0%;
-            background: rgba(255, 255, 255, 0.9);
-            transition: width 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+        .apply-form-fields {
+            transition: opacity 0.25s ease;
         }
 
-        .job-apply-submit.is-loading .progress-strip {
-            width: 92%;
-            /* stalls near-complete until the real response arrives */
+        /* submit button: spinner only, no in-button success state anymore */
+        .job-apply-submit {
+            position: relative;
         }
 
-        .job-apply-submit.is-done .progress-strip {
-            width: 100%;
-            transition: width 0.2s ease;
-        }
-
-        /* button text fades while loading/done, checkmark takes over */
         .job-apply-submit .btn-text {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: opacity 0.2s ease, transform 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
-        .job-apply-submit.is-loading .btn-text,
-        .job-apply-submit.is-done .btn-text {
-            opacity: 0;
-            transform: translateY(4px);
+        .job-apply-submit .spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            margin-left: 8px;
+            vertical-align: middle;
+            animation: tg-spin 0.7s linear infinite;
         }
 
-        /* checkmark, hidden until success */
-        .job-apply-submit .check-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
+        .job-apply-submit.is-loading .btn-text {
+            opacity: 0.6;
         }
 
-        .job-apply-submit.is-done .check-icon {
-            opacity: 1;
+        .job-apply-submit.is-loading .spinner {
+            display: inline-block;
         }
 
-        .job-apply-submit .check-icon path {
-            stroke-dasharray: 24;
-            stroke-dashoffset: 24;
+        .job-apply-submit:disabled {
+            cursor: not-allowed;
+            opacity: 0.85;
         }
 
-        .job-apply-submit.is-done .check-icon path {
-            animation: draw-check 0.4s ease forwards 0.15s;
-        }
-
-        @keyframes draw-check {
+        @keyframes tg-spin {
             to {
-                stroke-dashoffset: 0;
+                transform: rotate(360deg);
+            }
+        }
+
+        /* full-block success overlay */
+        .apply-success-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            background: #ffffff;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(14px);
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+            padding: 30px 20px;
+            z-index: 5;
+            /* in case the fields are taller than the overlay content, keep it scrollable instead of clipped */
+            overflow-y: auto;
+        }
+
+        .apply-success-overlay h3 {
+            margin: 0;
+            color: #0c3947;
+            font-size: clamp(18px, 4vw, 24px);
+        }
+
+        .apply-success-overlay p {
+            margin: 0;
+            color: #5c6b73;
+            max-width: 360px;
+            font-size: clamp(14px, 3vw, 16px);
+        }
+
+        .apply-success-overlay .success-check {
+            width: clamp(44px, 10vw, 56px);
+            height: clamp(44px, 10vw, 56px);
+            animation: pop-in 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        @keyframes pop-in {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .apply-form-wrap.is-submitted .apply-form-fields {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .apply-form-wrap.is-submitted .apply-success-overlay {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        }
+
+        /* keep the overlay from ever being taller than the viewport, and give it breathing
+           room on very small phones where the form block itself is short */
+        @media (max-width: 575.98px) {
+            .apply-success-overlay {
+                padding: 24px 16px;
+                gap: 8px;
+            }
+        }
+
+        /* respect reduced-motion preference */
+        @media (prefers-reduced-motion: reduce) {
+
+            .apply-success-overlay,
+            .apply-form-fields,
+            .success-check,
+            .spinner {
+                animation: none !important;
+                transition: none !important;
             }
         }
     </style>
@@ -236,7 +307,7 @@
 
     <div id="root"></div>
 
-   
+
     <!--Preloader-->
     <div id="preloader">
         <div class="loader"></div>
@@ -316,7 +387,7 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                                     <ul class="navigation">
-                                       
+
                                         <li class="menu-item-has-children"><a href="what-we-do.html">What we do</a>
                                             <ul class="sub-menu">
                                                 <li><a href="it-consulting.html">IT Consulting</a></li>
@@ -328,7 +399,7 @@
 
                                             </ul>
                                         </li>
-                                        
+
                                         <li><a href="career.html">Career</a></li>
                                         <li><a href="partners.html">Partners</a></li>
                                         <li><a href="contact.html">Contact Us</a></li>
@@ -336,7 +407,7 @@
                                 </div>
                                 <div class="tgmenu__action">
                                     <ul class="list-wrap">
-                                        
+
 
                                         <li class="offCanvas-menu">
                                             <a href="#!" class="menu-tigger">
@@ -388,7 +459,7 @@
                 <div class="nav-logo">
                     <a href="index.html"><img src="assets/img/logo/creslogo.svg" alt="Logo"></a>
                 </div>
-                
+
                 <div class="tgmobile__menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 </div>
@@ -623,7 +694,7 @@
                                 View Open Positions
                             </a>
 
-                          
+
                         </div>
                     </div>
                 </div>
@@ -939,67 +1010,72 @@
         <!-- job-form-area -->
         <section id="apply-form" class="job__form-area section-bg section-py-140">
             <div class="container">
-                <div class="contact__form-wrap contact__form-wrap-four">
-                    <h3 class="title">Apply Form</h3>
-                    <p>Digital Marketing Executive</p>
-                    <form id="contact-form" class="contact-form" action="scripts/apply.php" method="POST"
-                        enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-grp">
-                                    <input type="text" name="name" placeholder="Your Name*" required>
+                <div class="contact__form-wrap contact__form-wrap-four apply-form-wrap">
+                    <div class="apply-form-fields">
+                        <h3 class="title">Apply Form</h3>
+                        <p>Digital Marketing Executive</p>
+                        <form id="contact-form" class="contact-form" action="scripts/apply.php" method="POST"
+                            enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-grp">
+                                        <input type="text" name="name" placeholder="Your Name*" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-grp">
+                                        <input type="email" name="email" placeholder="Email*" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-grp select-grp">
+                                        <select name="orderby" class="orderby">
+                                            <option value="Default sorting">Select Job Role *</option>
+                                            <option value="Desktop Engg">Desktop Engg</option>
+                                            <option value="Network Engg">Network Engg</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-grp">
+                                        <input type="tel" name="phone" placeholder="Phone Number">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-grp">
-                                    <input type="email" name="email" placeholder="Email*" required>
-                                </div>
+                            <div class="form-grp">
+                                <textarea name="message" placeholder="Write your message" required></textarea>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-grp select-grp">
-                                    <select name="orderby" class="orderby">
-                                        <option value="Default sorting">Select Job Role *</option>
-                                        <option value="Desktop Engg">Desktop Engg</option>
-                                        <option value="Network Engg">Network Engg</option>
-                                    </select>
-                                </div>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Upload Your CV</label>
+                                <input class="form-control" name="cv" type="file" id="formFile" accept=".pdf,.doc,.docx"
+                                    required>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-grp">
-                                    <input type="tel" name="phone" placeholder="Phone Number">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-grp">
-                            <textarea name="message" placeholder="Write your message" required></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Upload Your CV</label>
-                            <input class="form-control" name="cv" type="file" id="formFile" accept=".pdf,.doc,.docx"
-                                required>
-                        </div>
-                        <!-- replace your submit button markup with this -->
-                        <button type="submit" class="tg-btn job-apply-submit">
-                            <span class="btn-text">
-                                Submit Application
-                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </span>
+                            <button type="submit" class="tg-btn job-apply-submit">
+                                <span class="btn-text">
+                                    Submit Application
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 9L9 1M9 1H1M9 1V9" stroke="currentColor" stroke-width="1.6"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <span class="spinner"></span>
+                            </button>
+                        </form>
 
-                            <svg class="check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 10L8 14L16 6" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
+                        <p class="ajax-response mb-0"></p>
+                    </div>
 
-                            <span class="progress-strip"></span>
-                        </button>
-                    </form>
-
-                    <p class="ajax-response mb-0"></p>
+                    <div class="apply-success-overlay">
+                        <svg class="success-check" width="56" height="56" viewBox="0 0 56 56" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="28" cy="28" r="26" stroke="#1F7A5C" stroke-width="2" />
+                            <path d="M17 29L24 36L39 19" stroke="#1F7A5C" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <h3>Application Received!</h3>
+                        <p>Thanks for applying — we'll get back to you soon.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1010,7 +1086,7 @@
     <!-- footer-area -->
     <footer class="footer__area footer__bg fix">
         <div class="container">
-           
+
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-4 col-md-5 col-sm-6">
@@ -1042,7 +1118,7 @@
                             <ul class="list-wrap footer__link">
                                 <li><a href="">Terms & Service</a></li>
                                 <li><a href="">GSTIN</a></li>
-                              
+
                             </ul>
                         </div>
                     </div>
@@ -1138,7 +1214,7 @@
     <script src="assets/js/jquery.marquee.min.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/parallax.min.js"></script>
-    <script src="assets/js/ajax-form.js"></script>
+    <!-- <script src="assets/js/ajax-form.js"></script> -->
     <script src="assets/js/sal.js"></script>
     <script src="assets/js/main.js"></script>
 
@@ -1207,22 +1283,24 @@
             var form = document.getElementById('contact-form');
             if (!form) return;
 
+            var wrap = form.closest('.apply-form-wrap');
             var submitBtn = form.querySelector('.job-apply-submit') || form.querySelector('button[type="submit"]');
             var responseEl = document.querySelector('.ajax-response');
 
-            // wrap existing button text so we can fade it during loading
             if (submitBtn && !submitBtn.querySelector('.btn-text')) {
-                submitBtn.innerHTML = '<span class="btn-text">' + submitBtn.innerHTML + '</span><span class="spinner"></span>';
+                submitBtn.innerHTML = '<span class="btn-text">' + submitBtn.innerHTML + '</span>';
+            }
+            if (submitBtn && !submitBtn.querySelector('.spinner')) {
+                submitBtn.insertAdjacentHTML('beforeend', '<span class="spinner"></span>');
             }
 
-            // updated submit handler — swap in for the fetch section from before
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                submitBtn.classList.remove('is-done');
                 submitBtn.classList.add('is-loading');
                 submitBtn.disabled = true;
                 responseEl.classList.remove('show', 'success', 'error');
+                responseEl.textContent = '';
 
                 var formData = new FormData(form);
 
@@ -1230,20 +1308,17 @@
                     .then(function (res) { return res.json(); })
                     .then(function (data) {
                         submitBtn.classList.remove('is-loading');
+                        submitBtn.disabled = false;
 
                         if (data.status === 'success') {
-                            submitBtn.classList.add('is-done');
-                            setTimeout(function () {
-                                submitBtn.classList.remove('is-done');
-                                submitBtn.disabled = false;
-                                form.reset();
-                            }, 1400); // hold the checkmark a beat before resetting the button
+                            form.reset();
+                            if (wrap) {
+                                wrap.classList.add('is-submitted');
+                            }
                         } else {
-                            submitBtn.disabled = false;
+                            responseEl.textContent = data.message;
+                            responseEl.classList.add('show', 'error');
                         }
-
-                        responseEl.textContent = data.message;
-                        responseEl.classList.add('show', data.status === 'success' ? 'success' : 'error');
                     })
                     .catch(function () {
                         submitBtn.classList.remove('is-loading');

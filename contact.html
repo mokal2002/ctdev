@@ -5,33 +5,35 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Contact Crescent Technoserve | IT Support in Malad, Mumbai</title>
-<meta name="description"
-    content="Contact Crescent Technoserve for IT support, CCTV, networking and onsite engineers in Malad West, Mumbai. Call +91 77382 62069 or send a message.">
+    <meta name="description"
+        content="Contact Crescent Technoserve for IT support, CCTV, networking and onsite engineers in Malad West, Mumbai. Call +91 77382 62069 or send a message.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4169WX6HEV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4169WX6HEV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-4169WX6HEV');
-</script>
-<link rel="canonical" href="https://www.crescenttechnoserve.com/contact.html">
-<!-- TESTING COPY ONLY: delete the next line when the site moves to crescenttechnoserve.com -->
-<meta name="robots" content="noindex, nofollow">
+        gtag('config', 'G-4169WX6HEV');
+    </script>
+    <link rel="canonical" href="https://www.crescenttechnoserve.com/contact.html">
+    <!-- TESTING COPY ONLY: delete the next line when the site moves to crescenttechnoserve.com -->
+    <meta name="robots" content="noindex, nofollow">
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Crescent Technoserve">
-<meta property="og:locale" content="en_IN">
-<meta property="og:title" content="Contact Crescent Technoserve | IT Support in Malad, Mumbai">
-<meta property="og:description" content="Contact Crescent Technoserve for IT support, CCTV, networking and onsite engineers in Malad West, Mumbai. Call +91 77382 62069 or send a message.">
-<meta property="og:url" content="https://www.crescenttechnoserve.com/contact.html">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Contact Crescent Technoserve | IT Support in Malad, Mumbai">
-<meta name="twitter:description" content="Contact Crescent Technoserve for IT support, CCTV, networking and onsite engineers in Malad West, Mumbai. Call +91 77382 62069 or send a message.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Crescent Technoserve">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:title" content="Contact Crescent Technoserve | IT Support in Malad, Mumbai">
+    <meta property="og:description"
+        content="Contact Crescent Technoserve for IT support, CCTV, networking and onsite engineers in Malad West, Mumbai. Call +91 77382 62069 or send a message.">
+    <meta property="og:url" content="https://www.crescenttechnoserve.com/contact.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contact Crescent Technoserve | IT Support in Malad, Mumbai">
+    <meta name="twitter:description"
+        content="Contact Crescent Technoserve for IT support, CCTV, networking and onsite engineers in Malad West, Mumbai. Call +91 77382 62069 or send a message.">
 
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -106,6 +108,141 @@
 
         .breadcrumb__alt-contact a:hover {
             text-decoration-color: #ffffff;
+        }
+
+        /* ===== Quick Contact Form: full-block success overlay ===== */
+        .apply-form-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apply-form-fields {
+            transition: opacity 0.25s ease;
+        }
+
+        /* submit button spinner */
+        .contact-submit-btn {
+            position: relative;
+        }
+
+        .contact-submit-btn .btn-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-submit-btn .spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            margin-left: 8px;
+            vertical-align: middle;
+            animation: tg-spin 0.7s linear infinite;
+        }
+
+        .contact-submit-btn.is-loading .btn-text {
+            opacity: 0.6;
+        }
+
+        .contact-submit-btn.is-loading .spinner {
+            display: inline-block;
+        }
+
+        .contact-submit-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.85;
+        }
+
+        @keyframes tg-spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* full-block success overlay */
+        .apply-success-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            background: #ffffff;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(14px);
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+            padding: 30px 20px;
+            z-index: 5;
+            overflow-y: auto;
+        }
+
+        .apply-success-overlay h3 {
+            margin: 0;
+            color: #0c3947;
+            font-size: clamp(18px, 4vw, 24px);
+        }
+
+        .apply-success-overlay p {
+            margin: 0;
+            color: #5c6b73;
+            max-width: 360px;
+            font-size: clamp(14px, 3vw, 16px);
+        }
+
+        .apply-success-overlay .success-check {
+            width: clamp(44px, 10vw, 56px);
+            height: clamp(44px, 10vw, 56px);
+            animation: pop-in 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        @keyframes pop-in {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .apply-form-wrap.is-submitted .apply-form-fields {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .apply-form-wrap.is-submitted .apply-success-overlay {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        }
+
+        @media (max-width: 575.98px) {
+            .apply-success-overlay {
+                padding: 24px 16px;
+                gap: 8px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .apply-success-overlay,
+            .apply-form-fields,
+            .success-check,
+            .spinner {
+                animation: none !important;
+                transition: none !important;
+            }
         }
     </style>
 </head>
@@ -188,7 +325,7 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                                     <ul class="navigation">
-                                       
+
                                         <li class="menu-item-has-children"><a href="what-we-do.html">What we do</a>
                                             <ul class="sub-menu">
                                                 <li><a href="it-consulting.html">IT Consulting</a></li>
@@ -200,7 +337,7 @@
 
                                             </ul>
                                         </li>
-                                        
+
                                         <li><a href="career.html">Career</a></li>
                                         <li><a href="partners.html">Partners</a></li>
                                         <li><a href="contact.html">Contact Us</a></li>
@@ -208,7 +345,7 @@
                                 </div>
                                 <div class="tgmenu__action">
                                     <ul class="list-wrap">
-                                        
+
                                         <li class="offCanvas-menu">
                                             <a href="#!" class="menu-tigger">
                                                 <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
@@ -259,7 +396,7 @@
                 <div class="nav-logo">
                     <a href="index.html"><img src="assets/img/logo/creslogo.svg" alt="Logo"></a>
                 </div>
-               
+
                 <div class="tgmobile__menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 </div>
@@ -295,7 +432,7 @@
                                 </svg>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </nav>
@@ -486,16 +623,17 @@
 
                             <div class="breadcrumb__socials">
                                 <a href="https://www.facebook.com/p/Crescent-Technoserve-61566423279334/"
-                                        target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://www.linkedin.com/company/crescenttechnoserve/" target="_blank" aria-label="Twitter / X"><i
-                                        class="fab fa-x-twitter"></i></a>
-                                <a href="https://www.instagram.com/crescent.technoserve" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/crescenttechnoserve/" target="_blank"
+                                    aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+                                <a href="https://www.instagram.com/crescent.technoserve" target="_blank"
+                                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             </div>
 
                             <p class="breadcrumb__alt-contact">
                                 Or reach us directly — fill below contact form.
-                               
+
 
                         </div>
                     </div>
@@ -532,7 +670,8 @@
                                     </div>
                                     <div class="content">
                                         <span>Location</span>
-                                        <h4 class="title">HD-314, WeWork Spectrum Tower, 4th Floor, Mindspace, Chincholi Bunder Road, Off Link Road, Malad (West), Mumbai, MH 400064</h4>
+                                        <h4 class="title">HD-314, WeWork Spectrum Tower, 4th Floor, Mindspace, Chincholi
+                                            Bunder Road, Off Link Road, Malad (West), Mumbai, MH 400064</h4>
                                     </div>
                                 </div>
                                 <div class="contact__info-item contact__info-item-three">
@@ -547,7 +686,9 @@
                                     </div>
                                     <div class="content">
                                         <span>Email Address</span>
-                                        <h4 class="title"><a href="mailto:info@crescenttechnoserve.com">info@crescenttechnoserve.com</a></h4>
+                                        <h4 class="title"><a
+                                                href="mailto:info@crescenttechnoserve.com">info@crescenttechnoserve.com</a>
+                                        </h4>
                                     </div>
                                 </div>
                                 <div class="contact__info-item contact__info-item-three">
@@ -585,41 +726,55 @@
         <!-- contact-form-area -->
         <section id="ct" class="job__form-area section-bg section-py-140">
             <div class="container">
-                <div class="contact__form-wrap contact__form-wrap-four">
-                    <h3 class="title">Quick Contact Form</h3>
-                    <p>Feel Free to Our Contact & Hire us for Your Solution !!</p>
-                    <form id="contactFormHome" action="scripts/contact.php" class="comment-form" method="POST">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-grp">
-                                    <input type="text" name="fname" placeholder="First Name*" required>
+                <div class="contact__form-wrap contact__form-wrap-four apply-form-wrap">
+                    <div class="apply-form-fields">
+                        <h3 class="title">Quick Contact Form</h3>
+                        <p>Feel Free to Our Contact & Hire us for Your Solution !!</p>
+                        <form id="contactFormHome" action="scripts/contact.php" class="comment-form" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-grp">
+                                        <input type="text" name="fname" placeholder="First Name*" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-grp">
+                                        <input type="text" name="lname" placeholder="Last Name*" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-grp">
+                                        <input type="email" name="email" placeholder="Email*" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-grp">
+                                        <input type="tel" name="number" placeholder="Enter 10 digit phone number"
+                                            pattern="[0-9]{10}" maxlength="10" required>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-grp">
-                                    <input type="text" name="lname" placeholder="Last Name*" required>
-                                </div>
+                            <div class="form-grp">
+                                <textarea name="messages" placeholder="Write your message"></textarea>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-grp">
-                                    <input type="email" name="email" placeholder="Email*" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-grp">
-                                    <input type="tel" name="number" placeholder="Enter 10 digit phone number"
-                                        pattern="[0-9]{10}" maxlength="10" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-grp">
-                            <textarea name="messages" placeholder="Write your message"></textarea>
-                        </div>
-                        <div class="g-recaptcha" data-sitekey="6Ld_SWssAAAAAFNvqGAjPLvlWrLmElow1SaOurDY">
-                        </div>
-                        <button type="submit" class="tg-btn mt-4">Send Us Message</button>
-                    </form>
-                    <div class="ajax-response mb-3 mt-3"></div>
+                            <button type="submit" class="tg-btn mt-4 contact-submit-btn">
+                                <span class="btn-text">Send Us Message</span>
+                                <span class="spinner"></span>
+                            </button>
+                        </form>
+                        <div class="ajax-response mb-3 mt-3"></div>
+                    </div>
+
+                    <div class="apply-success-overlay">
+                        <svg class="success-check" width="56" height="56" viewBox="0 0 56 56" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="28" cy="28" r="26" stroke="#1F7A5C" stroke-width="2" />
+                            <path d="M17 29L24 36L39 19" stroke="#1F7A5C" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <h3>Thanks for reaching out!</h3>
+                        <p>We've received your message — we'll get back to you soon.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -632,7 +787,7 @@
     <!-- footer-area -->
     <footer class="footer__area footer__bg fix">
         <div class="container">
-            
+
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-4 col-md-5 col-sm-6">
@@ -664,7 +819,7 @@
                             <ul class="list-wrap footer__link">
                                 <li><a href="">Terms & Service</a></li>
                                 <li><a href="">GSTIN</a></li>
-                                
+
                             </ul>
                         </div>
                     </div>
@@ -750,7 +905,6 @@
 
 
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- JS here -->
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -775,15 +929,15 @@
                 return;
             }
 
+            const wrap = form.closest(".apply-form-wrap");
+            const button = form.querySelector(".contact-submit-btn") || form.querySelector("button[type='submit']");
+
             form.addEventListener("submit", function (e) {
                 e.preventDefault(); // STOP normal submission
 
-                const button = form.querySelector("button[type='submit']");
-                const originalText = button.innerHTML;
-
-                // Disable button
+                button.classList.add("is-loading");
                 button.disabled = true;
-                button.innerHTML = "Sending...";
+                responseBox.innerHTML = "";
 
                 const formData = new FormData(form);
 
@@ -791,28 +945,27 @@
                     method: "POST",
                     body: formData
                 })
-                    .then(res => res.text())
+                    .then(res => res.json())
                     .then(data => {
-                        if (data.trim() === "success") {
-                            responseBox.innerHTML = "✅ Message sent successfully!";
-                            responseBox.style.color = "green";
+                        button.classList.remove("is-loading");
+                        button.disabled = false;
+
+                        if (data.status === "success") {
                             form.reset();
-                            if (typeof grecaptcha !== "undefined") {
-                                grecaptcha.reset();
+                            if (wrap) {
+                                wrap.classList.add("is-submitted");
                             }
                         } else {
-                            responseBox.innerHTML = "❌ " + data;
+                            responseBox.innerHTML = "❌ " + data.message;
                             responseBox.style.color = "red";
                         }
                     })
                     .catch(error => {
+                        button.classList.remove("is-loading");
+                        button.disabled = false;
                         responseBox.innerHTML = "❌ Error sending message.";
                         responseBox.style.color = "red";
                         console.error(error);
-                    })
-                    .finally(() => {
-                        button.disabled = false;
-                        button.innerHTML = originalText;
                     });
             });
 
