@@ -1,0 +1,1468 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Terms of Use | Crescent Technoserve</title>
+    <meta name="description"
+        content="Read the Terms of Use for the Crescent Technoserve website, including acceptable use, intellectual property, third-party links, and limitations.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4169WX6HEV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4169WX6HEV');
+    </script>
+    <link rel="canonical" href="https://www.crescenttechnoserve.com/terms-of-use.html">
+    <!-- TESTING COPY ONLY: delete the next line when the site moves to crescenttechnoserve.com -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Crescent Technoserve">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:title" content="Terms of Use | Crescent Technoserve">
+    <meta property="og:description"
+        content="Read the Terms of Use for the Crescent Technoserve website, including acceptable use, intellectual property, third-party links, and limitations.">
+    <meta property="og:url" content="https://www.crescenttechnoserve.com/terms-of-use.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Terms of Use | Crescent Technoserve">
+    <meta name="twitter:description"
+        content="Read the Terms of Use for the Crescent Technoserve website, including acceptable use, intellectual property, third-party links, and limitations.">
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.crescenttechnoserve.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Terms of Use", "item": "https://www.crescenttechnoserve.com/terms-of-use.html" }
+        ]
+        }
+        </script>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
+
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/default-icons.css">
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/sal.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* ===== Apply form + full-block success overlay ===== */
+        .apply-form-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apply-form-fields {
+            transition: opacity 0.25s ease;
+        }
+
+        /* submit button: spinner only, no in-button success state anymore */
+        .job-apply-submit {
+            position: relative;
+        }
+
+        .job-apply-submit .btn-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s ease;
+        }
+
+        .job-apply-submit .spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            margin-left: 8px;
+            vertical-align: middle;
+            animation: tg-spin 0.7s linear infinite;
+        }
+
+        .job-apply-submit.is-loading .btn-text {
+            opacity: 0.6;
+        }
+
+        .job-apply-submit.is-loading .spinner {
+            display: inline-block;
+        }
+
+        .job-apply-submit:disabled {
+            cursor: not-allowed;
+            opacity: 0.85;
+        }
+
+        @keyframes tg-spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* full-block success overlay */
+        .apply-success-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            background: #ffffff;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(14px);
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+            padding: 30px 20px;
+            z-index: 5;
+            /* in case the fields are taller than the overlay content, keep it scrollable instead of clipped */
+            overflow-y: auto;
+        }
+
+        .apply-success-overlay h3 {
+            margin: 0;
+            color: #0c3947;
+            font-size: clamp(18px, 4vw, 24px);
+        }
+
+        .apply-success-overlay p {
+            margin: 0;
+            color: #5c6b73;
+            max-width: 360px;
+            font-size: clamp(14px, 3vw, 16px);
+        }
+
+        .apply-success-overlay .success-check {
+            width: clamp(44px, 10vw, 56px);
+            height: clamp(44px, 10vw, 56px);
+            animation: pop-in 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        @keyframes pop-in {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .apply-form-wrap.is-submitted .apply-form-fields {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .apply-form-wrap.is-submitted .apply-success-overlay {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        }
+
+        /* keep the overlay from ever being taller than the viewport, and give it breathing
+           room on very small phones where the form block itself is short */
+        @media (max-width: 575.98px) {
+            .apply-success-overlay {
+                padding: 24px 16px;
+                gap: 8px;
+            }
+        }
+
+        /* respect reduced-motion preference */
+        @media (prefers-reduced-motion: reduce) {
+
+            .apply-success-overlay,
+            .apply-form-fields,
+            .success-check,
+            .spinner {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+    <style>
+        .breadcrumb__hiring-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .breadcrumb__hiring-badge .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #4ADE80;
+            box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+            animation: hiring-pulse 1.8s infinite;
+        }
+
+        @keyframes hiring-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55);
+            }
+
+            70% {
+                box-shadow: 0 0 0 8px rgba(74, 222, 128, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .breadcrumb__hiring-badge .dot {
+                animation: none;
+            }
+        }
+
+        /* Divider between the collapsed card and the expanded details */
+        .job__details-inner {
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            margin-top: 26px;
+            padding-top: 30px;
+        }
+
+        /* Smooth arrow rotation on expand/collapse */
+        .job__toggle-trigger .toggle-arrow {
+            transition: transform 0.25s ease;
+        }
+
+        .job__details-panel {
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+        }
+
+        .job__details-panel.is-open {
+            opacity: 1;
+        }
+
+        .job__details-inner {
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            margin-top: 26px;
+            padding-top: 30px;
+        }
+
+        .job__toggle-trigger .toggle-arrow {
+            transition: transform 0.25s ease;
+        }
+
+        input[type="tel"] {
+            /* margin-top: 10px;
+            margin-bottom: 10px; */
+            border: 1px solid var(--tg-border-4);
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--tg-heading-color);
+            background: var(--tg-color-gray-2);
+            width: 100%;
+            padding: 10px 16px;
+            height: 45px;
+            display: block;
+        }
+
+        input[type="tel"]::placeholder {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+        #apply-form .form-grp {
+            margin-bottom: 10px;
+        }
+
+        /* This page's footer has no internal .footer__cta-wrap banner anymore —
+           it was replaced by the standalone .final-cta section above it.
+           Cancel the theme's -180px overlap trick so the footer no longer
+           collides with .final-cta. Scoped to this page only. */
+        footer.footer__area.footer__bg {
+            margin-top: 0;
+            padding-top: 60px;
+        }
+
+        @media (max-width: 767.98px) {
+            footer.footer__area.footer__bg {
+                padding-top: 45px;
+            }
+        }
+    </style>
+
+    <style>
+        /* Terms of Use page styles — scoped to this page only */
+        .ct-terms-page {
+            background: #fff;
+            color: #34474b;
+        }
+
+        .ct-terms-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 95px 0 76px;
+            background: #004958;
+            color: #fff;
+        }
+
+        .ct-terms-hero:before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            right: -130px;
+            top: -210px;
+            border: 1px solid rgba(255, 255, 255, .17);
+            border-radius: 50%;
+            box-shadow: 0 0 0 34px rgba(255, 255, 255, .035), 0 0 0 70px rgba(255, 255, 255, .025);
+            pointer-events: none;
+        }
+
+        .ct-terms-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 18px;
+        }
+
+        .ct-terms-kicker:before {
+            content: "";
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: #fff;
+        }
+
+        .ct-terms-hero h1 {
+            color: #fff;
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.08;
+            letter-spacing: -.035em;
+            margin: 0 0 18px;
+        }
+
+        .ct-terms-hero p {
+            max-width: 680px;
+            margin: 0;
+            color: rgba(255, 255, 255, .86);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .ct-terms-hero-meta {
+            margin-top: 26px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            color: rgba(255, 255, 255, .8);
+            font-size: 13px;
+        }
+
+        .ct-terms-hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ct-terms-hero-meta span:before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .ct-terms-layout {
+            display: grid;
+            grid-template-columns: 270px minmax(0, 1fr);
+            gap: 54px;
+            align-items: start;
+            padding-top: 76px;
+            padding-bottom: 100px;
+        }
+
+        .ct-terms-toc {
+            position: sticky;
+            top: 35px;
+            border: 1px solid #e3ebed;
+            border-radius: 14px;
+            padding: 24px 20px;
+            background: #fff;
+        }
+
+        .ct-terms-toc-title {
+            color: #004958;
+            font-size: 14px;
+            font-weight: 800;
+            margin: 0 0 14px;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+
+        .ct-terms-toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: toc;
+        }
+
+        .ct-terms-toc li {
+            margin: 0;
+            padding: 0;
+            border-top: 1px solid #edf1f2;
+        }
+
+        .ct-terms-toc a {
+            display: block;
+            padding: 10px 0;
+            color: #53666a;
+            font-size: 13px;
+            line-height: 1.5;
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .ct-terms-toc a:hover {
+            color: #004958;
+        }
+
+        .ct-terms-content {
+            min-width: 0;
+        }
+
+        .ct-terms-intro {
+            padding: 0 0 30px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #e7eeee;
+        }
+
+        .ct-terms-intro p {
+            font-size: 17px;
+            line-height: 1.85;
+            margin: 0;
+            color: #53666a;
+        }
+
+        .ct-terms-section {
+            scroll-margin-top: 30px;
+            padding: 0 0 30px;
+            margin: 0 0 30px;
+            border-bottom: 1px solid #e7eeee;
+        }
+
+        .ct-terms-section:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .ct-terms-section-head {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 13px;
+        }
+
+        .ct-terms-number {
+            flex: 0 0 42px;
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 11px;
+            background: #eaf2f3;
+            color: #004958;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .ct-terms-section h2 {
+            color: #123f48;
+            font-size: clamp(21px, 2.3vw, 27px);
+            line-height: 1.3;
+            margin: 5px 0 0;
+            letter-spacing: -.02em;
+        }
+
+        .ct-terms-section p {
+            color: #53666a;
+            font-size: 15px;
+            line-height: 1.9;
+            margin: 0 0 13px;
+        }
+
+        .ct-terms-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .ct-terms-section ul {
+            margin: 12px 0 0;
+            padding-left: 22px;
+        }
+
+        .ct-terms-section li {
+            color: #53666a;
+            font-size: 15px;
+            line-height: 1.8;
+            padding-left: 4px;
+            margin: 6px 0;
+        }
+
+        .ct-terms-section li::marker {
+            color: #004958;
+        }
+
+        .ct-terms-note {
+            margin-top: 18px;
+            padding: 18px 20px;
+            border-left: 3px solid #004958;
+            border-radius: 0 9px 9px 0;
+            background: #f3f7f7;
+            color: #53666a;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .ct-terms-contact {
+            margin-top: 10px;
+            padding: 25px;
+            border-radius: 14px;
+            background: #004958;
+            color: #fff;
+        }
+
+        .ct-terms-contact h2 {
+            color: #fff;
+            font-size: 22px;
+            margin: 0 0 8px;
+        }
+
+        .ct-terms-contact p {
+            color: rgba(255, 255, 255, .85);
+            margin: 0 0 16px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .ct-terms-contact a {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        @media(max-width:991.98px) {
+            .ct-terms-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding-top: 50px;
+                padding-bottom: 70px;
+            }
+
+            .ct-terms-toc {
+                position: static;
+            }
+
+            .ct-terms-toc ol {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                column-gap: 22px;
+            }
+        }
+
+        @media(max-width:575.98px) {
+            .ct-terms-hero {
+                padding: 72px 0 58px;
+            }
+
+            .ct-terms-hero p {
+                font-size: 15px;
+            }
+
+            .ct-terms-layout {
+                padding-top: 36px;
+                padding-bottom: 55px;
+            }
+
+            .ct-terms-toc ol {
+                grid-template-columns: 1fr;
+            }
+
+            .ct-terms-section-head {
+                gap: 11px;
+            }
+
+            .ct-terms-number {
+                flex-basis: 36px;
+                width: 36px;
+                height: 36px;
+            }
+
+            .ct-terms-section p,
+            .ct-terms-section li {
+                font-size: 14px;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            .ct-terms-toc a {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="root"></div>
+
+
+    <!--Preloader-->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!--Preloader-end -->
+
+    <!-- Scroll-top -->
+    <button class="scroll__top scroll-to-target" data-target="html">
+        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 19.3848V0.999995M11 0.999995L1.80762 10.1924M11 0.999995L20.1924 10.1924" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+    <!-- Scroll-top-end-->
+    <a href="https://wa.me/917738262069" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat" />
+    </a>
+    <!-- header-area -->
+    <header class="transparent-header">
+        <div class="tg-header__top">
+            <div class="container custom-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <div class="tg-header__top-menu">
+                            <ul class="list-wrap">
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15 7.54545C15 12.6364 8.5 17 8.5 17C8.5 17 2 12.6364 2 7.54545C2 5.80949 2.68482 4.14463 3.90381 2.91712C5.12279 1.68961 6.77609 1 8.5 1C10.2239 1 11.8772 1.68961 13.0962 2.91712C14.3152 4.14463 15 5.80949 15 7.54545Z"
+                                            stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M8.5 9.72727C9.69662 9.72727 10.6667 8.75044 10.6667 7.54545C10.6667 6.34047 9.69662 5.36364 8.5 5.36364C7.30338 5.36364 6.33333 6.34047 6.33333 7.54545C6.33333 8.75044 7.30338 9.72727 8.5 9.72727Z"
+                                            stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    HD-314 Malad West, Mumbai City
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.9718 12.4817V14.5893C15.9726 14.7849 15.9325 14.9786 15.8542 15.1578C15.7758 15.3371 15.6608 15.498 15.5167 15.6303C15.3725 15.7626 15.2023 15.8633 15.0169 15.9259C14.8316 15.9886 14.6352 16.0119 14.4403 15.9943C12.2786 15.7594 10.202 15.0207 8.37757 13.8376C6.68016 12.7589 5.24105 11.3198 4.16244 9.62243C2.97517 7.78969 2.2363 5.70306 2.0057 3.53156C1.98815 3.33729 2.01123 3.1415 2.0735 2.95664C2.13576 2.77178 2.23583 2.60191 2.36734 2.45785C2.49885 2.31378 2.65891 2.19868 2.83734 2.11986C3.01577 2.04105 3.20866 2.00025 3.40372 2.00007H5.51128C5.85222 1.99671 6.18275 2.11744 6.44126 2.33976C6.69976 2.56208 6.86861 2.87081 6.91633 3.20841C7.00528 3.88287 7.17025 4.54511 7.40809 5.18249C7.50261 5.43394 7.52307 5.70721 7.46704 5.96993C7.41101 6.23265 7.28084 6.4738 7.09196 6.66481L6.19976 7.55701C7.19983 9.31581 8.65609 10.7721 10.4149 11.7721L11.3071 10.8799C11.4981 10.6911 11.7392 10.5609 12.002 10.5049C12.2647 10.4488 12.538 10.4693 12.7894 10.5638C13.4268 10.8016 14.089 10.9666 14.7635 11.0556C15.1048 11.1037 15.4164 11.2756 15.6392 11.5386C15.862 11.8015 15.9804 12.1372 15.9718 12.4817Z"
+                                            stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    <a href="tel:+917738262069">+91 7738262069</a>
+                                </li>
+                                <li>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17 4.5C17 3.675 16.28 3 15.4 3H2.6C1.72 3 1 3.675 1 4.5M17 4.5V13.5C17 14.325 16.28 15 15.4 15H2.6C1.72 15 1 14.325 1 13.5V4.5M17 4.5L9 9.75007L1 4.5"
+                                            stroke="currentColor" stroke-width="1.1" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    <a href="mailto:info@crescenttechnoserve.com">info@crescenttechnoserve.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-header" class="tg-header__area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tgmenu__wrap">
+                            <nav class="tgmenu__nav">
+                                <div class="logo">
+                                    <!-- <a href="index.html"><img src="assets/img/logo/creslogo.svg" alt="Logo"></a> -->
+                                    <a href="index.html"><img src="assets/img/logo/creslogo.svg" alt="Logo"></a>
+
+
+                                </div>
+                                <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
+                                    <ul class="navigation">
+
+                                        <li class="menu-item-has-children"><a href="what-we-do.html">What we do</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="it-consulting.html">IT Consulting</a></li>
+                                                <li><a href="cloud-solution.html">Cloud Solutions</a></li>
+                                                <li><a href="cctv-biometric.html">CCTV & Biometric</a></li>
+                                                <li><a href="network-security.html">Network & Security</a></li>
+                                                <li><a href="web-services.html">Web Management</a></li>
+                                                <li><a href="itrental-services.html">IT Rental</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="career.html">Career</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tgmenu__action">
+                                    <ul class="list-wrap">
+
+
+                                        <li class="offCanvas-menu">
+                                            <a href="#!" class="menu-tigger">
+                                                <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="4" height="4" rx="2" fill="currentColor" />
+                                                    <rect x="7.19995" width="4" height="4" rx="2" fill="currentColor" />
+                                                    <rect x="14.3999" width="4" height="4" rx="2" fill="currentColor" />
+                                                    <rect y="8" width="4" height="4" rx="2" fill="currentColor" />
+                                                    <rect x="7.19995" y="8" width="4" height="4" rx="2"
+                                                        fill="currentColor" />
+                                                    <rect x="14.3999" y="8" width="4" height="4" rx="2"
+                                                        fill="currentColor" />
+                                                    <rect y="16" width="4" height="4" rx="2" fill="currentColor" />
+                                                    <rect x="7.19995" y="16" width="4" height="4" rx="2"
+                                                        fill="currentColor" />
+                                                    <rect x="14.3999" y="16" width="4" height="4" rx="2"
+                                                        fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mobile-nav-toggler">
+                                    <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="4" height="4" rx="2" fill="currentColor" />
+                                        <rect x="7.19995" width="4" height="4" rx="2" fill="currentColor" />
+                                        <rect x="14.3999" width="4" height="4" rx="2" fill="currentColor" />
+                                        <rect y="8" width="4" height="4" rx="2" fill="currentColor" />
+                                        <rect x="7.19995" y="8" width="4" height="4" rx="2" fill="currentColor" />
+                                        <rect x="14.3999" y="8" width="4" height="4" rx="2" fill="currentColor" />
+                                        <rect y="16" width="4" height="4" rx="2" fill="currentColor" />
+                                        <rect x="7.19995" y="16" width="4" height="4" rx="2" fill="currentColor" />
+                                        <rect x="14.3999" y="16" width="4" height="4" rx="2" fill="currentColor" />
+                                    </svg>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+        <div class="tgmobile__menu">
+            <nav class="tgmobile__menu-box">
+                <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
+                <div class="nav-logo">
+                    <a href="index.html"><img src="assets/img/logo/creslogo.svg" alt="Logo"></a>
+                </div>
+
+                <div class="tgmobile__menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+                <div class="social-links">
+                    <ul class="list-wrap">
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <svg width="11" height="20" viewBox="0 0 11 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.86031 11.25L10.4075 7.63046H6.9863V5.28164C6.9863 4.2914 7.46421 3.32617 8.99646 3.32617H10.5518V0.244531C10.5518 0.244531 9.14037 0 7.7909 0C4.97345 0 3.13183 1.73359 3.13183 4.87187V7.63046H0V11.25H3.13183V20H6.9863V11.25H9.86031Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/" target="_blank">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.2337 7.28122L16.6351 0H15.118L9.55989 6.32204L5.12043 0H0L6.71329 9.56016L0 17.1955H1.51707L7.38684 10.5192L12.0751 17.1955H17.1955L10.2333 7.28122H10.2337ZM8.15595 9.64426L2.06363 1.11744H4.39374L15.1187 16.1288H12.7889L8.15595 9.64466V9.64426Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.79512 4.29904C6.29988 4.29904 4.28722 6.31911 4.28722 8.82352C4.28722 11.3279 6.29988 13.348 8.79512 13.348C11.2904 13.348 13.303 11.3279 13.303 8.82352C13.303 6.31911 11.2904 4.29904 8.79512 4.29904ZM8.79512 11.765C7.18263 11.765 5.86439 10.4459 5.86439 8.82352C5.86439 7.20117 7.17871 5.88202 8.79512 5.88202C10.4115 5.88202 11.7258 7.20117 11.7258 8.82352C11.7258 10.4459 10.4076 11.765 8.79512 11.765ZM14.5389 4.11397C14.5389 4.70069 14.0681 5.16929 13.4874 5.16929C12.9028 5.16929 12.436 4.69676 12.436 4.11397C12.436 3.53118 12.9068 3.05865 13.4874 3.05865C14.0681 3.05865 14.5389 3.53118 14.5389 4.11397ZM17.5245 5.18504C17.4578 3.77138 17.1361 2.51918 16.1043 1.48749C15.0764 0.455795 13.8287 0.132899 12.4203 0.0620196C10.9686 -0.0206732 6.61767 -0.0206732 5.16604 0.0620196C3.76149 0.128961 2.51387 0.451857 1.48204 1.48355C0.450202 2.51524 0.132412 3.76745 0.0617924 5.1811C-0.0205975 6.63807 -0.0205975 11.005 0.0617924 12.462C0.128489 13.8757 0.450202 15.1279 1.48204 16.1596C2.51387 17.1912 3.75757 17.5141 5.16604 17.585C6.61767 17.6677 10.9686 17.6677 12.4203 17.585C13.8287 17.5181 15.0764 17.1952 16.1043 16.1596C17.1322 15.1279 17.4539 13.8757 17.5245 12.462C17.6069 11.005 17.6069 6.64201 17.5245 5.18504ZM15.6492 14.0253C15.3432 14.7971 14.7507 15.3917 13.9778 15.7028C12.8205 16.1635 10.0741 16.0572 8.79512 16.0572C7.51611 16.0572 4.76586 16.1596 3.6124 15.7028C2.84343 15.3956 2.25101 14.801 1.94107 14.0253C1.48204 12.8637 1.58797 10.1072 1.58797 8.82352C1.58797 7.53981 1.48596 4.77945 1.94107 3.62175C2.24709 2.84995 2.83951 2.25535 3.6124 1.94427C4.76978 1.48355 7.51611 1.58987 8.79512 1.58987C10.0741 1.58987 12.8244 1.48749 13.9778 1.94427C14.7468 2.25141 15.3392 2.84601 15.6492 3.62175C16.1082 4.78339 16.0023 7.53981 16.0023 8.82352C16.0023 10.1072 16.1082 12.8676 15.6492 14.0253Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="tgmobile__menu-backdrop"></div>
+        <!-- End Mobile Menu -->
+
+        <!-- header-search -->
+        <div class="search__popup">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="search__wrapper">
+                            <div class="search__close">
+                                <button type="button" class="search-close-btn">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="search__form">
+                                <form action="#">
+                                    <div class="search__input">
+                                        <input class="search-input-field" type="text" placeholder="Type keywords here">
+                                        <span class="search-focus-border"></span>
+                                        <button>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z"
+                                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor"
+                                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-popup-overlay"></div>
+        <!-- header-search-end -->
+
+        <!-- offCanvas-menu -->
+        <div class="offCanvas__info">
+            <div class="offCanvas__close-icon menu-close">
+                <button>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="offCanvas__logo mb-30">
+                <a href="index.html"><img src="assets/img/logo/creslogo.svg" alt="Logo"></a>
+            </div>
+            <div class="offCanvas__content">
+                <p>Crescent Technoserve delivers smart, reliable IT solutions with speed and precision. Connect with us
+                    anytime to elevate your business effortlessly.</p>
+            </div>
+            <div class="offCanvas__info-wrap mb-30">
+                <h2 class="offCanvas__title">Contact Details</h2>
+                <div class="offCanvas__info-list">
+                    <div class="offCanvas__info-list-item">
+                        <div class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.9998 10.0606C19.9998 16.8485 11.3332 22.6667 11.3332 22.6667C11.3332 22.6667 2.6665 16.8485 2.6665 10.0606C2.6665 7.746 3.5796 5.52618 5.20491 3.8895C6.83023 2.25282 9.03463 1.33334 11.3332 1.33334C13.6317 1.33334 15.8361 2.25282 17.4614 3.8895C19.0867 5.52618 19.9998 7.746 19.9998 10.0606Z"
+                                    stroke="currentColor" stroke-width="1.73333" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M11.3332 12.9697C12.9287 12.9697 14.2221 11.6673 14.2221 10.0606C14.2221 8.45397 12.9287 7.15153 11.3332 7.15153C9.73768 7.15153 8.44428 8.45397 8.44428 10.0606C8.44428 11.6673 9.73768 12.9697 11.3332 12.9697Z"
+                                    stroke="currentColor" stroke-width="1.73333" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p>HD-314, WeWork Spectrum Tower, 4th Floor, Mindspace Chincholi Bunder Road, Off Link Road,
+                            Malad (West), Mumbai, MH 400064</p>
+                    </div>
+                    <div class="offCanvas__info-list-item">
+                        <div class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21.2956 16.6422V19.4523C21.2967 19.7132 21.2432 19.9714 21.1387 20.2104C21.0342 20.4495 20.8809 20.664 20.6887 20.8404C20.4965 21.0167 20.2695 21.151 20.0224 21.2346C19.7753 21.3182 19.5134 21.3492 19.2536 21.3257C16.3712 21.0125 13.6025 20.0276 11.1699 18.4501C8.90672 17.0119 6.9879 15.0931 5.54976 12.8299C3.96673 10.3862 2.98157 7.60406 2.67411 4.70874C2.6507 4.44972 2.68148 4.18865 2.7645 3.94217C2.84751 3.6957 2.98094 3.4692 3.15629 3.27712C3.33163 3.08503 3.54505 2.93156 3.78296 2.82647C4.02087 2.72139 4.27805 2.66699 4.53813 2.66675H7.34822C7.8028 2.66227 8.2435 2.82325 8.58818 3.11967C8.93285 3.41609 9.15798 3.82773 9.22161 4.27786C9.34021 5.17715 9.56018 6.06014 9.87729 6.90998C10.0033 7.24524 10.0306 7.60961 9.95589 7.9599C9.88118 8.31019 9.70762 8.63173 9.45578 8.88641L8.26618 10.076C9.59962 12.4211 11.5413 14.3627 13.8864 15.6962L15.076 14.5066C15.3306 14.2547 15.6522 14.0812 16.0025 14.0065C16.3527 13.9318 16.7171 13.959 17.0524 14.0851C17.9022 14.4022 18.7852 14.6221 19.6845 14.7408C20.1395 14.8049 20.5551 15.0341 20.8521 15.3847C21.1492 15.7353 21.307 16.1829 21.2956 16.6422Z"
+                                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <a href="tel:+917738262069">+91 77382 62069</a>
+                    </div>
+                    <div class="offCanvas__info-list-item">
+                        <div class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.6668 6C22.6668 4.9 21.7068 4 20.5335 4H3.46683C2.2935 4 1.3335 4.9 1.3335 6M22.6668 6V18C22.6668 19.1 21.7068 20 20.5335 20H3.46683C2.2935 20 1.3335 19.1 1.3335 18V6M22.6668 6L12.0002 13.0001L1.3335 6"
+                                    stroke="currentColor" stroke-width="1.46667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <a href="mailto:info@crescenttechnoserve.com">info@crescenttechnoserve.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="offCanvas__social-wrap">
+                <h2 class="offCanvas__title">Follow us</h2>
+                <ul class="list-wrap">
+                    <li>
+                        <a href="https://www.facebook.com/p/Crescent-Technoserve-61566423279334/" target="_blank">
+                            <svg width="11" height="20" viewBox="0 0 11 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.86031 11.25L10.4075 7.63046H6.9863V5.28164C6.9863 4.2914 7.46421 3.32617 8.99646 3.32617H10.5518V0.244531C10.5518 0.244531 9.14037 0 7.7909 0C4.97345 0 3.13183 1.73359 3.13183 4.87187V7.63046H0V11.25H3.13183V20H6.9863V11.25H9.86031Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.2337 7.28122L16.6351 0H15.118L9.55989 6.32204L5.12043 0H0L6.71329 9.56016L0 17.1955H1.51707L7.38684 10.5192L12.0751 17.1955H17.1955L10.2333 7.28122H10.2337ZM8.15595 9.64426L2.06363 1.11744H4.39374L15.1187 16.1288H12.7889L8.15595 9.64466V9.64426Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/crescent.technoserve" target="_blank">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.79512 4.29904C6.29988 4.29904 4.28722 6.31911 4.28722 8.82352C4.28722 11.3279 6.29988 13.348 8.79512 13.348C11.2904 13.348 13.303 11.3279 13.303 8.82352C13.303 6.31911 11.2904 4.29904 8.79512 4.29904ZM8.79512 11.765C7.18263 11.765 5.86439 10.4459 5.86439 8.82352C5.86439 7.20117 7.17871 5.88202 8.79512 5.88202C10.4115 5.88202 11.7258 7.20117 11.7258 8.82352C11.7258 10.4459 10.4076 11.765 8.79512 11.765ZM14.5389 4.11397C14.5389 4.70069 14.0681 5.16929 13.4874 5.16929C12.9028 5.16929 12.436 4.69676 12.436 4.11397C12.436 3.53118 12.9068 3.05865 13.4874 3.05865C14.0681 3.05865 14.5389 3.53118 14.5389 4.11397ZM17.5245 5.18504C17.4578 3.77138 17.1361 2.51918 16.1043 1.48749C15.0764 0.455795 13.8287 0.132899 12.4203 0.0620196C10.9686 -0.0206732 6.61767 -0.0206732 5.16604 0.0620196C3.76149 0.128961 2.51387 0.451857 1.48204 1.48355C0.450202 2.51524 0.132412 3.76745 0.0617924 5.1811C-0.0205975 6.63807 -0.0205975 11.005 0.0617924 12.462C0.128489 13.8757 0.450202 15.1279 1.48204 16.1596C2.51387 17.1912 3.75757 17.5141 5.16604 17.585C6.61767 17.6677 10.9686 17.6677 12.4203 17.585C13.8287 17.5181 15.0764 17.1952 16.1043 16.1596C17.1322 15.1279 17.4539 13.8757 17.5245 12.462C17.6069 11.005 17.6069 6.64201 17.5245 5.18504ZM15.6492 14.0253C15.3432 14.7971 14.7507 15.3917 13.9778 15.7028C12.8205 16.1635 10.0741 16.0572 8.79512 16.0572C7.51611 16.0572 4.76586 16.1596 3.6124 15.7028C2.84343 15.3956 2.25101 14.801 1.94107 14.0253C1.48204 12.8637 1.58797 10.1072 1.58797 8.82352C1.58797 7.53981 1.48596 4.77945 1.94107 3.62175C2.24709 2.84995 2.83951 2.25535 3.6124 1.94427C4.76978 1.48355 7.51611 1.58987 8.79512 1.58987C10.0741 1.58987 12.8244 1.48749 13.9778 1.94427C14.7468 2.25141 15.3392 2.84601 15.6492 3.62175C16.1082 4.78339 16.0023 7.53981 16.0023 8.82352C16.0023 10.1072 16.1082 12.8676 15.6492 14.0253Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/crescenttechnoserve/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                                <path
+                                    d="m20.65,18.172h-.174v-.353h.22c.114,0,.244.018.244.167,0,.171-.131.185-.29.185Z" />
+                                <path
+                                    d="m20.639,17.366c-.473.008-.85.398-.843.871.008.473.398.851.871.843h0s.022,0,.022,0c.463-.01.83-.393.821-.856v-.014c-.008-.473-.398-.851-.871-.843h0Zm.31,1.378l-.285-.449-.004-.005h-.184v.454h-.149v-1.043h.398c.246,0,.367.095.367.294,0,.006,0,.012,0,.018-.001.147-.095.266-.289.266l.308.465h-.16Z" />
+                                <path
+                                    d="m12,0h0C5.373,0,0,5.373,0,12h0c0,6.627,5.373,12,12,12h0c6.627,0,12-5.373,12-12h0C24,5.373,18.627,0,12,0Zm7.037,18.056c-.008.578-.483,1.042-1.062,1.034H5.76c-.577.006-1.051-.457-1.058-1.034V5.79c.007-.577.48-1.04,1.058-1.033h12.215c.578-.009,1.053.454,1.062,1.032v12.267Zm1.65,1.136c-.54.005-.982-.428-.987-.968-.005-.539.428-.981.968-.987h.019c.532.005.963.436.968.968.005.539-.428.981-.968.987Zm-6.32-9.232c-.823-.03-1.596.394-2.012,1.105h-.028v-.935h-2.039v6.84h2.124v-3.383c0-.893.169-1.756,1.276-1.756,1.09,0,1.104,1.021,1.104,1.814v3.326h2.124v-3.752c0-1.843-.396-3.258-2.549-3.258h0Zm-7.54,7.01h2.126v-6.84h-2.126v6.84Zm1.064-10.24c-.681,0-1.233.552-1.233,1.233,0,.681.552,1.232,1.233,1.232s1.233-.552,1.233-1.233c0-.681-.552-1.233-1.233-1.232Z" />
+                            </svg>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="offCanvas__overly"></div>
+        <!-- offCanvas-menu-end -->
+
+    </header>
+    <!-- header-area-end -->
+
+
+
+    <!-- main-area -->
+    <main class="main-area fix ct-terms-page">
+
+        <!-- 01 — hero -->
+        <section class="breadcrumb__area breadcrumb__bg fix" data-background="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb__content">
+                            <h1 class="title">Terms of Use</h1>
+                            <p
+                                style="color:#ffffff; opacity:0.92; max-width:680px; font-size:17px; margin-bottom:32px;">
+                                Please read these terms before using the Crescent Technoserve website. They explain the
+                                basic rules
+                                for accessing our website, using its content, and contacting our team.
+                            </p>
+                            <div class="hero-btn-group">
+                                <a href="contact.html" class="tg-btn white-btn">
+                                    Talk to Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- hero-end -->
+
+        <section class="container ct-terms-layout" aria-label="Terms of Use content">
+            <nav class="ct-terms-toc" aria-label="On this page">
+                <h2 class="ct-terms-toc-title">On this page</h2>
+                <ol>
+                    <li><a href="#acceptance">01. Acceptance of terms</a></li>
+                    <li><a href="#website-use">02. Permitted use</a></li>
+                    <li><a href="#services">03. Services and information</a></li>
+                    <li><a href="#intellectual-property">04. Intellectual property</a></li>
+                    <li><a href="#submissions">05. Enquiries and submissions</a></li>
+                    <li><a href="#third-party">06. Third-party links</a></li>
+                    <li><a href="#privacy">07. Privacy</a></li>
+                    <li><a href="#disclaimer">08. Disclaimer</a></li>
+                    <li><a href="#liability">09. Limitation of liability</a></li>
+                    <li><a href="#changes">10. Changes to these terms</a></li>
+                    <li><a href="#law">11. Governing law</a></li>
+                    <li><a href="#contact">12. Contact us</a></li>
+                </ol>
+            </nav>
+
+            <div class="ct-terms-content">
+                <div class="ct-terms-intro">
+                    <p>These Terms of Use (“Terms”) apply to your access to and use of the Crescent Technoserve website.
+                        By visiting or using this website, you agree to these Terms. If you do not agree, please
+                        discontinue use of the website. These Terms relate to website use and do not replace any
+                        separate written agreement governing services supplied by Crescent Technoserve.</p>
+                </div>
+
+                <section class="ct-terms-section" id="acceptance">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">01</span>
+                        <h2>Acceptance of Terms</h2>
+                    </div>
+                    <p>By accessing this website, you confirm that you have read and understood these Terms and agree to
+                        follow them and applicable laws. If you access the website on behalf of a business or other
+                        organisation, you confirm that you are authorised to do so.</p>
+                </section>
+
+                <section class="ct-terms-section" id="website-use">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">02</span>
+                        <h2>Permitted Use of the Website</h2>
+                    </div>
+                    <p>You may use this website for lawful purposes, including learning about our services, reviewing
+                        information, and making genuine business enquiries. You agree not to:</p>
+                    <ul>
+                        <li>Use the website in a way that violates applicable law or the rights of another person or
+                            organisation.</li>
+                        <li>Attempt to gain unauthorised access to the website, its hosting environment, accounts, or
+                            connected systems.</li>
+                        <li>Introduce malware, malicious code, or any material intended to disrupt website operation or
+                            security.</li>
+                        <li>Scrape, copy, reproduce, or redistribute website content at scale without permission, except
+                            where permitted by law.</li>
+                        <li>Misrepresent your identity or submit false, misleading, abusive, or unlawful information
+                            through our forms or contact channels.</li>
+                    </ul>
+                </section>
+
+                <section class="ct-terms-section" id="services">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">03</span>
+                        <h2>Services and Website Information</h2>
+                    </div>
+                    <p>This website may describe IT consulting, managed IT support, networking, security, hardware,
+                        software, cloud, web, and related technology services. The information is provided for general
+                        informational purposes and does not constitute a binding quotation, service-level commitment, or
+                        offer to provide a particular service.</p>
+                    <p>Service availability, scope, pricing, timelines, specifications, and other conditions are
+                        confirmed separately when applicable. Any engagement is subject to a mutually accepted proposal,
+                        quotation, purchase order, or written agreement.</p>
+                    <p>We make reasonable efforts to keep website information useful and current, but we do not
+                        guarantee that every description, specification, price, or item of information will always be
+                        complete, current, or error-free.</p>
+                </section>
+
+                <section class="ct-terms-section" id="intellectual-property">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">04</span>
+                        <h2>Intellectual Property</h2>
+                    </div>
+                    <p>Unless otherwise stated, the website's text, layout, graphics, visual design, logos, and original
+                        materials are owned by or used with permission by Crescent Technoserve and may be protected by
+                        intellectual-property laws.</p>
+                    <p>You may view and use the website for personal or internal business reference. You must not
+                        republish, modify, commercially exploit, or distribute our original materials without prior
+                        written permission, except where applicable law permits such use.</p>
+                    <p>Third-party names, trademarks, and logos appearing on the website remain the property of their
+                        respective owners. Their appearance does not by itself imply sponsorship, certification, or
+                        endorsement.</p>
+                </section>
+
+                <section class="ct-terms-section" id="submissions">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">05</span>
+                        <h2>Enquiries and Submissions</h2>
+                    </div>
+                    <p>When you submit an enquiry, request a quotation, apply for a role, or otherwise contact us
+                        through the website, you agree to provide information that is accurate to the best of your
+                        knowledge and that you are entitled to share.</p>
+                    <p>Submitting a form does not guarantee a response, job interview, offer of employment, service
+                        availability, or acceptance of a business proposal. Please do not submit confidential or
+                        sensitive information unless it is necessary and you are authorised to provide it.</p>
+                </section>
+
+                <section class="ct-terms-section" id="third-party">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">06</span>
+                        <h2>Third-Party Websites and Services</h2>
+                    </div>
+                    <p>This website may link to third-party websites, platforms, tools, or resources for convenience.
+                        These are not controlled by Crescent Technoserve. We are not responsible for their content,
+                        availability, security, privacy practices, or terms. Accessing a third-party website is at your
+                        own discretion, and you should review its applicable terms and privacy policy.</p>
+                </section>
+
+                <section class="ct-terms-section" id="privacy">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">07</span>
+                        <h2>Privacy and Personal Information</h2>
+                    </div>
+                    <p>If you provide personal information through our website, we will handle it in accordance with
+                        applicable law and any privacy notice published by us. Please provide only information relevant
+                        to your enquiry and avoid sending passwords, payment-card details, or other sensitive
+                        information through general contact forms.</p>
+                    <p>These Terms should be read alongside any applicable privacy policy. If a separate privacy policy
+                        is not available on the website, contact us to ask how information submitted through the website
+                        is handled.</p>
+                </section>
+
+                <section class="ct-terms-section" id="disclaimer">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">08</span>
+                        <h2>Disclaimer</h2>
+                    </div>
+                    <p>The website and its content are provided on an “as is” and “as available” basis to the extent
+                        permitted by law. We do not warrant uninterrupted availability, compatibility with every device
+                        or browser, or the absence of errors, vulnerabilities, or harmful components.</p>
+                    <p>Information on this website is general in nature and should not be treated as a substitute for
+                        advice or a technical assessment tailored to your specific requirements.</p>
+                </section>
+
+                <section class="ct-terms-section" id="liability">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">09</span>
+                        <h2>Limitation of Liability</h2>
+                    </div>
+                    <p>To the maximum extent permitted by applicable law, Crescent Technoserve will not be liable for
+                        indirect, incidental, special, consequential, or punitive losses arising from or connected with
+                        the use of, or inability to use, this website. Nothing in these Terms excludes or limits
+                        liability that cannot lawfully be excluded or limited.</p>
+                    <div class="ct-terms-note">These Terms govern website use only. Any limitations, warranties,
+                        remedies, or responsibilities relating to services we provide are governed by the applicable
+                        service agreement and mandatory law.</div>
+                </section>
+
+                <section class="ct-terms-section" id="changes">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">10</span>
+                        <h2>Changes to These Terms</h2>
+                    </div>
+                    <p>We may update these Terms when our website, services, or legal requirements change. The updated
+                        version will be published on this page with a revised effective date where appropriate. Your
+                        continued use of the website after changes are published indicates that you accept the updated
+                        Terms, to the extent permitted by law.</p>
+                </section>
+
+                <section class="ct-terms-section" id="law">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">11</span>
+                        <h2>Governing Law</h2>
+                    </div>
+                    <p>These Terms are intended to be governed by the laws of India. Subject to applicable law, the
+                        courts with competent jurisdiction in Mumbai, Maharashtra, shall have jurisdiction over disputes
+                        relating to these Terms or website use.</p>
+                </section>
+
+                <section class="ct-terms-section" id="contact">
+                    <div class="ct-terms-section-head"><span class="ct-terms-number">12</span>
+                        <h2>Contact Us</h2>
+                    </div>
+                    <p>If you have a question about these Terms or the use of this website, please contact Crescent
+                        Technoserve through our contact page.</p>
+                    <div class="ct-terms-contact">
+                        <h2>Need clarification?</h2>
+                        <p>Contact our team and let us know which section of these Terms you would like to discuss.</p>
+                        <a href="contact.html#ct">Contact Crescent Technoserve &rarr;</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <!-- main-area-end -->
+
+    <!-- footer-area -->
+    <footer class="footer__area footer__bg fix">
+        <div class="container">
+
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5 col-sm-6">
+                        <div class="footer__widget">
+                            <div class="footer__logo">
+                                <a href="index.html"><img src="assets/img/logo/creswhitelogo.svg" alt="logo"></a>
+                            </div>
+                            <div class="footer__content">
+                                <p>Empowering businesses with smart IT solutions, innovation, and trusted support.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div class="footer__widget">
+                            <h4 class="footer__widget-title">Our Services</h4>
+                            <ul class="list-wrap footer__link">
+                                <li><a href="it-consulting.html">IT Consulting</a></li>
+                                <li><a href="cloud-solution.html">Cloud Solutions</a></li>
+                                <li><a href="cctv-biometric.html">CCTV & Biometric</a></li>
+                                <li><a href="network-security.html">Network & Security</a></li>
+                                <li><a href="web-services.html">Web Management</a></li>
+                                <li><a href="itrental-services.html">IT Rental</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="footer__widget">
+                            <h4 class="footer__widget-title">Usefull Links</h4>
+                            <ul class="list-wrap footer__link">
+                                <li><a href="">Terms & Service</a></li>
+                                <li><a href="">GSTIN</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="footer__widget">
+                            <h4 class="footer__widget-title">Contact</h4>
+                            <div class="footer__contact">
+                                <p>Connect With us</p>
+                                <a href="tel:+917738262069" class="phone">+91 77382 62069</a>
+                                <a href="mailto:info@crescenttechnoserve.com"
+                                    class="mail">info@crescenttechnoserve.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 order-0 order-sm-2">
+                        <div class="footer__social">
+                            <ul class="list-wrap">
+                                <li>
+                                    <a href="https://www.facebook.com/p/Crescent-Technoserve-61566423279334/"
+                                        target="_blank">
+                                        <svg width="11" height="20" viewBox="0 0 11 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9.86031 11.25L10.4075 7.63046H6.9863V5.28164C6.9863 4.2914 7.46421 3.32617 8.99646 3.32617H10.5518V0.244531C10.5518 0.244531 9.14037 0 7.7909 0C4.97345 0 3.13183 1.73359 3.13183 4.87187V7.63046H0V11.25H3.13183V20H6.9863V11.25H9.86031Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/" target="_blank">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.2337 7.28122L16.6351 0H15.118L9.55989 6.32204L5.12043 0H0L6.71329 9.56016L0 17.1955H1.51707L7.38684 10.5192L12.0751 17.1955H17.1955L10.2333 7.28122H10.2337ZM8.15595 9.64426L2.06363 1.11744H4.39374L15.1187 16.1288H12.7889L8.15595 9.64466V9.64426Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/crescent.technoserve" target="_blank">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8.79512 4.29904C6.29988 4.29904 4.28722 6.31911 4.28722 8.82352C4.28722 11.3279 6.29988 13.348 8.79512 13.348C11.2904 13.348 13.303 11.3279 13.303 8.82352C13.303 6.31911 11.2904 4.29904 8.79512 4.29904ZM8.79512 11.765C7.18263 11.765 5.86439 10.4459 5.86439 8.82352C5.86439 7.20117 7.17871 5.88202 8.79512 5.88202C10.4115 5.88202 11.7258 7.20117 11.7258 8.82352C11.7258 10.4459 10.4076 11.765 8.79512 11.765ZM14.5389 4.11397C14.5389 4.70069 14.0681 5.16929 13.4874 5.16929C12.9028 5.16929 12.436 4.69676 12.436 4.11397C12.436 3.53118 12.9068 3.05865 13.4874 3.05865C14.0681 3.05865 14.5389 3.53118 14.5389 4.11397ZM17.5245 5.18504C17.4578 3.77138 17.1361 2.51918 16.1043 1.48749C15.0764 0.455795 13.8287 0.132899 12.4203 0.0620196C10.9686 -0.0206732 6.61767 -0.0206732 5.16604 0.0620196C3.76149 0.128961 2.51387 0.451857 1.48204 1.48355C0.450202 2.51524 0.132412 3.76745 0.0617924 5.1811C-0.0205975 6.63807 -0.0205975 11.005 0.0617924 12.462C0.128489 13.8757 0.450202 15.1279 1.48204 16.1596C2.51387 17.1912 3.75757 17.5141 5.16604 17.585C6.61767 17.6677 10.9686 17.6677 12.4203 17.585C13.8287 17.5181 15.0764 17.1952 16.1043 16.1596C17.1322 15.1279 17.4539 13.8757 17.5245 12.462C17.6069 11.005 17.6069 6.64201 17.5245 5.18504ZM15.6492 14.0253C15.3432 14.7971 14.7507 15.3917 13.9778 15.7028C12.8205 16.1635 10.0741 16.0572 8.79512 16.0572C7.51611 16.0572 4.76586 16.1596 3.6124 15.7028C2.84343 15.3956 2.25101 14.801 1.94107 14.0253C1.48204 12.8637 1.58797 10.1072 1.58797 8.82352C1.58797 7.53981 1.48596 4.77945 1.94107 3.62175C2.24709 2.84995 2.83951 2.25535 3.6124 1.94427C4.76978 1.48355 7.51611 1.58987 8.79512 1.58987C10.0741 1.58987 12.8244 1.48749 13.9778 1.94427C14.7468 2.25141 15.3392 2.84601 15.6492 3.62175C16.1082 4.78339 16.0023 7.53981 16.0023 8.82352C16.0023 10.1072 16.1082 12.8676 15.6492 14.0253Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/crescenttechnoserve/" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18"
+                                            height="18" fill="white">
+                                            <path
+                                                d="m20.65,18.172h-.174v-.353h.22c.114,0,.244.018.244.167,0,.171-.131.185-.29.185Z" />
+                                            <path
+                                                d="m20.639,17.366c-.473.008-.85.398-.843.871.008.473.398.851.871.843h0s.022,0,.022,0c.463-.01.83-.393.821-.856v-.014c-.008-.473-.398-.851-.871-.843h0Zm.31,1.378l-.285-.449-.004-.005h-.184v.454h-.149v-1.043h.398c.246,0,.367.095.367.294,0,.006,0,.012,0,.018-.001.147-.095.266-.289.266l.308.465h-.16Z" />
+                                            <path
+                                                d="m12,0h0C5.373,0,0,5.373,0,12h0c0,6.627,5.373,12,12,12h0c6.627,0,12-5.373,12-12h0C24,5.373,18.627,0,12,0Zm7.037,18.056c-.008.578-.483,1.042-1.062,1.034H5.76c-.577.006-1.051-.457-1.058-1.034V5.79c.007-.577.48-1.04,1.058-1.033h12.215c.578-.009,1.053.454,1.062,1.032v12.267Zm1.65,1.136c-.54.005-.982-.428-.987-.968-.005-.539.428-.981.968-.987h.019c.532.005.963.436.968.968.005.539-.428.981-.968.987Zm-6.32-9.232c-.823-.03-1.596.394-2.012,1.105h-.028v-.935h-2.039v6.84h2.124v-3.383c0-.893.169-1.756,1.276-1.756,1.09,0,1.104,1.021,1.104,1.814v3.326h2.124v-3.752c0-1.843-.396-3.258-2.549-3.258h0Zm-7.54,7.01h2.126v-6.84h-2.126v6.84Zm1.064-10.24c-.681,0-1.233.552-1.233,1.233,0,.681.552,1.232,1.233,1.232s1.233-.552,1.233-1.233c0-.681-.552-1.233-1.233-1.232Z" />
+                                        </svg>
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="copyright__text">
+                            <p>Copyright © CT | All Right Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area-end -->
+
+
+
+
+
+    <!-- JS here -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery.marquee.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
+    <!-- <script src="assets/js/ajax-form.js"></script> -->
+    <script src="assets/js/sal.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function closeCard(card) {
+                var panel = card.querySelector('.job__details-panel');
+                var btn = card.querySelector('.job__toggle-trigger');
+                var label = btn.querySelector('.btn-label');
+                var arrow = btn.querySelector('.toggle-arrow');
+
+                panel.style.maxHeight = panel.scrollHeight + 'px'; // lock current height first
+                requestAnimationFrame(function () {
+                    panel.style.maxHeight = '0px';
+                });
+                panel.classList.remove('is-open');
+                if (label) label.textContent = 'View Details';
+                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            }
+
+            function openCard(card) {
+                var panel = card.querySelector('.job__details-panel');
+                var btn = card.querySelector('.job__toggle-trigger');
+                var label = btn.querySelector('.btn-label');
+                var arrow = btn.querySelector('.toggle-arrow');
+
+                panel.classList.add('is-open');
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                if (label) label.textContent = 'Hide Details';
+                if (arrow) arrow.style.transform = 'rotate(45deg)';
+
+                // once open, release the fixed height so content (e.g. window resize) isn't clipped later
+                panel.addEventListener('transitionend', function handler() {
+                    if (panel.classList.contains('is-open')) {
+                        panel.style.maxHeight = 'none';
+                    }
+                    panel.removeEventListener('transitionend', handler);
+                });
+            }
+
+            document.querySelectorAll('.job__toggle-trigger').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var card = btn.closest('.job__item');
+                    var panel = card.querySelector('.job__details-panel');
+                    var isOpen = panel.classList.contains('is-open');
+
+                    // close any other open card first
+                    document.querySelectorAll('.job__item').forEach(function (otherCard) {
+                        if (otherCard !== card) closeCard(otherCard);
+                    });
+
+                    if (isOpen) {
+                        closeCard(card);
+                    } else {
+                        openCard(card);
+                        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('contact-form');
+            if (!form) return;
+
+            var wrap = form.closest('.apply-form-wrap');
+            var submitBtn = form.querySelector('.job-apply-submit') || form.querySelector('button[type="submit"]');
+            var responseEl = document.querySelector('.ajax-response');
+
+            if (submitBtn && !submitBtn.querySelector('.btn-text')) {
+                submitBtn.innerHTML = '<span class="btn-text">' + submitBtn.innerHTML + '</span>';
+            }
+            if (submitBtn && !submitBtn.querySelector('.spinner')) {
+                submitBtn.insertAdjacentHTML('beforeend', '<span class="spinner"></span>');
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                submitBtn.classList.add('is-loading');
+                submitBtn.disabled = true;
+                responseEl.classList.remove('show', 'success', 'error');
+                responseEl.textContent = '';
+
+                var formData = new FormData(form);
+
+                fetch(form.action, { method: 'POST', body: formData })
+                    .then(function (res) { return res.json(); })
+                    .then(function (data) {
+                        submitBtn.classList.remove('is-loading');
+                        submitBtn.disabled = false;
+
+                        if (data.status === 'success') {
+                            form.reset();
+                            if (wrap) {
+                                wrap.classList.add('is-submitted');
+                            }
+                        } else {
+                            responseEl.textContent = data.message;
+                            responseEl.classList.add('show', 'error');
+                        }
+                    })
+                    .catch(function () {
+                        submitBtn.classList.remove('is-loading');
+                        submitBtn.disabled = false;
+                        responseEl.textContent = 'Network error — please check your connection and try again.';
+                        responseEl.classList.add('show', 'error');
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
