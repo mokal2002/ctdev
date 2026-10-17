@@ -8590,6 +8590,7 @@ textarea {
 .testimonial__item {
   background: var(--tg-color-white-default);
   padding: 40px 24px 40px 40px;
+  min-height: 486px;
   border-radius: 20px;
   position: relative;
   z-index: 1;
